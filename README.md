@@ -6,4 +6,4 @@ up to now we have
 4. create local repostory
 5. create branches
 6.link local and remote repository
-7. to connect github repository with telegram notification
+7. to connect github repository with telegram messages
