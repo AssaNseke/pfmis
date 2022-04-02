@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'api',
         'passwords' => 'users',
     ],
 
@@ -92,6 +92,10 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
+        ],
+        'api' => [ 
+            'driver' => 'passport', 
+            'provider' => 'users', 
         ],
     ],
 
