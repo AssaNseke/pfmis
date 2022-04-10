@@ -2160,7 +2160,7 @@ return array(
     'Illuminate\\Filesystem\\FilesystemServiceProvider' => $vendorDir . '/laravel/framework/src/Illuminate/Filesystem/FilesystemServiceProvider.php',
     'Illuminate\\Filesystem\\LockableFile' => $vendorDir . '/laravel/framework/src/Illuminate/Filesystem/LockableFile.php',
     'Illuminate\\Foundation\\AliasLoader' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/AliasLoader.php',
-    'Illuminate\\Foundation\\Application' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Application.php',
+    'Illuminate\\Foundation\\Application' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/',
     'Illuminate\\Foundation\\Auth\\Access\\Authorizable' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/Authorizable.php',
     'Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php',
     'Illuminate\\Foundation\\Auth\\EmailVerificationRequest' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Auth/EmailVerificationRequest.php',
