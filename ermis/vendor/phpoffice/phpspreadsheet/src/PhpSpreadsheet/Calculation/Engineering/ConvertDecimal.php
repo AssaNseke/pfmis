@@ -22,7 +22,11 @@ class ConvertDecimal extends ConvertBase
      * Excel Function:
      *        DEC2BIN(x[,places])
      *
+<<<<<<< HEAD
      * @param string $value The decimal integer you want to convert. If number is negative,
+=======
+     * @param array|string $value The decimal integer you want to convert. If number is negative,
+>>>>>>> develop
      *                          valid place values are ignored and DEC2BIN returns a 10-character
      *                          (10-bit) binary number in which the most significant bit is the sign
      *                          bit. The remaining 9 bits are magnitude bits. Negative numbers are
@@ -32,12 +36,18 @@ class ConvertDecimal extends ConvertBase
      *                      If number is nonnumeric, DEC2BIN returns the #VALUE! error value.
      *                      If DEC2BIN requires more than places characters, it returns the #NUM!
      *                          error value.
+<<<<<<< HEAD
      * @param int $places The number of characters to use. If places is omitted, DEC2BIN uses
+=======
+     *                      Or can be an array of values
+     * @param array|int $places The number of characters to use. If places is omitted, DEC2BIN uses
+>>>>>>> develop
      *                          the minimum number of characters necessary. Places is useful for
      *                          padding the return value with leading 0s (zeros).
      *                      If places is not an integer, it is truncated.
      *                      If places is nonnumeric, DEC2BIN returns the #VALUE! error value.
      *                      If places is zero or negative, DEC2BIN returns the #NUM! error value.
+<<<<<<< HEAD
      */
     public static function toBinary($value, $places = null): string
     {
@@ -45,6 +55,24 @@ class ConvertDecimal extends ConvertBase
             $value = self::validateValue(Functions::flattenSingleValue($value));
             $value = self::validateDecimal($value);
             $places = self::validatePlaces(Functions::flattenSingleValue($places));
+=======
+     *                      Or can be an array of values
+     *
+     * @return array|string Result, or an error
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function toBinary($value, $places = null)
+    {
+        if (is_array($value) || is_array($places)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $value, $places);
+        }
+
+        try {
+            $value = self::validateValue($value);
+            $value = self::validateDecimal($value);
+            $places = self::validatePlaces($places);
+>>>>>>> develop
         } catch (Exception $e) {
             return $e->getMessage();
         }
@@ -69,7 +97,11 @@ class ConvertDecimal extends ConvertBase
      * Excel Function:
      *        DEC2HEX(x[,places])
      *
+<<<<<<< HEAD
      * @param string $value The decimal integer you want to convert. If number is negative,
+=======
+     * @param array|string $value The decimal integer you want to convert. If number is negative,
+>>>>>>> develop
      *                          places is ignored and DEC2HEX returns a 10-character (40-bit)
      *                          hexadecimal number in which the most significant bit is the sign
      *                          bit. The remaining 39 bits are magnitude bits. Negative numbers
@@ -79,12 +111,18 @@ class ConvertDecimal extends ConvertBase
      *                      If number is nonnumeric, DEC2HEX returns the #VALUE! error value.
      *                      If DEC2HEX requires more than places characters, it returns the
      *                          #NUM! error value.
+<<<<<<< HEAD
      * @param int $places The number of characters to use. If places is omitted, DEC2HEX uses
+=======
+     *                      Or can be an array of values
+     * @param array|int $places The number of characters to use. If places is omitted, DEC2HEX uses
+>>>>>>> develop
      *                          the minimum number of characters necessary. Places is useful for
      *                          padding the return value with leading 0s (zeros).
      *                      If places is not an integer, it is truncated.
      *                      If places is nonnumeric, DEC2HEX returns the #VALUE! error value.
      *                      If places is zero or negative, DEC2HEX returns the #NUM! error value.
+<<<<<<< HEAD
      */
     public static function toHex($value, $places = null): string
     {
@@ -92,6 +130,24 @@ class ConvertDecimal extends ConvertBase
             $value = self::validateValue(Functions::flattenSingleValue($value));
             $value = self::validateDecimal($value);
             $places = self::validatePlaces(Functions::flattenSingleValue($places));
+=======
+     *                      Or can be an array of values
+     *
+     * @return array|string Result, or an error
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function toHex($value, $places = null)
+    {
+        if (is_array($value) || is_array($places)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $value, $places);
+        }
+
+        try {
+            $value = self::validateValue($value);
+            $value = self::validateDecimal($value);
+            $places = self::validatePlaces($places);
+>>>>>>> develop
         } catch (Exception $e) {
             return $e->getMessage();
         }
@@ -135,7 +191,11 @@ class ConvertDecimal extends ConvertBase
      * Excel Function:
      *        DEC2OCT(x[,places])
      *
+<<<<<<< HEAD
      * @param string $value The decimal integer you want to convert. If number is negative,
+=======
+     * @param array|string $value The decimal integer you want to convert. If number is negative,
+>>>>>>> develop
      *                          places is ignored and DEC2OCT returns a 10-character (30-bit)
      *                          octal number in which the most significant bit is the sign bit.
      *                          The remaining 29 bits are magnitude bits. Negative numbers are
@@ -145,12 +205,18 @@ class ConvertDecimal extends ConvertBase
      *                      If number is nonnumeric, DEC2OCT returns the #VALUE! error value.
      *                      If DEC2OCT requires more than places characters, it returns the
      *                          #NUM! error value.
+<<<<<<< HEAD
      * @param int $places The number of characters to use. If places is omitted, DEC2OCT uses
+=======
+     *                      Or can be an array of values
+     * @param array|int $places The number of characters to use. If places is omitted, DEC2OCT uses
+>>>>>>> develop
      *                          the minimum number of characters necessary. Places is useful for
      *                          padding the return value with leading 0s (zeros).
      *                      If places is not an integer, it is truncated.
      *                      If places is nonnumeric, DEC2OCT returns the #VALUE! error value.
      *                      If places is zero or negative, DEC2OCT returns the #NUM! error value.
+<<<<<<< HEAD
      */
     public static function toOctal($value, $places = null): string
     {
@@ -158,6 +224,24 @@ class ConvertDecimal extends ConvertBase
             $value = self::validateValue(Functions::flattenSingleValue($value));
             $value = self::validateDecimal($value);
             $places = self::validatePlaces(Functions::flattenSingleValue($places));
+=======
+     *                      Or can be an array of values
+     *
+     * @return array|string Result, or an error
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function toOctal($value, $places = null)
+    {
+        if (is_array($value) || is_array($places)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $value, $places);
+        }
+
+        try {
+            $value = self::validateValue($value);
+            $value = self::validateDecimal($value);
+            $places = self::validatePlaces($places);
+>>>>>>> develop
         } catch (Exception $e) {
             return $e->getMessage();
         }

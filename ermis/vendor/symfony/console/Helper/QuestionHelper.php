@@ -251,6 +251,12 @@ class QuestionHelper extends Helper
         $numMatches = \count($matches);
 
         $sttyMode = shell_exec('stty -g');
+<<<<<<< HEAD
+=======
+        $isStdin = 'php://stdin' === (stream_get_meta_data($inputStream)['uri'] ?? null);
+        $r = [$inputStream];
+        $w = [];
+>>>>>>> develop
 
         // Disable icanon (so we can fread each keypress) and echo (we'll do echoing here instead)
         shell_exec('stty -icanon -echo');
@@ -260,11 +266,22 @@ class QuestionHelper extends Helper
 
         // Read a keypress
         while (!feof($inputStream)) {
+<<<<<<< HEAD
+=======
+            while ($isStdin && 0 === @stream_select($r, $w, $w, 0, 100)) {
+                // Give signal handlers a chance to run
+                $r = [$inputStream];
+            }
+>>>>>>> develop
             $c = fread($inputStream, 1);
 
             // as opposed to fgets(), fread() returns an empty string when the stream content is empty, not false.
             if (false === $c || ('' === $ret && '' === $c && null === $question->getDefault())) {
+<<<<<<< HEAD
                 shell_exec(sprintf('stty %s', $sttyMode));
+=======
+                shell_exec('stty '.$sttyMode);
+>>>>>>> develop
                 throw new MissingInputException('Aborted.');
             } elseif ("\177" === $c) { // Backspace Character
                 if (0 === $numMatches && 0 !== $i) {
@@ -369,7 +386,11 @@ class QuestionHelper extends Helper
         }
 
         // Reset stty so it behaves normally again
+<<<<<<< HEAD
         shell_exec(sprintf('stty %s', $sttyMode));
+=======
+        shell_exec('stty '.$sttyMode);
+>>>>>>> develop
 
         return $fullChoice;
     }
@@ -430,7 +451,11 @@ class QuestionHelper extends Helper
         $value = fgets($inputStream, 4096);
 
         if (self::$stty && Terminal::hasSttyAvailable()) {
+<<<<<<< HEAD
             shell_exec(sprintf('stty %s', $sttyMode));
+=======
+            shell_exec('stty '.$sttyMode);
+>>>>>>> develop
         }
 
         if (false === $value) {
@@ -485,11 +510,19 @@ class QuestionHelper extends Helper
         }
 
         if (\function_exists('stream_isatty')) {
+<<<<<<< HEAD
             return self::$stdinIsInteractive = stream_isatty(fopen('php://stdin', 'r'));
         }
 
         if (\function_exists('posix_isatty')) {
             return self::$stdinIsInteractive = posix_isatty(fopen('php://stdin', 'r'));
+=======
+            return self::$stdinIsInteractive = @stream_isatty(fopen('php://stdin', 'r'));
+        }
+
+        if (\function_exists('posix_isatty')) {
+            return self::$stdinIsInteractive = @posix_isatty(fopen('php://stdin', 'r'));
+>>>>>>> develop
         }
 
         if (!\function_exists('exec')) {

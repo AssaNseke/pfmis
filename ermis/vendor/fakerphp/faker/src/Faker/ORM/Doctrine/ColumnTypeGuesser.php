@@ -5,6 +5,11 @@ namespace Faker\ORM\Doctrine;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 use Faker\Generator;
 
+<<<<<<< HEAD
+=======
+require_once 'backward-compatibility.php';
+
+>>>>>>> develop
 class ColumnTypeGuesser
 {
     protected $generator;

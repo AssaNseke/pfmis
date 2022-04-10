@@ -14,6 +14,11 @@ class Namespaces
     // This one used in Reader\Xlsx\Properties
     const CORE_PROPERTIES2 = 'http://schemas.openxmlformats.org/package/2006/metadata/core-properties';
 
+<<<<<<< HEAD
+=======
+    const THUMBNAIL = 'http://schemas.openxmlformats.org/package/2006/relationships/metadata/thumbnail';
+
+>>>>>>> develop
     const THEME = 'http://schemas.openxmlformats.org/package/2006/relationships/theme';
 
     const COMPATIBILITY = 'http://schemas.openxmlformats.org/markup-compatibility/2006';

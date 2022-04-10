@@ -48,6 +48,10 @@ return [
             'use_bom'                => false,
             'include_separator_line' => false,
             'excel_compatibility'    => false,
+<<<<<<< HEAD
+=======
+            'output_encoding'        => '',
+>>>>>>> develop
         ],
 
         /*
@@ -121,7 +125,11 @@ return [
         |
         */
         'csv'         => [
+<<<<<<< HEAD
             'delimiter'        => ',',
+=======
+            'delimiter'        => null,
+>>>>>>> develop
             'enclosure'        => '"',
             'escape_character' => '\\',
             'contiguous'       => false,
@@ -276,6 +284,12 @@ return [
     */
     'transactions' => [
         'handler' => 'db',
+<<<<<<< HEAD
+=======
+        'db'      => [
+            'connection' => null,
+        ],
+>>>>>>> develop
     ],
 
     'temporary_files' => [

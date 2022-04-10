@@ -149,6 +149,10 @@ class Xlsx extends BaseReader
 
     private const REL_TO_MAIN = [
         Namespaces::PURL_OFFICE_DOCUMENT => Namespaces::PURL_MAIN,
+<<<<<<< HEAD
+=======
+        Namespaces::THUMBNAIL => '',
+>>>>>>> develop
     ];
 
     private const REL_TO_DRAWING = [
@@ -538,6 +542,7 @@ class Xlsx extends BaseReader
                     if ($xpath === null) {
                         $xmlStyles = self::testSimpleXml(null);
                     } else {
+<<<<<<< HEAD
                         // I think Nonamespace is okay because I'm using xpath.
                         $xmlStyles = $this->loadZipNonamespace("$dir/$xpath[Target]", $mainNS);
                     }
@@ -548,6 +553,16 @@ class Xlsx extends BaseReader
                     $borders = self::xpathNoFalse($xmlStyles, 'smm:borders/smm:border');
                     $xfTags = self::xpathNoFalse($xmlStyles, 'smm:cellXfs/smm:xf');
                     $cellXfTags = self::xpathNoFalse($xmlStyles, 'smm:cellStyleXfs/smm:xf');
+=======
+                        $xmlStyles = $this->loadZip("$dir/$xpath[Target]", $mainNS);
+                    }
+
+                    $fills = self::extractStyles($xmlStyles, 'fills', 'fill');
+                    $fonts = self::extractStyles($xmlStyles, 'fonts', 'font');
+                    $borders = self::extractStyles($xmlStyles, 'borders', 'border');
+                    $xfTags = self::extractStyles($xmlStyles, 'cellXfs', 'xf');
+                    $cellXfTags = self::extractStyles($xmlStyles, 'cellStyleXfs', 'xf');
+>>>>>>> develop
 
                     $styles = [];
                     $cellStyles = [];
@@ -558,6 +573,10 @@ class Xlsx extends BaseReader
                     if (isset($numFmts) && ($numFmts !== null)) {
                         $numFmts->registerXPathNamespace('sml', $mainNS);
                     }
+<<<<<<< HEAD
+=======
+                    $this->styleReader->setNamespace($mainNS);
+>>>>>>> develop
                     if (!$this->readDataOnly/* && $xmlStyles*/) {
                         foreach ($xfTags as $xfTag) {
                             $xf = self::getAttributes($xfTag);
@@ -642,6 +661,10 @@ class Xlsx extends BaseReader
                         }
                     }
                     $this->styleReader->setStyleXml($xmlStyles);
+<<<<<<< HEAD
+=======
+                    $this->styleReader->setNamespace($mainNS);
+>>>>>>> develop
                     $this->styleReader->setStyleBaseData($theme, $styles, $cellStyles);
                     $dxfs = $this->styleReader->dxfs($this->readDataOnly);
                     $styles = $this->styleReader->styles();
@@ -708,9 +731,18 @@ class Xlsx extends BaseReader
                                 $xmlSheetMain = $xmlSheetNS->children($mainNS);
                                 // Setting Conditional Styles adjusts selected cells, so we need to execute this
                                 //    before reading the sheet view data to get the actual selected cells
+<<<<<<< HEAD
                                 if (!$this->readDataOnly && $xmlSheet->conditionalFormatting) {
                                     (new ConditionalStyles($docSheet, $xmlSheet, $dxfs))->load();
                                 }
+=======
+                                if (!$this->readDataOnly && ($xmlSheet->conditionalFormatting)) {
+                                    (new ConditionalStyles($docSheet, $xmlSheet, $dxfs))->load();
+                                }
+                                if (!$this->readDataOnly && $xmlSheet->extLst) {
+                                    (new ConditionalStyles($docSheet, $xmlSheet, $dxfs))->loadFromExt($this->styleReader);
+                                }
+>>>>>>> develop
                                 if (isset($xmlSheetMain->sheetViews, $xmlSheetMain->sheetViews->sheetView)) {
                                     $sheetViews = new SheetViews($xmlSheetMain->sheetViews->sheetView, $docSheet);
                                     $sheetViews->load();
@@ -767,7 +799,16 @@ class Xlsx extends BaseReader
                                                 break;
                                             case 'b':
                                                 if (!isset($c->f)) {
+<<<<<<< HEAD
                                                     $value = self::castToBoolean($c);
+=======
+                                                    if (isset($c->v)) {
+                                                        $value = self::castToBoolean($c);
+                                                    } else {
+                                                        $value = null;
+                                                        $cellDataType = DATATYPE::TYPE_NULL;
+                                                    }
+>>>>>>> develop
                                                 } else {
                                                     // Formula
                                                     $this->castToFormula($c, $r, $cellDataType, $value, $calculatedValue, $sharedFormulas, 'castToBoolean');
@@ -821,10 +862,19 @@ class Xlsx extends BaseReader
                                             // Assign value
                                             if ($cellDataType != '') {
                                                 // it is possible, that datatype is numeric but with an empty string, which result in an error
+<<<<<<< HEAD
                                                 if ($cellDataType === DataType::TYPE_NUMERIC && $value === '') {
                                                     $cellDataType = DataType::TYPE_STRING;
                                                 }
                                                 $cell->setValueExplicit($value, $cellDataType);
+=======
+                                                if ($cellDataType === DataType::TYPE_NUMERIC && ($value === '' || $value === null)) {
+                                                    $cellDataType = DataType::TYPE_NULL;
+                                                }
+                                                if ($cellDataType !== DataType::TYPE_NULL) {
+                                                    $cell->setValueExplicit($value, $cellDataType);
+                                                }
+>>>>>>> develop
                                             } else {
                                                 $cell->setValue($value);
                                             }
@@ -1250,8 +1300,13 @@ class Xlsx extends BaseReader
                                                     $objDrawing->setOffsetX((int) Drawing::EMUToPixels($oneCellAnchor->from->colOff));
                                                     $objDrawing->setOffsetY(Drawing::EMUToPixels($oneCellAnchor->from->rowOff));
                                                     $objDrawing->setResizeProportional(false);
+<<<<<<< HEAD
                                                     $objDrawing->setWidth(Drawing::EMUToPixels(self::getArrayItem((int) self::getAttributes($oneCellAnchor->ext), 'cx')));
                                                     $objDrawing->setHeight(Drawing::EMUToPixels(self::getArrayItem((int) self::getAttributes($oneCellAnchor->ext), 'cy')));
+=======
+                                                    $objDrawing->setWidth(Drawing::EMUToPixels(self::getArrayItem(self::getAttributes($oneCellAnchor->ext), 'cx')));
+                                                    $objDrawing->setHeight(Drawing::EMUToPixels(self::getArrayItem(self::getAttributes($oneCellAnchor->ext), 'cy')));
+>>>>>>> develop
                                                     if ($xfrm) {
                                                         $objDrawing->setRotation((int) Drawing::angleToDegrees(self::getArrayItem(self::getAttributes($xfrm), 'rot')));
                                                     }
@@ -1680,6 +1735,7 @@ class Xlsx extends BaseReader
                     } else {
                         $objText = $value->createTextRun(StringHelper::controlCharacterOOXML2PHP((string) $run->t));
 
+<<<<<<< HEAD
                         $attr = $run->rPr->rFont->attributes();
                         if (isset($attr['val'])) {
                             $objText->getFont()->setName((string) $attr['val']);
@@ -1687,6 +1743,19 @@ class Xlsx extends BaseReader
                         $attr = $run->rPr->sz->attributes();
                         if (isset($attr['val'])) {
                             $objText->getFont()->setSize((float) $attr['val']);
+=======
+                        if (isset($run->rPr->rFont)) {
+                            $attr = $run->rPr->rFont->attributes();
+                            if (isset($attr['val'])) {
+                                $objText->getFont()->setName((string) $attr['val']);
+                            }
+                        }
+                        if (isset($run->rPr->sz)) {
+                            $attr = $run->rPr->sz->attributes();
+                            if (isset($attr['val'])) {
+                                $objText->getFont()->setSize((float) $attr['val']);
+                            }
+>>>>>>> develop
                         }
                         if (isset($run->rPr->color)) {
                             $objText->getFont()->setColor(new Color($this->styleReader->readColor($run->rPr->color)));
@@ -2077,4 +2146,19 @@ class Xlsx extends BaseReader
             }
         }
     }
+<<<<<<< HEAD
+=======
+
+    private static function extractStyles(?SimpleXMLElement $sxml, string $node1, string $node2): array
+    {
+        $array = [];
+        if ($sxml && $sxml->{$node1}->{$node2}) {
+            foreach ($sxml->{$node1}->{$node2} as $node) {
+                $array[] = $node;
+            }
+        }
+
+        return $array;
+    }
+>>>>>>> develop
 }

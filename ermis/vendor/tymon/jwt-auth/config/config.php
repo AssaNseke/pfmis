@@ -129,12 +129,18 @@ return [
     |
     | Specify the hashing algorithm that will be used to sign the token.
     |
+<<<<<<< HEAD
     | See here: https://github.com/namshi/jose/tree/master/src/Namshi/JOSE/Signer/OpenSSL
     | for possible values.
     |
     */
 
     'algo' => env('JWT_ALGO', 'HS256'),
+=======
+    */
+
+    'algo' => env('JWT_ALGO', Tymon\JWTAuth\Providers\JWT\Provider::ALGO_HS256),
+>>>>>>> develop
 
     /*
     |--------------------------------------------------------------------------

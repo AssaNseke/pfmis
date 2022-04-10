@@ -11,6 +11,10 @@
 
 namespace Monolog\Formatter;
 
+<<<<<<< HEAD
+=======
+use MongoDB\BSON\Type;
+>>>>>>> develop
 use MongoDB\BSON\UTCDateTime;
 use Monolog\Utils;
 
@@ -85,7 +89,11 @@ class MongoDBFormatter implements FormatterInterface
                 $array[$name] = $this->formatException($value, $nestingLevel + 1);
             } elseif (is_array($value)) {
                 $array[$name] = $this->formatArray($value, $nestingLevel + 1);
+<<<<<<< HEAD
             } elseif (is_object($value)) {
+=======
+            } elseif (is_object($value) && !$value instanceof Type) {
+>>>>>>> develop
                 $array[$name] = $this->formatObject($value, $nestingLevel + 1);
             }
         }

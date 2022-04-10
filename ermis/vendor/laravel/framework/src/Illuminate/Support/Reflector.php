@@ -136,7 +136,11 @@ class Reflector
         $paramClassName = static::getParameterClassName($parameter);
 
         return $paramClassName
+<<<<<<< HEAD
             && class_exists($paramClassName)
+=======
+            && (class_exists($paramClassName) || interface_exists($paramClassName))
+>>>>>>> develop
             && (new ReflectionClass($paramClassName))->isSubclassOf($className);
     }
 }

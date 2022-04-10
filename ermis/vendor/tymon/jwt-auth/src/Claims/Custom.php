@@ -16,7 +16,10 @@ class Custom extends Claim
     /**
      * @param  string  $name
      * @param  mixed  $value
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return void
      */
     public function __construct($name, $value)

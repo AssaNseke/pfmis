@@ -78,9 +78,13 @@ class Style extends Supervisor
      * @see Style::applyFromArray()
      * @see Style::getHashCode()
      *
+<<<<<<< HEAD
      * @phpstan-var null|array{styleByHash: array<string, Style>, hashByObjId: array<int, string>}
      *
      * @var array<string, array>
+=======
+     * @var ?array<string, array>
+>>>>>>> develop
      */
     private static $cachedStyles;
 

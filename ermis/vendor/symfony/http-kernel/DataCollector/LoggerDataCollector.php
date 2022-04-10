@@ -108,7 +108,11 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
 
             $logs[] = [
                 'type' => $logType,
+<<<<<<< HEAD
                 'errorCounter' => isset($rawLogData['errorCounter']) ? $rawLogData['errorCounter']->getValue() : 1,
+=======
+                'errorCount' => $rawLog['errorCount'] ?? 1,
+>>>>>>> develop
                 'timestamp' => $rawLogData['timestamp_rfc3339']->getValue(),
                 'priority' => $rawLogData['priority']->getValue(),
                 'priorityName' => $rawLogData['priorityName']->getValue(),
@@ -133,6 +137,10 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
             'priority' => [
                 'Debug' => 100,
                 'Info' => 200,
+<<<<<<< HEAD
+=======
+                'Notice' => 250,
+>>>>>>> develop
                 'Warning' => 300,
                 'Error' => 400,
                 'Critical' => 500,

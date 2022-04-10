@@ -2,12 +2,22 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\DateTimeExcel;
 
+<<<<<<< HEAD
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+use PhpOffice\PhpSpreadsheet\Calculation\Exception;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Shared\Date as SharedDateHelper;
 
 class TimeParts
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     /**
      * HOUROFDAY.
      *
@@ -19,6 +29,7 @@ class TimeParts
      *
      * @param mixed $timeValue Excel date serial value (float), PHP date timestamp (integer),
      *                                    PHP DateTime object, or a standard time string
+<<<<<<< HEAD
      *
      * @return int|string Hour
      */
@@ -26,6 +37,21 @@ class TimeParts
     {
         try {
             $timeValue = Functions::flattenSingleValue($timeValue);
+=======
+     *                         Or can be an array of date/time values
+     *
+     * @return array|int|string Hour
+     *         If an array of numbers is passed as the argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function hour($timeValue)
+    {
+        if (is_array($timeValue)) {
+            return self::evaluateSingleArgumentArray([self::class, __FUNCTION__], $timeValue);
+        }
+
+        try {
+>>>>>>> develop
             Helpers::nullFalseTrueToNumber($timeValue);
             if (!is_numeric($timeValue)) {
                 $timeValue = Helpers::getTimeValue($timeValue);
@@ -53,6 +79,7 @@ class TimeParts
      *
      * @param mixed $timeValue Excel date serial value (float), PHP date timestamp (integer),
      *                                    PHP DateTime object, or a standard time string
+<<<<<<< HEAD
      *
      * @return int|string Minute
      */
@@ -60,6 +87,21 @@ class TimeParts
     {
         try {
             $timeValue = Functions::flattenSingleValue($timeValue);
+=======
+     *                         Or can be an array of date/time values
+     *
+     * @return array|int|string Minute
+     *         If an array of numbers is passed as the argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function minute($timeValue)
+    {
+        if (is_array($timeValue)) {
+            return self::evaluateSingleArgumentArray([self::class, __FUNCTION__], $timeValue);
+        }
+
+        try {
+>>>>>>> develop
             Helpers::nullFalseTrueToNumber($timeValue);
             if (!is_numeric($timeValue)) {
                 $timeValue = Helpers::getTimeValue($timeValue);
@@ -87,6 +129,7 @@ class TimeParts
      *
      * @param mixed $timeValue Excel date serial value (float), PHP date timestamp (integer),
      *                                    PHP DateTime object, or a standard time string
+<<<<<<< HEAD
      *
      * @return int|string Second
      */
@@ -94,6 +137,21 @@ class TimeParts
     {
         try {
             $timeValue = Functions::flattenSingleValue($timeValue);
+=======
+     *                         Or can be an array of date/time values
+     *
+     * @return array|int|string Second
+     *         If an array of numbers is passed as the argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function second($timeValue)
+    {
+        if (is_array($timeValue)) {
+            return self::evaluateSingleArgumentArray([self::class, __FUNCTION__], $timeValue);
+        }
+
+        try {
+>>>>>>> develop
             Helpers::nullFalseTrueToNumber($timeValue);
             if (!is_numeric($timeValue)) {
                 $timeValue = Helpers::getTimeValue($timeValue);

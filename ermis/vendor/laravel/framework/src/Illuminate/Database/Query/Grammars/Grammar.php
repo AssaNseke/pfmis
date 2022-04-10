@@ -19,11 +19,19 @@ class Grammar extends BaseGrammar
     protected $operators = [];
 
     /**
+<<<<<<< HEAD
      * The grammar specific bit operators.
      *
      * @var array
      */
     protected $bitOperators = [];
+=======
+     * The grammar specific bitwise operators.
+     *
+     * @var array
+     */
+    protected $bitwiseOperators = [];
+>>>>>>> develop
 
     /**
      * The components that make up a select clause.
@@ -263,12 +271,17 @@ class Grammar extends BaseGrammar
     }
 
     /**
+<<<<<<< HEAD
      * Compile a bit operator where clause.
+=======
+     * Compile a bitwise operator where clause.
+>>>>>>> develop
      *
      * @param  \Illuminate\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
+<<<<<<< HEAD
     protected function whereBit(Builder $query, $where)
     {
         $value = $this->parameter($where['value']);
@@ -276,6 +289,11 @@ class Grammar extends BaseGrammar
         $operator = str_replace('?', '??', $where['operator']);
 
         return '('.$this->wrap($where['column']).' '.$operator.' '.$value.') != 0';
+=======
+    protected function whereBitwise(Builder $query, $where)
+    {
+        return $this->whereBasic($query, $where);
+>>>>>>> develop
     }
 
     /**
@@ -708,8 +726,11 @@ class Grammar extends BaseGrammar
             return $having['boolean'].' '.$having['sql'];
         } elseif ($having['type'] === 'between') {
             return $this->compileHavingBetween($having);
+<<<<<<< HEAD
         } elseif ($having['type'] === 'bit') {
             return $this->compileHavingBit($having);
+=======
+>>>>>>> develop
         }
 
         return $this->compileBasicHaving($having);
@@ -750,6 +771,7 @@ class Grammar extends BaseGrammar
     }
 
     /**
+<<<<<<< HEAD
      * Compile a having clause involving a bit operator.
      *
      * @param  array  $having
@@ -765,6 +787,8 @@ class Grammar extends BaseGrammar
     }
 
     /**
+=======
+>>>>>>> develop
      * Compile the "order by" portions of the query.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -1341,6 +1365,7 @@ class Grammar extends BaseGrammar
     }
 
     /**
+<<<<<<< HEAD
      * Get the grammar specific bit operators.
      *
      * @return array
@@ -1348,5 +1373,14 @@ class Grammar extends BaseGrammar
     public function getBitOperators()
     {
         return $this->bitOperators;
+=======
+     * Get the grammar specific bitwise operators.
+     *
+     * @return array
+     */
+    public function getBitwiseOperators()
+    {
+        return $this->bitwiseOperators;
+>>>>>>> develop
     }
 }

@@ -3,7 +3,11 @@
 /*
  * This file is part of Psy Shell.
  *
+<<<<<<< HEAD
  * (c) 2012-2020 Justin Hileman
+=======
+ * (c) 2012-2022 Justin Hileman
+>>>>>>> develop
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -36,7 +40,11 @@ class ClassNamesMatcher extends AbstractMatcher
                 // get the number of namespace separators
                 $nsPos = \substr_count($class, '\\');
                 $pieces = \explode('\\', $className);
+<<<<<<< HEAD
                 //$methods = Mirror::get($class);
+=======
+                // $methods = Mirror::get($class);
+>>>>>>> develop
                 return \implode('\\', \array_slice($pieces, $nsPos, \count($pieces)));
             },
             \array_filter(
@@ -56,13 +64,22 @@ class ClassNamesMatcher extends AbstractMatcher
         $token = \array_pop($tokens);
         $prevToken = \array_pop($tokens);
 
+<<<<<<< HEAD
         $blacklistedTokens = [
+=======
+        $ignoredTokens = [
+>>>>>>> develop
             self::T_INCLUDE, self::T_INCLUDE_ONCE, self::T_REQUIRE, self::T_REQUIRE_ONCE,
         ];
 
         switch (true) {
+<<<<<<< HEAD
             case self::hasToken([$blacklistedTokens], $token):
             case self::hasToken([$blacklistedTokens], $prevToken):
+=======
+            case self::hasToken([$ignoredTokens], $token):
+            case self::hasToken([$ignoredTokens], $prevToken):
+>>>>>>> develop
             case \is_string($token) && $token === '$':
                 return false;
             case self::hasToken([self::T_NEW, self::T_OPEN_TAG, self::T_NS_SEPARATOR, self::T_STRING], $prevToken):

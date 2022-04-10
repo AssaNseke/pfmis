@@ -12,6 +12,10 @@
 namespace Monolog\Handler;
 
 use Monolog\Logger;
+<<<<<<< HEAD
+=======
+use Monolog\Utils;
+>>>>>>> develop
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\LineFormatter;
 use Swift_Message;
@@ -83,7 +87,12 @@ class SwiftMailerHandler extends MailHandler
         }
 
         if (!$message instanceof Swift_Message) {
+<<<<<<< HEAD
             throw new \InvalidArgumentException('Could not resolve message as instance of Swift_Message or a callable returning it');
+=======
+            $record = reset($records);
+            throw new \InvalidArgumentException('Could not resolve message as instance of Swift_Message or a callable returning it' . ($record ? Utils::getRecordMessageForException($record) : ''));
+>>>>>>> develop
         }
 
         if ($records) {

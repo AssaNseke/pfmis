@@ -5,6 +5,11 @@ namespace Faker\ORM\Doctrine;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker\Generator;
 
+<<<<<<< HEAD
+=======
+require_once 'backward-compatibility.php';
+
+>>>>>>> develop
 /**
  * Service class for populating a database using the Doctrine ORM or ODM.
  * A Populator can populate several tables using ActiveRecord classes.
@@ -86,7 +91,11 @@ class Populator
      * Please note that large amounts of data will result in more memory usage since the the Populator will return
      * all newly created primary keys after executing.
      *
+<<<<<<< HEAD
      * @param EntityManager|null $entityManager A Doctrine connection object
+=======
+     * @param ObjectManager|null $entityManager A Doctrine connection object
+>>>>>>> develop
      *
      * @return array A list of the inserted PKs
      */

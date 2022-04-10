@@ -9,6 +9,10 @@ namespace Illuminate\Support\Facades;
  * @method static bool check(string $name, array ...$parameters)
  * @method static string compileString(string $value)
  * @method static string render(string $string, array $data = [], bool $deleteCachedView = false)
+<<<<<<< HEAD
+=======
+ * @method static string renderComponent(\Illuminate\View\Component $component)
+>>>>>>> develop
  * @method static string getPath()
  * @method static string stripParentheses(string $expression)
  * @method static void aliasComponent(string $path, string|null $alias = null)

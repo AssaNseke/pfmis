@@ -796,8 +796,13 @@ class LazyCollection implements CanBeEscapedWhenCastToString, Enumerable
         return new static(function () use ($step, $offset) {
             $position = 0;
 
+<<<<<<< HEAD
             foreach ($this as $item) {
                 if ($position % $step === $offset) {
+=======
+            foreach ($this->slice($offset) as $item) {
+                if ($position % $step === 0) {
+>>>>>>> develop
                     yield $item;
                 }
 

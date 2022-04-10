@@ -45,6 +45,10 @@ use function substr;
  * @psalm-type Params = array{
  *     charset?: string,
  *     dbname?: string,
+<<<<<<< HEAD
+=======
+ *     defaultTableOptions?: array<string, mixed>,
+>>>>>>> develop
  *     default_dbname?: string,
  *     driver?: key-of<self::DRIVER_MAP>,
  *     driverClass?: class-string<Driver>,
@@ -61,6 +65,10 @@ use function substr;
  *     port?: int,
  *     primary?: OverrideParams,
  *     replica?: array<OverrideParams>,
+<<<<<<< HEAD
+=======
+ *     serverVersion?: string,
+>>>>>>> develop
  *     sharding?: array<string,mixed>,
  *     slaves?: array<OverrideParams>,
  *     user?: string,

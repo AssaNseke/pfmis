@@ -177,6 +177,10 @@ SYD = АСЧ
 TBILLEQ = РАВНОКЧЕК
 TBILLPRICE = ЦЕНАКЧЕК
 TBILLYIELD = ДОХОДКЧЕК
+<<<<<<< HEAD
+=======
+USDOLLAR = ДОЛЛСША
+>>>>>>> develop
 VDB = ПУО
 XIRR = ЧИСТВНДОХ
 XNPV = ЧИСТНЗ
@@ -231,6 +235,10 @@ AREAS = ОБЛАСТИ
 CHOOSE = ВЫБОР
 COLUMN = СТОЛБЕЦ
 COLUMNS = ЧИСЛСТОЛБ
+<<<<<<< HEAD
+=======
+FILTER = ФИЛЬТР
+>>>>>>> develop
 FORMULATEXT = Ф.ТЕКСТ
 GETPIVOTDATA = ПОЛУЧИТЬ.ДАННЫЕ.СВОДНОЙ.ТАБЛИЦЫ
 HLOOKUP = ГПР
@@ -243,8 +251,18 @@ OFFSET = СМЕЩ
 ROW = СТРОКА
 ROWS = ЧСТРОК
 RTD = ДРВ
+<<<<<<< HEAD
 TRANSPOSE = ТРАНСП
 VLOOKUP = ВПР
+=======
+SORT = СОРТ
+SORTBY = СОРТПО
+TRANSPOSE = ТРАНСП
+UNIQUE = УНИК
+VLOOKUP = ВПР
+XLOOKUP = ПРОСМОТРX
+XMATCH = ПОИСКПОЗX
+>>>>>>> develop
 
 ##
 ## Математические и тригонометрические функции (Math & Trig Functions)
@@ -302,6 +320,10 @@ PRODUCT = ПРОИЗВЕД
 QUOTIENT = ЧАСТНОЕ
 RADIANS = РАДИАНЫ
 RAND = СЛЧИС
+<<<<<<< HEAD
+=======
+RANDARRAY = СЛУЧМАССИВ
+>>>>>>> develop
 RANDBETWEEN = СЛУЧМЕЖДУ
 ROMAN = РИМСКОЕ
 ROUND = ОКРУГЛ
@@ -312,6 +334,10 @@ ROUNDUP = ОКРУГЛВВЕРХ
 SEC = SEC
 SECH = SECH
 SERIESSUM = РЯД.СУММ
+<<<<<<< HEAD
+=======
+SEQUENCE = ПОСЛЕДОВ
+>>>>>>> develop
 SIGN = ЗНАК
 SIN = SIN
 SINH = SINH
@@ -447,11 +473,16 @@ Z.TEST = Z.ТЕСТ
 ##
 ## Текстовые функции (Text Functions)
 ##
+<<<<<<< HEAD
+=======
+ARRAYTOTEXT = МАССИВВТЕКСТ
+>>>>>>> develop
 BAHTTEXT = БАТТЕКСТ
 CHAR = СИМВОЛ
 CLEAN = ПЕЧСИМВ
 CODE = КОДСИМВ
 CONCAT = СЦЕП
+<<<<<<< HEAD
 DOLLAR = РУБЛЬ
 EXACT = СОВПАД
 FIND = НАЙТИ
@@ -461,13 +492,38 @@ LEFT = ЛЕВСИМВ
 LEN = ДЛСТР
 LOWER = СТРОЧН
 MID = ПСТР
+=======
+DBCS = БДЦС
+DOLLAR = РУБЛЬ
+EXACT = СОВПАД
+FIND = НАЙТИ
+FINDB = НАЙТИБ
+FIXED = ФИКСИРОВАННЫЙ
+ISTHAIDIGIT = ЕТАЙЦИФРЫ
+LEFT = ЛЕВСИМВ
+LEFTB = ЛЕВБ
+LEN = ДЛСТР
+LENB = ДЛИНБ
+LOWER = СТРОЧН
+MID = ПСТР
+MIDB = ПСТРБ
+>>>>>>> develop
 NUMBERSTRING = СТРОКАЧИСЕЛ
 NUMBERVALUE = ЧЗНАЧ
 PROPER = ПРОПНАЧ
 REPLACE = ЗАМЕНИТЬ
+<<<<<<< HEAD
 REPT = ПОВТОР
 RIGHT = ПРАВСИМВ
 SEARCH = ПОИСК
+=======
+REPLACEB = ЗАМЕНИТЬБ
+REPT = ПОВТОР
+RIGHT = ПРАВСИМВ
+RIGHTB = ПРАВБ
+SEARCH = ПОИСК
+SEARCHB = ПОИСКБ
+>>>>>>> develop
 SUBSTITUTE = ПОДСТАВИТЬ
 T = Т
 TEXT = ТЕКСТ
@@ -481,6 +537,10 @@ UNICHAR = ЮНИСИМВ
 UNICODE = UNICODE
 UPPER = ПРОПИСН
 VALUE = ЗНАЧЕН
+<<<<<<< HEAD
+=======
+VALUETOTEXT = ЗНАЧЕНИЕВТЕКСТ
+>>>>>>> develop
 
 ##
 ## Веб-функции (Web Functions)

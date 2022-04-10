@@ -99,7 +99,11 @@ class Repository implements ArrayAccess, ConfigContract
      */
     public function prepend($key, $value)
     {
+<<<<<<< HEAD
         $array = $this->get($key);
+=======
+        $array = $this->get($key, []);
+>>>>>>> develop
 
         array_unshift($array, $value);
 
@@ -115,7 +119,11 @@ class Repository implements ArrayAccess, ConfigContract
      */
     public function push($key, $value)
     {
+<<<<<<< HEAD
         $array = $this->get($key);
+=======
+        $array = $this->get($key, []);
+>>>>>>> develop
 
         $array[] = $value;
 

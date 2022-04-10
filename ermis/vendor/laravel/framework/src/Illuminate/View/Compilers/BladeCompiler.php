@@ -3,7 +3,13 @@
 namespace Illuminate\View\Compilers;
 
 use Illuminate\Container\Container;
+<<<<<<< HEAD
 use Illuminate\Contracts\View\Factory as ViewFactory;
+=======
+use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Contracts\View\Factory as ViewFactory;
+use Illuminate\Contracts\View\View;
+>>>>>>> develop
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\ReflectsClosures;
@@ -114,7 +120,11 @@ class BladeCompiler extends Compiler implements CompilerInterface
     protected $footer = [];
 
     /**
+<<<<<<< HEAD
      * Array to temporary store the raw blocks found in the template.
+=======
+     * Array to temporarily store the raw blocks found in the template.
+>>>>>>> develop
      *
      * @var array
      */
@@ -307,6 +317,33 @@ class BladeCompiler extends Compiler implements CompilerInterface
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Render a component instance to HTML.
+     *
+     * @param  \Illuminate\View\Component  $component
+     * @return string
+     */
+    public static function renderComponent(Component $component)
+    {
+        $data = $component->data();
+
+        $view = value($component->resolveView(), $data);
+
+        if ($view instanceof View) {
+            return $view->with($data)->render();
+        } elseif ($view instanceof Htmlable) {
+            return $view->toHtml();
+        } else {
+            return Container::getInstance()
+                ->make(ViewFactory::class)
+                ->make($view, $data)
+                ->render();
+        }
+    }
+
+    /**
+>>>>>>> develop
      * Store the blocks that do not receive compilation.
      *
      * @param  string  $value
@@ -399,7 +436,11 @@ class BladeCompiler extends Compiler implements CompilerInterface
     }
 
     /**
+<<<<<<< HEAD
      * Get a placeholder to temporary mark the position of raw blocks.
+=======
+     * Get a placeholder to temporarily mark the position of raw blocks.
+>>>>>>> develop
      *
      * @param  int|string  $replace
      * @return string

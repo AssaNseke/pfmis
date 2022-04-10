@@ -22,7 +22,10 @@ class QueryString implements ParserContract
      * Try to parse the token from the request query string.
      *
      * @param  \Illuminate\Http\Request  $request
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return null|string
      */
     public function parse(Request $request)

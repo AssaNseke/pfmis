@@ -567,10 +567,19 @@ class Command
 
             $this->exitWithErrorMessage(
                 sprintf(
+<<<<<<< HEAD
                     'Error in bootstrap script: %s:%s%s',
                     get_class($t),
                     PHP_EOL,
                     $t->getMessage()
+=======
+                    'Error in bootstrap script: %s:%s%s%s%s',
+                    get_class($t),
+                    PHP_EOL,
+                    $t->getMessage(),
+                    PHP_EOL,
+                    $t->getTraceAsString()
+>>>>>>> develop
                 )
             );
         }

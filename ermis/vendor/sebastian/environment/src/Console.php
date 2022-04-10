@@ -34,7 +34,11 @@ final class Console
     /**
      * @var int
      */
+<<<<<<< HEAD
     public const STDIN  = 0;
+=======
+    public const STDIN = 0;
+>>>>>>> develop
 
     /**
      * @var int
@@ -60,10 +64,17 @@ final class Console
 
         if ($this->isWindows()) {
             // @codeCoverageIgnoreStart
+<<<<<<< HEAD
             return (defined('STDOUT') && function_exists('sapi_windows_vt100_support') && @sapi_windows_vt100_support(STDOUT))
                 || false !== getenv('ANSICON')
                 || 'ON' === getenv('ConEmuANSI')
                 || 'xterm' === getenv('TERM');
+=======
+            return (defined('STDOUT') && function_exists('sapi_windows_vt100_support') && @sapi_windows_vt100_support(STDOUT)) ||
+                false !== getenv('ANSICON') ||
+                'ON' === getenv('ConEmuANSI') ||
+                'xterm' === getenv('TERM');
+>>>>>>> develop
             // @codeCoverageIgnoreEnd
         }
 

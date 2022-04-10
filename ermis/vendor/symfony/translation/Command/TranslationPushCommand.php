@@ -103,7 +103,11 @@ You can delete provider translations which are not present locally by using the 
 
 Full example:
 
+<<<<<<< HEAD
   <info>php %command.full_name% provider --force --delete-missing --domains=messages,validators --locales=en</>
+=======
+  <info>php %command.full_name% provider --force --delete-missing --domains=messages --domains=validators --locales=en</>
+>>>>>>> develop
 
 This command pushes all translations associated with the <comment>messages</> and <comment>validators</> domains for the <comment>en</> locale.
 Provider translations for the specified domains and locale are deleted if they're not present locally and overwritten if it's the case.

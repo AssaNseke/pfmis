@@ -42,7 +42,11 @@ if (PHP_VERSION_ID < 80000) {
     ];
     // Erroneous analysis by Phpstan before PHP8 - mb_strlen does not return false
     $config['parameters']['ignoreErrors'][] = [
+<<<<<<< HEAD
         'message' => '#^Method PhpOffice\\\\PhpSpreadsheet\\\\Shared\\\\StringHelper\\:\\:countCharacters\\(\\) should return int but returns int\\|false\\.$#',
+=======
+        'message' => '#^Method PhpOffice\\\\PhpSpreadsheet\\\\Shared\\\\StringHelper\\:\\:countCharacters\\(\\) should return int but returns int(<0, max>)?\\|false\\.$#',
+>>>>>>> develop
         'path' => __DIR__ . '/src/PhpSpreadsheet/Shared/StringHelper.php',
         'count' => 1,
     ];

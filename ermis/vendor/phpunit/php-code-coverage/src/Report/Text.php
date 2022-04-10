@@ -19,7 +19,11 @@ use function str_pad;
 use function strlen;
 use SebastianBergmann\CodeCoverage\CodeCoverage;
 use SebastianBergmann\CodeCoverage\Node\File;
+<<<<<<< HEAD
 use SebastianBergmann\CodeCoverage\Percentage;
+=======
+use SebastianBergmann\CodeCoverage\Util\Percentage;
+>>>>>>> develop
 
 final class Text
 {

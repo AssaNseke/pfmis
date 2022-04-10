@@ -76,6 +76,7 @@ final class TypeName
              : $this->namespaceName . '\\' . $this->simpleName;
     }
 
+<<<<<<< HEAD
     /**
      * @deprecated Use namespaceName() instead
      *
@@ -106,6 +107,8 @@ final class TypeName
         return $this->qualifiedName();
     }
 
+=======
+>>>>>>> develop
     public function isNamespaced(): bool
     {
         return $this->namespaceName !== null;

@@ -174,6 +174,7 @@ class Calculation
     public $cyclicFormulaCount = 1;
 
     /**
+<<<<<<< HEAD
      * Epsilon Precision used for comparisons in calculations.
      *
      * @var float
@@ -181,6 +182,8 @@ class Calculation
     private $delta = 0.1e-12;
 
     /**
+=======
+>>>>>>> develop
      * The current locale setting.
      *
      * @var string
@@ -223,7 +226,11 @@ class Calculation
      *
      * @var array<string, mixed>
      */
+<<<<<<< HEAD
     private static $excelConstants = [
+=======
+    public static $excelConstants = [
+>>>>>>> develop
         'TRUE' => true,
         'FALSE' => false,
         'NULL' => null,
@@ -1041,7 +1048,11 @@ class Calculation
         'FILTER' => [
             'category' => Category::CATEGORY_LOOKUP_AND_REFERENCE,
             'functionCall' => [Functions::class, 'DUMMY'],
+<<<<<<< HEAD
             'argumentCount' => '3+',
+=======
+            'argumentCount' => '2-3',
+>>>>>>> develop
         ],
         'FILTERXML' => [
             'category' => Category::CATEGORY_WEB,
@@ -2078,7 +2089,11 @@ class Calculation
         ],
         'RANDARRAY' => [
             'category' => Category::CATEGORY_MATH_AND_TRIG,
+<<<<<<< HEAD
             'functionCall' => [Functions::class, 'DUMMY'],
+=======
+            'functionCall' => [MathTrig\Random::class, 'randArray'],
+>>>>>>> develop
             'argumentCount' => '0-5',
         ],
         'RANDBETWEEN' => [
@@ -2220,8 +2235,13 @@ class Calculation
         ],
         'SEQUENCE' => [
             'category' => Category::CATEGORY_MATH_AND_TRIG,
+<<<<<<< HEAD
             'functionCall' => [Functions::class, 'DUMMY'],
             'argumentCount' => '2',
+=======
+            'functionCall' => [MathTrig\MatrixFunctions::class, 'sequence'],
+            'argumentCount' => '1-4',
+>>>>>>> develop
         ],
         'SERIESSUM' => [
             'category' => Category::CATEGORY_MATH_AND_TRIG,
@@ -2759,8 +2779,11 @@ class Calculation
 
     public function __construct(?Spreadsheet $spreadsheet = null)
     {
+<<<<<<< HEAD
         $this->delta = 1 * 10 ** (0 - ini_get('precision'));
 
+=======
+>>>>>>> develop
         $this->spreadsheet = $spreadsheet;
         $this->cyclicReferenceStack = new CyclicReferenceStack();
         $this->debugLog = new Logger($this->cyclicReferenceStack);
@@ -3170,10 +3193,17 @@ class Calculation
         if (self::$functionReplaceFromExcel === null) {
             self::$functionReplaceFromExcel = [];
             foreach (array_keys(self::$localeFunctions) as $excelFunctionName) {
+<<<<<<< HEAD
                 self::$functionReplaceFromExcel[] = '/(@?[^\w\.])' . preg_quote($excelFunctionName, '/') . '([\s]*\()/Ui';
             }
             foreach (array_keys(self::$localeBoolean) as $excelBoolean) {
                 self::$functionReplaceFromExcel[] = '/(@?[^\w\.])' . preg_quote($excelBoolean, '/') . '([^\w\.])/Ui';
+=======
+                self::$functionReplaceFromExcel[] = '/(@?[^\w\.])' . preg_quote($excelFunctionName, '/') . '([\s]*\()/ui';
+            }
+            foreach (array_keys(self::$localeBoolean) as $excelBoolean) {
+                self::$functionReplaceFromExcel[] = '/(@?[^\w\.])' . preg_quote($excelBoolean, '/') . '([^\w\.])/ui';
+>>>>>>> develop
             }
         }
 
@@ -3187,7 +3217,17 @@ class Calculation
             }
         }
 
+<<<<<<< HEAD
         return self::translateFormula(self::$functionReplaceFromExcel, self::$functionReplaceToLocale, $formula, ',', self::$localeArgumentSeparator);
+=======
+        return self::translateFormula(
+            self::$functionReplaceFromExcel,
+            self::$functionReplaceToLocale,
+            $formula,
+            ',',
+            self::$localeArgumentSeparator
+        );
+>>>>>>> develop
     }
 
     private static $functionReplaceFromLocale;
@@ -3199,10 +3239,17 @@ class Calculation
         if (self::$functionReplaceFromLocale === null) {
             self::$functionReplaceFromLocale = [];
             foreach (self::$localeFunctions as $localeFunctionName) {
+<<<<<<< HEAD
                 self::$functionReplaceFromLocale[] = '/(@?[^\w\.])' . preg_quote($localeFunctionName, '/') . '([\s]*\()/Ui';
             }
             foreach (self::$localeBoolean as $excelBoolean) {
                 self::$functionReplaceFromLocale[] = '/(@?[^\w\.])' . preg_quote($excelBoolean, '/') . '([^\w\.])/Ui';
+=======
+                self::$functionReplaceFromLocale[] = '/(@?[^\w\.])' . preg_quote($localeFunctionName, '/') . '([\s]*\()/ui';
+            }
+            foreach (self::$localeBoolean as $excelBoolean) {
+                self::$functionReplaceFromLocale[] = '/(@?[^\w\.])' . preg_quote($excelBoolean, '/') . '([^\w\.])/ui';
+>>>>>>> develop
             }
         }
 
@@ -3742,6 +3789,11 @@ class Calculation
                 return self::FORMULA_STRING_QUOTE . $value . self::FORMULA_STRING_QUOTE;
             } elseif (is_bool($value)) {
                 return ($value) ? self::$localeBoolean['TRUE'] : self::$localeBoolean['FALSE'];
+<<<<<<< HEAD
+=======
+            } elseif ($value === null) {
+                return self::$localeBoolean['NULL'];
+>>>>>>> develop
             }
         }
 
@@ -4369,6 +4421,15 @@ class Calculation
         if (($operandData['reference'] === null) && (is_array($operand))) {
             $rKeys = array_keys($operand);
             $rowKey = array_shift($rKeys);
+<<<<<<< HEAD
+=======
+            if (is_array($operand[$rowKey]) === false) {
+                $operandData['value'] = $operand[$rowKey];
+
+                return $operand[$rowKey];
+            }
+
+>>>>>>> develop
             $cKeys = array_keys(array_keys($operand[$rowKey]));
             $colKey = array_shift($cKeys);
             if (ctype_upper("$colKey")) {
@@ -4509,7 +4570,11 @@ class Calculation
                     case '<=':            //    Less than or Equal to
                     case '=':            //    Equality
                     case '<>':            //    Inequality
+<<<<<<< HEAD
                         $result = $this->executeBinaryComparisonOperation($cellID, $operand1, $operand2, $token, $stack);
+=======
+                        $result = $this->executeBinaryComparisonOperation($operand1, $operand2, (string) $token, $stack);
+>>>>>>> develop
                         if (isset($storeKey)) {
                             $branchStore[$storeKey] = $result;
                         }
@@ -4952,21 +5017,32 @@ class Calculation
     }
 
     /**
+<<<<<<< HEAD
      * @param null|string $cellID
+=======
+>>>>>>> develop
      * @param mixed $operand1
      * @param mixed $operand2
      * @param string $operation
      *
      * @return array
      */
+<<<<<<< HEAD
     private function executeArrayComparison($cellID, $operand1, $operand2, $operation, Stack &$stack, bool $recursingArrays)
+=======
+    private function executeArrayComparison($operand1, $operand2, $operation, Stack &$stack, bool $recursingArrays)
+>>>>>>> develop
     {
         $result = [];
         if (!is_array($operand2)) {
             // Operand 1 is an array, Operand 2 is a scalar
             foreach ($operand1 as $x => $operandData) {
                 $this->debugLog->writeDebugLog('Evaluating Comparison ', $this->showValue($operandData), ' ', $operation, ' ', $this->showValue($operand2));
+<<<<<<< HEAD
                 $this->executeBinaryComparisonOperation($cellID, $operandData, $operand2, $operation, $stack);
+=======
+                $this->executeBinaryComparisonOperation($operandData, $operand2, $operation, $stack);
+>>>>>>> develop
                 $r = $stack->pop();
                 $result[$x] = $r['value'];
             }
@@ -4974,7 +5050,11 @@ class Calculation
             // Operand 1 is a scalar, Operand 2 is an array
             foreach ($operand2 as $x => $operandData) {
                 $this->debugLog->writeDebugLog('Evaluating Comparison ', $this->showValue($operand1), ' ', $operation, ' ', $this->showValue($operandData));
+<<<<<<< HEAD
                 $this->executeBinaryComparisonOperation($cellID, $operand1, $operandData, $operation, $stack);
+=======
+                $this->executeBinaryComparisonOperation($operand1, $operandData, $operation, $stack);
+>>>>>>> develop
                 $r = $stack->pop();
                 $result[$x] = $r['value'];
             }
@@ -4985,7 +5065,11 @@ class Calculation
             }
             foreach ($operand1 as $x => $operandData) {
                 $this->debugLog->writeDebugLog('Evaluating Comparison ', $this->showValue($operandData), ' ', $operation, ' ', $this->showValue($operand2[$x]));
+<<<<<<< HEAD
                 $this->executeBinaryComparisonOperation($cellID, $operandData, $operand2[$x], $operation, $stack, true);
+=======
+                $this->executeBinaryComparisonOperation($operandData, $operand2[$x], $operation, $stack, true);
+>>>>>>> develop
                 $r = $stack->pop();
                 $result[$x] = $r['value'];
             }
@@ -4999,7 +5083,10 @@ class Calculation
     }
 
     /**
+<<<<<<< HEAD
      * @param null|string $cellID
+=======
+>>>>>>> develop
      * @param mixed $operand1
      * @param mixed $operand2
      * @param string $operation
@@ -5007,6 +5094,7 @@ class Calculation
      *
      * @return mixed
      */
+<<<<<<< HEAD
     private function executeBinaryComparisonOperation($cellID, $operand1, $operand2, $operation, Stack &$stack, $recursingArrays = false)
     {
         //    If we're dealing with matrix operations, we want a matrix result
@@ -5098,6 +5186,16 @@ class Calculation
             default:
                 throw new Exception('Unsupported binary comparison operation');
         }
+=======
+    private function executeBinaryComparisonOperation($operand1, $operand2, $operation, Stack &$stack, $recursingArrays = false)
+    {
+        //    If we're dealing with matrix operations, we want a matrix result
+        if ((is_array($operand1)) || (is_array($operand2))) {
+            return $this->executeArrayComparison($operand1, $operand2, $operation, $stack, $recursingArrays);
+        }
+
+        $result = BinaryComparison::compare($operand1, $operand2, $operation);
+>>>>>>> develop
 
         //    Log the result details
         $this->debugLog->writeDebugLog('Evaluation Result is ', $this->showTypeDetails($result));
@@ -5108,6 +5206,7 @@ class Calculation
     }
 
     /**
+<<<<<<< HEAD
      * Compare two strings in the same way as strcmp() except that lowercase come before uppercase letters.
      *
      * @param null|string $str1 First string value for the comparison
@@ -5137,6 +5236,8 @@ class Calculation
     }
 
     /**
+=======
+>>>>>>> develop
      * @param mixed $operand1
      * @param mixed $operand2
      * @param mixed $operation

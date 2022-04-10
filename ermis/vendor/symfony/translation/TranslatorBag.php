@@ -94,7 +94,14 @@ final class TranslatorBag implements TranslatorBagInterface
             $obsoleteCatalogue = new MessageCatalogue($locale);
 
             foreach ($operation->getDomains() as $domain) {
+<<<<<<< HEAD
                 $obsoleteCatalogue->add($operation->getObsoleteMessages($domain), $domain);
+=======
+                $obsoleteCatalogue->add(
+                    array_diff($operation->getMessages($domain), $operation->getNewMessages($domain)),
+                    $domain
+                );
+>>>>>>> develop
             }
 
             $diff->addCatalogue($obsoleteCatalogue);

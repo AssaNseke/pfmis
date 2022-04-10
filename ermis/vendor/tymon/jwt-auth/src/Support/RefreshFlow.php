@@ -24,7 +24,10 @@ trait RefreshFlow
      * Set the refresh flow flag.
      *
      * @param  bool  $refreshFlow
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return $this
      */
     public function setRefreshFlow($refreshFlow = true)

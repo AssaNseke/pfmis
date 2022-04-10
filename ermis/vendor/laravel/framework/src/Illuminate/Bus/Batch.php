@@ -467,4 +467,18 @@ class Batch implements Arrayable, JsonSerializable
     {
         return $this->toArray();
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * Dynamically access the batch's "options" via properties.
+     *
+     * @param  string  $key
+     * @return mixed
+     */
+    public function __get($key)
+    {
+        return $this->options[$key] ?? null;
+    }
+>>>>>>> develop
 }

@@ -18,7 +18,10 @@ use PhpParser\Node\Stmt\ClassMethod;
 use PhpParser\Node\Stmt\Function_;
 use PhpParser\Node\Stmt\Interface_;
 use PhpParser\Node\Stmt\Trait_;
+<<<<<<< HEAD
 use PhpParser\NodeTraverser;
+=======
+>>>>>>> develop
 use PhpParser\NodeVisitorAbstract;
 
 /**
@@ -47,18 +50,30 @@ final class IgnoredLinesFindingVisitor extends NodeVisitorAbstract
         $this->ignoreDeprecated              = $ignoreDeprecated;
     }
 
+<<<<<<< HEAD
     public function enterNode(Node $node): ?int
+=======
+    public function enterNode(Node $node): void
+>>>>>>> develop
     {
         if (!$node instanceof Class_ &&
             !$node instanceof Trait_ &&
             !$node instanceof Interface_ &&
             !$node instanceof ClassMethod &&
             !$node instanceof Function_) {
+<<<<<<< HEAD
             return null;
         }
 
         if ($node instanceof Class_ && $node->isAnonymous()) {
             return null;
+=======
+            return;
+        }
+
+        if ($node instanceof Class_ && $node->isAnonymous()) {
+            return;
+>>>>>>> develop
         }
 
         // Workaround for https://bugs.xdebug.org/view.php?id=1798
@@ -69,17 +84,29 @@ final class IgnoredLinesFindingVisitor extends NodeVisitorAbstract
         }
 
         if (!$this->useAnnotationsForIgnoringCode) {
+<<<<<<< HEAD
             return null;
         }
 
         if ($node instanceof Interface_) {
             return null;
+=======
+            return;
+        }
+
+        if ($node instanceof Interface_) {
+            return;
+>>>>>>> develop
         }
 
         $docComment = $node->getDocComment();
 
         if ($docComment === null) {
+<<<<<<< HEAD
             return null;
+=======
+            return;
+>>>>>>> develop
         }
 
         if (strpos($docComment->getText(), '@codeCoverageIgnore') !== false) {
@@ -95,12 +122,15 @@ final class IgnoredLinesFindingVisitor extends NodeVisitorAbstract
                 range($node->getStartLine(), $node->getEndLine())
             );
         }
+<<<<<<< HEAD
 
         if ($node instanceof ClassMethod || $node instanceof Function_) {
             return NodeTraverser::DONT_TRAVERSE_CHILDREN;
         }
 
         return null;
+=======
+>>>>>>> develop
     }
 
     /**

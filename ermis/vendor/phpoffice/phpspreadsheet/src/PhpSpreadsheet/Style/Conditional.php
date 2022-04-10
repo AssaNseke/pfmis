@@ -9,6 +9,7 @@ class Conditional implements IComparable
 {
     // Condition types
     const CONDITION_NONE = 'none';
+<<<<<<< HEAD
     const CONDITION_CELLIS = 'cellIs';
     const CONDITION_CONTAINSTEXT = 'containsText';
     const CONDITION_EXPRESSION = 'expression';
@@ -26,6 +27,39 @@ class Conditional implements IComparable
         self::CONDITION_NONE,
         self::CONDITION_NOTCONTAINSBLANKS,
         self::CONDITION_NOTCONTAINSTEXT,
+=======
+    const CONDITION_BEGINSWITH = 'beginsWith';
+    const CONDITION_CELLIS = 'cellIs';
+    const CONDITION_CONTAINSBLANKS = 'containsBlanks';
+    const CONDITION_CONTAINSERRORS = 'containsErrors';
+    const CONDITION_CONTAINSTEXT = 'containsText';
+    const CONDITION_DATABAR = 'dataBar';
+    const CONDITION_ENDSWITH = 'endsWith';
+    const CONDITION_EXPRESSION = 'expression';
+    const CONDITION_NOTCONTAINSBLANKS = 'notContainsBlanks';
+    const CONDITION_NOTCONTAINSERRORS = 'notContainsErrors';
+    const CONDITION_NOTCONTAINSTEXT = 'notContainsText';
+    const CONDITION_TIMEPERIOD = 'timePeriod';
+    const CONDITION_DUPLICATES = 'duplicateValues';
+    const CONDITION_UNIQUE = 'uniqueValues';
+
+    private const CONDITION_TYPES = [
+        self::CONDITION_BEGINSWITH,
+        self::CONDITION_CELLIS,
+        self::CONDITION_CONTAINSBLANKS,
+        self::CONDITION_CONTAINSERRORS,
+        self::CONDITION_CONTAINSTEXT,
+        self::CONDITION_DATABAR,
+        self::CONDITION_DUPLICATES,
+        self::CONDITION_ENDSWITH,
+        self::CONDITION_EXPRESSION,
+        self::CONDITION_NONE,
+        self::CONDITION_NOTCONTAINSBLANKS,
+        self::CONDITION_NOTCONTAINSERRORS,
+        self::CONDITION_NOTCONTAINSTEXT,
+        self::CONDITION_TIMEPERIOD,
+        self::CONDITION_UNIQUE,
+>>>>>>> develop
     ];
 
     // Operator types
@@ -43,6 +77,20 @@ class Conditional implements IComparable
     const OPERATOR_BETWEEN = 'between';
     const OPERATOR_NOTBETWEEN = 'notBetween';
 
+<<<<<<< HEAD
+=======
+    const TIMEPERIOD_TODAY = 'today';
+    const TIMEPERIOD_YESTERDAY = 'yesterday';
+    const TIMEPERIOD_TOMORROW = 'tomorrow';
+    const TIMEPERIOD_LAST_7_DAYS = 'last7Days';
+    const TIMEPERIOD_LAST_WEEK = 'lastWeek';
+    const TIMEPERIOD_THIS_WEEK = 'thisWeek';
+    const TIMEPERIOD_NEXT_WEEK = 'nextWeek';
+    const TIMEPERIOD_LAST_MONTH = 'lastMonth';
+    const TIMEPERIOD_THIS_MONTH = 'thisMonth';
+    const TIMEPERIOD_NEXT_MONTH = 'nextMonth';
+
+>>>>>>> develop
     /**
      * Condition type.
      *

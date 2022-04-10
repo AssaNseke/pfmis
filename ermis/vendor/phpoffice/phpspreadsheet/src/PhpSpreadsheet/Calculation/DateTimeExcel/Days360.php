@@ -2,12 +2,21 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\DateTimeExcel;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 use PhpOffice\PhpSpreadsheet\Shared\Date as SharedDateHelper;
 
 class Days360
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     /**
      * DAYS360.
      *
@@ -18,11 +27,21 @@ class Days360
      * Excel Function:
      *        DAYS360(startDate,endDate[,method])
      *
+<<<<<<< HEAD
      * @param mixed $startDate Excel date serial value (float), PHP date timestamp (integer),
      *                                        PHP DateTime object, or a standard date string
      * @param mixed $endDate Excel date serial value (float), PHP date timestamp (integer),
      *                                        PHP DateTime object, or a standard date string
      * @param mixed $method US or European Method as a bool
+=======
+     * @param array|mixed $startDate Excel date serial value (float), PHP date timestamp (integer),
+     *                                        PHP DateTime object, or a standard date string
+     *                         Or can be an array of date values
+     * @param array|mixed $endDate Excel date serial value (float), PHP date timestamp (integer),
+     *                                        PHP DateTime object, or a standard date string
+     *                         Or can be an array of date values
+     * @param array|mixed $method US or European Method as a bool
+>>>>>>> develop
      *                                        FALSE or omitted: U.S. (NASD) method. If the starting date is
      *                                        the last day of a month, it becomes equal to the 30th of the
      *                                        same month. If the ending date is the last day of a month and
@@ -33,11 +52,26 @@ class Days360
      *                                        TRUE: European method. Starting dates and ending dates that
      *                                        occur on the 31st of a month become equal to the 30th of the
      *                                        same month.
+<<<<<<< HEAD
      *
      * @return int|string Number of days between start date and end date
      */
     public static function between($startDate = 0, $endDate = 0, $method = false)
     {
+=======
+     *                         Or can be an array of methods
+     *
+     * @return array|int|string Number of days between start date and end date
+     *         If an array of values is passed for the $startDate or $endDays,arguments, then the returned result
+     *            will also be an array with matching dimensions
+     */
+    public static function between($startDate = 0, $endDate = 0, $method = false)
+    {
+        if (is_array($startDate) || is_array($endDate) || is_array($method)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $startDate, $endDate, $method);
+        }
+
+>>>>>>> develop
         try {
             $startDate = Helpers::getDateValue($startDate);
             $endDate = Helpers::getDateValue($endDate);

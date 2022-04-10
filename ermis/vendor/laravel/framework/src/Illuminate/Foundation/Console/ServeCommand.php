@@ -104,8 +104,16 @@ class ServeCommand extends Command
                 'APP_ENV',
                 'LARAVEL_SAIL',
                 'PHP_CLI_SERVER_WORKERS',
+<<<<<<< HEAD
                 'XDEBUG_CONFIG',
                 'XDEBUG_MODE',
+=======
+                'PHP_IDE_CONFIG',
+                'SYSTEMROOT',
+                'XDEBUG_CONFIG',
+                'XDEBUG_MODE',
+                'XDEBUG_SESSION',
+>>>>>>> develop
             ]) ? [$key => $value] : [$key => false];
         })->all());
 

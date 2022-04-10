@@ -272,7 +272,11 @@ class QueueFake extends QueueManager implements Queue
     /**
      * Push a new job onto the queue.
      *
+<<<<<<< HEAD
      * @param  string  $job
+=======
+     * @param  string|object  $job
+>>>>>>> develop
      * @param  mixed  $data
      * @param  string|null  $queue
      * @return mixed
@@ -302,7 +306,11 @@ class QueueFake extends QueueManager implements Queue
      * Push a new job onto the queue after a delay.
      *
      * @param  \DateTimeInterface|\DateInterval|int  $delay
+<<<<<<< HEAD
      * @param  string  $job
+=======
+     * @param  string|object  $job
+>>>>>>> develop
      * @param  mixed  $data
      * @param  string|null  $queue
      * @return mixed
@@ -316,7 +324,11 @@ class QueueFake extends QueueManager implements Queue
      * Push a new job onto the queue.
      *
      * @param  string  $queue
+<<<<<<< HEAD
      * @param  string  $job
+=======
+     * @param  string|object  $job
+>>>>>>> develop
      * @param  mixed  $data
      * @return mixed
      */
@@ -330,7 +342,11 @@ class QueueFake extends QueueManager implements Queue
      *
      * @param  string  $queue
      * @param  \DateTimeInterface|\DateInterval|int  $delay
+<<<<<<< HEAD
      * @param  string  $job
+=======
+     * @param  string|object  $job
+>>>>>>> develop
      * @param  mixed  $data
      * @return mixed
      */

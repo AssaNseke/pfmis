@@ -96,7 +96,11 @@ class ReflectionClosure extends ReflectionFunction
         $builtin_types = self::getBuiltinTypes();
         $class_keywords = ['self', 'static', 'parent'];
 
+<<<<<<< HEAD
         $ns = $this->getNamespaceName();
+=======
+        $ns = $this->getClosureNamespaceName();
+>>>>>>> develop
         $nsf = $ns == '' ? '' : ($ns[0] == '\\' ? $ns : '\\'.$ns);
 
         $_file = var_export($fileName, true);
@@ -112,7 +116,13 @@ class ReflectionClosure extends ReflectionFunction
         $tokens = $this->getTokens();
         $state = $lastState = 'start';
         $inside_structure = false;
+<<<<<<< HEAD
         $isShortClosure = false;
+=======
+        $isFirstClassCallable = false;
+        $isShortClosure = false;
+
+>>>>>>> develop
         $inside_structure_mark = 0;
         $open = 0;
         $code = '';
@@ -130,11 +140,21 @@ class ReflectionClosure extends ReflectionFunction
                 case 'start':
                     if ($token[0] === T_FUNCTION || $token[0] === T_STATIC) {
                         $code .= $token[1];
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
                         $state = $token[0] === T_FUNCTION ? 'function' : 'static';
                     } elseif ($token[0] === T_FN) {
                         $isShortClosure = true;
                         $code .= $token[1];
                         $state = 'closure_args';
+<<<<<<< HEAD
+=======
+                    } elseif ($token[0] === T_PUBLIC || $token[0] === T_PROTECTED || $token[0] === T_PRIVATE) {
+                        $code = '';
+                        $isFirstClassCallable = true;
+>>>>>>> develop
                     }
                     break;
                 case 'static':
@@ -155,6 +175,14 @@ class ReflectionClosure extends ReflectionFunction
                 case 'function':
                     switch ($token[0]) {
                         case T_STRING:
+<<<<<<< HEAD
+=======
+                            if ($isFirstClassCallable) {
+                                $state = 'closure_args';
+                                break;
+                            }
+
+>>>>>>> develop
                             $code = '';
                             $state = 'named_function';
                             break;
@@ -1123,6 +1151,26 @@ class ReflectionClosure extends ReflectionFunction
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Returns the namespace associated to the closure.
+     *
+     * @return string
+     */
+    protected function getClosureNamespaceName()
+    {
+        $ns = $this->getNamespaceName();
+
+        // First class callables...
+        if ($this->getName() !== '{closure}' && empty($ns) && ! is_null($this->getClosureScopeClass())) {
+            $ns = $this->getClosureScopeClass()->getNamespaceName();
+        }
+
+        return $ns;
+    }
+
+    /**
+>>>>>>> develop
      * Parse the given token.
      *
      * @param  string  $token

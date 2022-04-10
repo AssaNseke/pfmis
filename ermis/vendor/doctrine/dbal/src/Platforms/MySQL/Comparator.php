@@ -31,11 +31,24 @@ class Comparator extends BaseComparator
      */
     public function diffTable(Table $fromTable, Table $toTable)
     {
+<<<<<<< HEAD
         $defaults = array_intersect_key($fromTable->getOptions(), [
+=======
+        return parent::diffTable(
+            $this->normalizeColumns($fromTable),
+            $this->normalizeColumns($toTable)
+        );
+    }
+
+    private function normalizeColumns(Table $table): Table
+    {
+        $defaults = array_intersect_key($table->getOptions(), [
+>>>>>>> develop
             'charset'   => null,
             'collation' => null,
         ]);
 
+<<<<<<< HEAD
         if ($defaults !== []) {
             $fromTable = clone $fromTable;
             $toTable   = clone $toTable;
@@ -52,6 +65,14 @@ class Comparator extends BaseComparator
      */
     private function normalizeColumns(Table $table, array $defaults): void
     {
+=======
+        if ($defaults === []) {
+            return $table;
+        }
+
+        $table = clone $table;
+
+>>>>>>> develop
         foreach ($table->getColumns() as $column) {
             $options = $column->getPlatformOptions();
             $diff    = array_diff_assoc($options, $defaults);
@@ -62,5 +83,10 @@ class Comparator extends BaseComparator
 
             $column->setPlatformOptions($diff);
         }
+<<<<<<< HEAD
+=======
+
+        return $table;
+>>>>>>> develop
     }
 }

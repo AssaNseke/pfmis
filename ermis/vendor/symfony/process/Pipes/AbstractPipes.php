@@ -47,7 +47,13 @@ abstract class AbstractPipes implements PipesInterface
     public function close()
     {
         foreach ($this->pipes as $pipe) {
+<<<<<<< HEAD
             fclose($pipe);
+=======
+            if (\is_resource($pipe)) {
+                fclose($pipe);
+            }
+>>>>>>> develop
         }
         $this->pipes = [];
     }

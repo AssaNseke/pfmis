@@ -40,7 +40,14 @@
     },
     "config": {
         "process-timeout": 0,
+<<<<<<< HEAD
         "sort-packages": true
+=======
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+>>>>>>> develop
     },
     "extra": {
         "branch-alias": {

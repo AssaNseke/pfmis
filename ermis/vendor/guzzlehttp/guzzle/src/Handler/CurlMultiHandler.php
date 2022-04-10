@@ -32,9 +32,15 @@ class CurlMultiHandler
     private $selectTimeout;
 
     /**
+<<<<<<< HEAD
      * @var resource|\CurlMultiHandle|null the currently executing resource in `curl_multi_exec`.
      */
     private $active;
+=======
+     * @var int Will be higher than 0 when `curl_multi_exec` is still running.
+     */
+    private $active = 0;
+>>>>>>> develop
 
     /**
      * @var array Request entry handles, indexed by handle id in `addRequest`.

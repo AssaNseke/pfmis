@@ -5,6 +5,11 @@ namespace Faker\ORM\Doctrine;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 use Doctrine\Common\Persistence\ObjectManager;
 
+<<<<<<< HEAD
+=======
+require_once 'backward-compatibility.php';
+
+>>>>>>> develop
 /**
  * Service class for populating a table through a Doctrine Entity class.
  */
@@ -226,11 +231,18 @@ class EntityPopulator
     }
 
     /**
+<<<<<<< HEAD
      * @return int|null
      */
     private function generateId($obj, $column, ObjectManager $manager)
     {
         /** @var \Doctrine\Common\Persistence\ObjectRepository $repository */
+=======
+     * @return int
+     */
+    private function generateId($obj, $column, ObjectManager $manager)
+    {
+>>>>>>> develop
         $repository = $manager->getRepository(get_class($obj));
         $result = $repository->createQueryBuilder('e')
                 ->select(sprintf('e.%s', $column))
@@ -238,8 +250,11 @@ class EntityPopulator
                 ->execute();
         $ids = array_map('current', $result->toArray());
 
+<<<<<<< HEAD
         $id = null;
 
+=======
+>>>>>>> develop
         do {
             $id = mt_rand();
         } while (in_array($id, $ids, false));

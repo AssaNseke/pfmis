@@ -1,8 +1,13 @@
 <br />
 <br />
 <p align="center">
+<<<<<<< HEAD
   <!-- https://user-images.githubusercontent.com/7728097/143205384-af3c73a8-0253-45f3-b5ac-28a335dddb87.png -->
 <img width="589" src="https://user-images.githubusercontent.com/7728097/146406114-a5f5e13a-e2ee-47a2-9bf9-ad43cdbdf200.png"  alt="Laravel Excel logo">
+=======
+  <!-- XMAS: https://user-images.githubusercontent.com/7728097/146406114-a5f5e13a-e2ee-47a2-9bf9-ad43cdbdf200.png-->
+<img width="589" src="https://user-images.githubusercontent.com/7728097/143205384-af3c73a8-0253-45f3-b5ac-28a335dddb87.png" alt="Laravel Excel logo">
+>>>>>>> develop
 </p>
 <br />
 
@@ -21,7 +26,11 @@ exports and imports.
   <span> · </span>
   <a href="https://course.laravel-excel.com">Video Course</a>
   <span> · </span>
+<<<<<<< HEAD
   <a href="https://github.com/SparterNL/Laravel-Nova-Excel">Nova</a>
+=======
+  <a href="https://github.com/SpartnerNL/Laravel-Nova-Excel">Nova</a>
+>>>>>>> develop
   <span> · </span>
   <a href="https://medium.com/maatwebsite/laravel-excel/home">Blog</a>
   <span> · </span>
@@ -31,7 +40,11 @@ exports and imports.
 </h4>
 
 <p align="center">
+<<<<<<< HEAD
   <a href="https://github.com/SparterNL/Laravel-Excel/actions">
+=======
+  <a href="https://github.com/SpartnerNL/Laravel-Excel/actions">
+>>>>>>> develop
     <img src="https://github.com/Maatwebsite/Laravel-Excel/workflows/Run%20tests/badge.svg?branch=3.1" alt="Github Actions">
   </a>
 
@@ -69,7 +82,11 @@ exports and imports.
 
 You can find the full documentation of Laravel Excel [on the website](https://docs.laravel-excel.com).
 
+<<<<<<< HEAD
 We welcome suggestions for improving our docs. The documentation repository can be found at [https://github.com/SparterNL/laravel-excel-docs](https://github.com/SparterNL/laravel-excel-docs).
+=======
+We welcome suggestions for improving our docs. The documentation repository can be found at [https://github.com/SpartnerNL/laravel-excel-docs](https://github.com/SpartnerNL/laravel-excel-docs).
+>>>>>>> develop
 
 Some articles and tutorials can be found on our blog: https://medium.com/maatwebsite/laravel-excel/home
 
@@ -79,20 +96,35 @@ Some articles and tutorials can be found on our blog: https://medium.com/maatweb
 
 Laravel Excel is created with love and care by Spartner (formerly known as Maatwebsite) to give back to the Laravel community. It is completely free (MIT license) to use, however the package is licensed as Postcardware. This means that if it makes it to your production environment, we would very much appreciate receiving a postcard from your hometown.
 
+<<<<<<< HEAD
 **Spartner**  
 Markt 2  
 6231 LS Meerssen  
 The Netherlands. 
+=======
+**Spartner**
+Markt 2
+6231 LS Meerssen
+The Netherlands.
+>>>>>>> develop
 
 More about the license can be found at: [https://docs.laravel-excel.com/3.1/getting-started/license.html](https://docs.laravel-excel.com/3.1/getting-started/license.html)
 
 ## Created by Spartner (formerly Maatwebsite)
 
+<<<<<<< HEAD
 We are a strategic development partner, creating web-based custom built software from Laravel. In need of a digital solution for your challenge? Give us a call. 
 
 https://spartner.software  
 info@spartner.nl  
 +31 (0) 10 - 7449312  
+=======
+We are a strategic development partner, creating web-based custom built software from Laravel. In need of a digital solution for your challenge? Give us a call.
+
+https://spartner.software
+info@spartner.nl
++31 (0) 10 - 7449312
+>>>>>>> develop
 
 ## :wrench: Supported Versions
 

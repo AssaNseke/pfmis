@@ -2,10 +2,19 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\Engineering;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 
 class Erf
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     private static $twoSqrtPi = 1.128379167095512574;
 
     /**
@@ -22,6 +31,7 @@ class Erf
      *        ERF(lower[,upper])
      *
      * @param mixed $lower Lower bound float for integrating ERF
+<<<<<<< HEAD
      * @param mixed $upper Upper bound float for integrating ERF.
      *                           If omitted, ERF integrates between zero and lower_limit
      *
@@ -31,6 +41,22 @@ class Erf
     {
         $lower = Functions::flattenSingleValue($lower);
         $upper = Functions::flattenSingleValue($upper);
+=======
+     *                      Or can be an array of values
+     * @param mixed $upper Upper bound float for integrating ERF.
+     *                           If omitted, ERF integrates between zero and lower_limit
+     *                      Or can be an array of values
+     *
+     * @return array|float|string
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function ERF($lower, $upper = null)
+    {
+        if (is_array($lower) || is_array($upper)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $lower, $upper);
+        }
+>>>>>>> develop
 
         if (is_numeric($lower)) {
             if ($upper === null) {
@@ -53,12 +79,26 @@ class Erf
      *        ERF.PRECISE(limit)
      *
      * @param mixed $limit Float bound for integrating ERF, other bound is zero
+<<<<<<< HEAD
      *
      * @return float|string
      */
     public static function ERFPRECISE($limit)
     {
         $limit = Functions::flattenSingleValue($limit);
+=======
+     *                      Or can be an array of values
+     *
+     * @return array|float|string
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function ERFPRECISE($limit)
+    {
+        if (is_array($limit)) {
+            return self::evaluateSingleArgumentArray([self::class, __FUNCTION__], $limit);
+        }
+>>>>>>> develop
 
         return self::ERF($limit);
     }

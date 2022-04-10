@@ -217,7 +217,11 @@ trait Difference
      */
     public function diffInDays($date = null, $absolute = true)
     {
+<<<<<<< HEAD
         return (int) $this->diff($this->resolveCarbon($date), $absolute)->format('%r%a');
+=======
+        return $this->getIntervalDayDiff($this->diff($this->resolveCarbon($date), $absolute));
+>>>>>>> develop
     }
 
     /**
@@ -518,7 +522,11 @@ trait Difference
             return $hoursDiff / static::HOURS_PER_DAY;
         }
 
+<<<<<<< HEAD
         $daysDiff = (int) $interval->format('%r%a');
+=======
+        $daysDiff = $this->getIntervalDayDiff($interval);
+>>>>>>> develop
 
         return $daysDiff + fmod($hoursDiff, static::HOURS_PER_DAY) / static::HOURS_PER_DAY;
     }
@@ -1149,4 +1157,24 @@ trait Difference
 
         return $this->isoFormat((string) $format);
     }
+<<<<<<< HEAD
+=======
+
+    private function getIntervalDayDiff(DateInterval $interval): int
+    {
+        $daysDiff = (int) $interval->format('%a');
+        $sign = $interval->format('%r') === '-' ? -1 : 1;
+
+        if (\is_int($interval->days) &&
+            $interval->y === 0 &&
+            $interval->m === 0 &&
+            version_compare(PHP_VERSION, '8.1.0-dev', '<') &&
+            abs($interval->d - $daysDiff) === 1
+        ) {
+            $daysDiff = abs($interval->d);
+        }
+
+        return $daysDiff * $sign;
+    }
+>>>>>>> develop
 }

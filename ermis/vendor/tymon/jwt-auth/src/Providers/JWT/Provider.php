@@ -15,6 +15,19 @@ use Illuminate\Support\Arr;
 
 abstract class Provider
 {
+<<<<<<< HEAD
+=======
+    const ALGO_HS256 = 'HS256';
+    const ALGO_HS384 = 'HS384';
+    const ALGO_HS512 = 'HS512';
+    const ALGO_RS256 = 'RS256';
+    const ALGO_RS384 = 'RS384';
+    const ALGO_RS512 = 'RS512';
+    const ALGO_ES256 = 'ES256';
+    const ALGO_ES384 = 'ES384';
+    const ALGO_ES512 = 'ES512';
+
+>>>>>>> develop
     /**
      * The secret.
      *
@@ -42,7 +55,10 @@ abstract class Provider
      * @param  string  $secret
      * @param  string  $algo
      * @param  array  $keys
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return void
      */
     public function __construct($secret, $algo, array $keys)
@@ -56,7 +72,10 @@ abstract class Provider
      * Set the algorithm used to sign the token.
      *
      * @param  string  $algo
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return $this
      */
     public function setAlgo($algo)
@@ -80,7 +99,10 @@ abstract class Provider
      * Set the secret used to sign the token.
      *
      * @param  string  $secret
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return $this
      */
     public function setSecret($secret)
@@ -104,7 +126,10 @@ abstract class Provider
      * Set the keys used to sign the token.
      *
      * @param  array  $keys
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return $this
      */
     public function setKeys(array $keys)
@@ -115,8 +140,12 @@ abstract class Provider
     }
 
     /**
+<<<<<<< HEAD
      * Get the array of keys used to sign tokens
      * with an asymmetric algorithm.
+=======
+     * Get the array of keys used to sign tokens with an asymmetric algorithm.
+>>>>>>> develop
      *
      * @return array
      */
@@ -126,10 +155,16 @@ abstract class Provider
     }
 
     /**
+<<<<<<< HEAD
      * Get the public key used to sign tokens
      * with an asymmetric algorithm.
      *
      * @return resource|string
+=======
+     * Get the public key used to sign tokens with an asymmetric algorithm.
+     *
+     * @return resource|string|null
+>>>>>>> develop
      */
     public function getPublicKey()
     {
@@ -137,10 +172,16 @@ abstract class Provider
     }
 
     /**
+<<<<<<< HEAD
      * Get the private key used to sign tokens
      * with an asymmetric algorithm.
      *
      * @return resource|string
+=======
+     * Get the private key used to sign tokens with an asymmetric algorithm.
+     *
+     * @return resource|string|null
+>>>>>>> develop
      */
     public function getPrivateKey()
     {
@@ -151,7 +192,11 @@ abstract class Provider
      * Get the passphrase used to sign tokens
      * with an asymmetric algorithm.
      *
+<<<<<<< HEAD
      * @return string
+=======
+     * @return string|null
+>>>>>>> develop
      */
     public function getPassphrase()
     {
@@ -161,7 +206,11 @@ abstract class Provider
     /**
      * Get the key used to sign the tokens.
      *
+<<<<<<< HEAD
      * @return resource|string
+=======
+     * @return resource|string|null
+>>>>>>> develop
      */
     protected function getSigningKey()
     {
@@ -171,7 +220,11 @@ abstract class Provider
     /**
      * Get the key used to verify the tokens.
      *
+<<<<<<< HEAD
      * @return resource|string
+=======
+     * @return resource|string|null
+>>>>>>> develop
      */
     protected function getVerificationKey()
     {
@@ -179,10 +232,14 @@ abstract class Provider
     }
 
     /**
+<<<<<<< HEAD
      * Determine if the algorithm is asymmetric, and thus
      * requires a public/private key combo.
      *
      * @throws \Tymon\JWTAuth\Exceptions\JWTException
+=======
+     * Determine if the algorithm is asymmetric, and thus requires a public/private key combo.
+>>>>>>> develop
      *
      * @return bool
      */

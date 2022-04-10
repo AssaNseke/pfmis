@@ -296,7 +296,11 @@ trait HasAttributes
                 $attributes[$key] = $this->serializeClassCastableAttribute($key, $attributes[$key]);
             }
 
+<<<<<<< HEAD
             if ($this->isEnumCastable($key)) {
+=======
+            if ($this->isEnumCastable($key) && (! ($attributes[$key] ?? null) instanceof Arrayable)) {
+>>>>>>> develop
                 $attributes[$key] = isset($attributes[$key]) ? $attributes[$key]->value : null;
             }
 
@@ -499,6 +503,13 @@ trait HasAttributes
      */
     public function isRelation($key)
     {
+<<<<<<< HEAD
+=======
+        if ($this->hasAttributeMutator($key)) {
+            return false;
+        }
+
+>>>>>>> develop
         return method_exists($this, $key) ||
             (static::$relationResolvers[get_class($this)][$key] ?? null);
     }
@@ -515,6 +526,13 @@ trait HasAttributes
             return call_user_func(static::$lazyLoadingViolationCallback, $this, $key);
         }
 
+<<<<<<< HEAD
+=======
+        if (! $this->exists || $this->wasRecentlyCreated) {
+            return;
+        }
+
+>>>>>>> develop
         throw new LazyLoadingViolationException($this, $key);
     }
 

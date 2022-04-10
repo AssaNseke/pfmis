@@ -45,8 +45,21 @@ class FleepHookHandler extends SocketHandler
      * @param  string                    $token  Webhook token
      * @throws MissingExtensionException
      */
+<<<<<<< HEAD
     public function __construct(string $token, $level = Logger::DEBUG, bool $bubble = true)
     {
+=======
+    public function __construct(
+        string $token,
+        $level = Logger::DEBUG,
+        bool $bubble = true,
+        bool $persistent = false,
+        float $timeout = 0.0,
+        float $writingTimeout = 10.0,
+        ?float $connectionTimeout = null,
+        ?int $chunkSize = null
+    ) {
+>>>>>>> develop
         if (!extension_loaded('openssl')) {
             throw new MissingExtensionException('The OpenSSL PHP extension is required to use the FleepHookHandler');
         }
@@ -54,7 +67,20 @@ class FleepHookHandler extends SocketHandler
         $this->token = $token;
 
         $connectionString = 'ssl://' . static::FLEEP_HOST . ':443';
+<<<<<<< HEAD
         parent::__construct($connectionString, $level, $bubble);
+=======
+        parent::__construct(
+            $connectionString,
+            $level,
+            $bubble,
+            $persistent,
+            $timeout,
+            $writingTimeout,
+            $connectionTimeout,
+            $chunkSize
+        );
+>>>>>>> develop
     }
 
     /**

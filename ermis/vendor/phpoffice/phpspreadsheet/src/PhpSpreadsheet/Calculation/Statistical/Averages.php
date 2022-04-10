@@ -24,7 +24,11 @@ class Averages extends AggregateBase
         $aArgs = Functions::flattenArrayIndexed($args);
 
         // Return value
+<<<<<<< HEAD
         $returnValue = 0;
+=======
+        $returnValue = 0.0;
+>>>>>>> develop
 
         $aMean = self::average(...$args);
         if ($aMean === Functions::DIV0()) {

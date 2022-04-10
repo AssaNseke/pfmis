@@ -29,6 +29,10 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Throwable;
 
+<<<<<<< HEAD
+=======
+/** @mixin Spreadsheet */
+>>>>>>> develop
 class Reader
 {
     use DelegatedMacroable, HasEventBus;
@@ -150,7 +154,11 @@ class Reader
      * @throws NoTypeDetectedException
      * @throws Exceptions\SheetNotFoundException
      */
+<<<<<<< HEAD
     public function toArray($import, $filePath, string $readerType, string $disk = null): array
+=======
+    public function toArray($import, $filePath, string $readerType = null, string $disk = null): array
+>>>>>>> develop
     {
         $this->reader = $this->getReader($import, $filePath, $readerType, $disk);
 
@@ -194,7 +202,11 @@ class Reader
      * @throws NoTypeDetectedException
      * @throws Exceptions\SheetNotFoundException
      */
+<<<<<<< HEAD
     public function toCollection($import, $filePath, string $readerType, string $disk = null): Collection
+=======
+    public function toCollection($import, $filePath, string $readerType = null, string $disk = null): Collection
+>>>>>>> develop
     {
         $this->reader = $this->getReader($import, $filePath, $readerType, $disk);
         $this->loadSpreadsheet($import);

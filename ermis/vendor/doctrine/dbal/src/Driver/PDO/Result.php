@@ -9,9 +9,12 @@ use PDO;
 use PDOException;
 use PDOStatement;
 
+<<<<<<< HEAD
 use function assert;
 use function is_array;
 
+=======
+>>>>>>> develop
 final class Result implements ResultInterface
 {
     /** @var PDOStatement */
@@ -118,6 +121,7 @@ final class Result implements ResultInterface
     private function fetchAll(int $mode): array
     {
         try {
+<<<<<<< HEAD
             $data = $this->statement->fetchAll($mode);
         } catch (PDOException $exception) {
             throw Exception::new($exception);
@@ -126,5 +130,11 @@ final class Result implements ResultInterface
         assert(is_array($data));
 
         return $data;
+=======
+            return $this->statement->fetchAll($mode);
+        } catch (PDOException $exception) {
+            throw Exception::new($exception);
+        }
+>>>>>>> develop
     }
 }

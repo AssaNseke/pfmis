@@ -19,7 +19,10 @@ interface Parser
      * Parse the request.
      *
      * @param  \Illuminate\Http\Request  $request
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return null|string
      */
     public function parse(Request $request);

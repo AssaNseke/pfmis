@@ -40,20 +40,33 @@ class LineFormatter extends NormalizerFormatter
      * @param bool        $allowInlineLineBreaks      Whether to allow inline line breaks in log entries
      * @param bool        $ignoreEmptyContextAndExtra
      */
+<<<<<<< HEAD
     public function __construct(?string $format = null, ?string $dateFormat = null, bool $allowInlineLineBreaks = false, bool $ignoreEmptyContextAndExtra = false)
+=======
+    public function __construct(?string $format = null, ?string $dateFormat = null, bool $allowInlineLineBreaks = false, bool $ignoreEmptyContextAndExtra = false, bool $includeStacktraces = false)
+>>>>>>> develop
     {
         $this->format = $format === null ? static::SIMPLE_FORMAT : $format;
         $this->allowInlineLineBreaks = $allowInlineLineBreaks;
         $this->ignoreEmptyContextAndExtra = $ignoreEmptyContextAndExtra;
+<<<<<<< HEAD
         parent::__construct($dateFormat);
     }
 
     public function includeStacktraces(bool $include = true): void
+=======
+        $this->includeStacktraces($includeStacktraces);
+        parent::__construct($dateFormat);
+    }
+
+    public function includeStacktraces(bool $include = true): self
+>>>>>>> develop
     {
         $this->includeStacktraces = $include;
         if ($this->includeStacktraces) {
             $this->allowInlineLineBreaks = true;
         }
+<<<<<<< HEAD
     }
 
     public function allowInlineLineBreaks(bool $allow = true): void
@@ -64,6 +77,24 @@ class LineFormatter extends NormalizerFormatter
     public function ignoreEmptyContextAndExtra(bool $ignore = true): void
     {
         $this->ignoreEmptyContextAndExtra = $ignore;
+=======
+
+        return $this;
+    }
+
+    public function allowInlineLineBreaks(bool $allow = true): self
+    {
+        $this->allowInlineLineBreaks = $allow;
+
+        return $this;
+    }
+
+    public function ignoreEmptyContextAndExtra(bool $ignore = true): self
+    {
+        $this->ignoreEmptyContextAndExtra = $ignore;
+
+        return $this;
+>>>>>>> develop
     }
 
     /**

@@ -11,15 +11,26 @@ use GuzzleHttp\HandlerStack;
 use Illuminate\Http\Client\Events\ConnectionFailed;
 use Illuminate\Http\Client\Events\RequestSending;
 use Illuminate\Http\Client\Events\ResponseReceived;
+<<<<<<< HEAD
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+=======
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Conditionable;
+>>>>>>> develop
 use Illuminate\Support\Traits\Macroable;
 use Psr\Http\Message\MessageInterface;
 use Symfony\Component\VarDumper\VarDumper;
 
 class PendingRequest
 {
+<<<<<<< HEAD
     use Macroable;
+=======
+    use Conditionable, Macroable;
+>>>>>>> develop
 
     /**
      * The factory instance.
@@ -148,6 +159,23 @@ class PendingRequest
     protected $request;
 
     /**
+<<<<<<< HEAD
+=======
+     * The Guzzle request options that are mergable via array_merge_recursive.
+     *
+     * @var array
+     */
+    protected $mergableOptions = [
+        'cookies',
+        'form_params',
+        'headers',
+        'json',
+        'multipart',
+        'query',
+    ];
+
+    /**
+>>>>>>> develop
      * Create a new HTTP Client instance.
      *
      * @param  \Illuminate\Http\Client\Factory|null  $factory
@@ -463,7 +491,11 @@ class PendingRequest
     }
 
     /**
+<<<<<<< HEAD
      * Merge new options into the client.
+=======
+     * Replace the specified options on the request.
+>>>>>>> develop
      *
      * @param  array  $options
      * @return $this
@@ -471,7 +503,14 @@ class PendingRequest
     public function withOptions(array $options)
     {
         return tap($this, function ($request) use ($options) {
+<<<<<<< HEAD
             return $this->options = array_merge_recursive($this->options, $options);
+=======
+            return $this->options = array_replace_recursive(
+                array_merge_recursive($this->options, Arr::only($options, $this->mergableOptions)),
+                $options
+            );
+>>>>>>> develop
         });
     }
 
@@ -544,7 +583,11 @@ class PendingRequest
      */
     public function get(string $url, $query = null)
     {
+<<<<<<< HEAD
         return $this->send('GET', $url, [
+=======
+        return $this->send('GET', $url, func_num_args() === 1 ? [] : [
+>>>>>>> develop
             'query' => $query,
         ]);
     }
@@ -558,7 +601,11 @@ class PendingRequest
      */
     public function head(string $url, $query = null)
     {
+<<<<<<< HEAD
         return $this->send('HEAD', $url, [
+=======
+        return $this->send('HEAD', $url, func_num_args() === 1 ? [] : [
+>>>>>>> develop
             'query' => $query,
         ]);
     }
@@ -970,23 +1017,42 @@ class PendingRequest
     public function runBeforeSendingCallbacks($request, array $options)
     {
         return tap($request, function ($request) use ($options) {
+<<<<<<< HEAD
             $this->beforeSendingCallbacks->each->__invoke(
                 (new Request($request))->withData($options['laravel_data']),
                 $options,
                 $this
             );
+=======
+            $this->beforeSendingCallbacks->each(function ($callback) use ($request, $options) {
+                call_user_func(
+                    $callback, (new Request($request))->withData($options['laravel_data']), $options, $this
+                );
+            });
+>>>>>>> develop
         });
     }
 
     /**
+<<<<<<< HEAD
      * Merge the given options with the current request options.
+=======
+     * Replace the given options with the current request options.
+>>>>>>> develop
      *
      * @param  array  $options
      * @return array
      */
     public function mergeOptions(...$options)
     {
+<<<<<<< HEAD
         return array_merge_recursive($this->options, ...$options);
+=======
+        return array_replace_recursive(
+            array_merge_recursive($this->options, Arr::only($options, $this->mergableOptions)),
+            ...$options
+        );
+>>>>>>> develop
     }
 
     /**
@@ -1092,4 +1158,17 @@ class PendingRequest
 
         return $this;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * Get the pending request options.
+     *
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+>>>>>>> develop
 }

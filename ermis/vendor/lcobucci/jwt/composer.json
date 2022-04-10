@@ -1,5 +1,6 @@
 {
     "name": "lcobucci/jwt",
+<<<<<<< HEAD
     "description": "A simple library to work with JSON Web Token and JSON Web Signature",
     "type": "library",
     "authors": [
@@ -9,6 +10,10 @@
             "role": "Developer"
         }
     ],
+=======
+    "type": "library",
+    "description": "A simple library to work with JSON Web Token and JSON Web Signature",
+>>>>>>> develop
     "keywords": [
         "JWT",
         "JWS"
@@ -16,6 +21,7 @@
     "license": [
         "BSD-3-Clause"
     ],
+<<<<<<< HEAD
     "require": {
         "php": "^5.6 || ^7.0",
         "ext-mbstring": "*",
@@ -27,6 +33,40 @@
         "phpmd/phpmd": "~2.2",
         "phpunit/php-invoker": "~1.1",
         "mikey179/vfsstream": "~1.5"
+=======
+    "authors": [
+        {
+            "name": "Luís Cobucci",
+            "email": "lcobucci@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-hash": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-sodium": "*",
+        "lcobucci/clock": "^2.0"
+    },
+    "require-dev": {
+        "infection/infection": "^0.21",
+        "lcobucci/coding-standard": "^6.0",
+        "mikey179/vfsstream": "^1.6.7",
+        "phpbench/phpbench": "^1.0",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-deprecation-rules": "^0.12",
+        "phpstan/phpstan-phpunit": "^0.12",
+        "phpstan/phpstan-strict-rules": "^0.12",
+        "phpunit/php-invoker": "^3.1",
+        "phpunit/phpunit": "^9.5"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+>>>>>>> develop
     },
     "autoload": {
         "psr-4": {
@@ -36,6 +76,7 @@
     "autoload-dev": {
         "psr-4": {
             "Lcobucci\\JWT\\": [
+<<<<<<< HEAD
                 "test/unit",
                 "test/functional"
             ]
@@ -44,6 +85,13 @@
     "extra": {
         "branch-alias": {
             "dev-master": "3.1-dev"
+=======
+                "test/_keys",
+                "test/unit",
+                "test/performance"
+            ],
+            "Lcobucci\\JWT\\FunctionalTests\\": "test/functional"
+>>>>>>> develop
         }
     }
 }

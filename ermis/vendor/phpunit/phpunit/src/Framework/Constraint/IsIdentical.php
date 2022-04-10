@@ -9,6 +9,10 @@
  */
 namespace PHPUnit\Framework\Constraint;
 
+<<<<<<< HEAD
+=======
+use const PHP_FLOAT_EPSILON;
+>>>>>>> develop
 use function abs;
 use function get_class;
 use function is_array;
@@ -27,11 +31,14 @@ use SebastianBergmann\Comparator\ComparisonFailure;
 final class IsIdentical extends Constraint
 {
     /**
+<<<<<<< HEAD
      * @var float
      */
     private const EPSILON = 0.0000000001;
 
     /**
+=======
+>>>>>>> develop
      * @var mixed
      */
     private $value;
@@ -59,7 +66,11 @@ final class IsIdentical extends Constraint
         if (is_float($this->value) && is_float($other) &&
             !is_infinite($this->value) && !is_infinite($other) &&
             !is_nan($this->value) && !is_nan($other)) {
+<<<<<<< HEAD
             $success = abs($this->value - $other) < self::EPSILON;
+=======
+            $success = abs($this->value - $other) < PHP_FLOAT_EPSILON;
+>>>>>>> develop
         } else {
             $success = $this->value === $other;
         }

@@ -2,11 +2,20 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\Engineering;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 
 class BitWise
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     const SPLIT_DIVISOR = 2 ** 24;
 
     /**
@@ -27,6 +36,7 @@ class BitWise
      * Excel Function:
      *        BITAND(number1, number2)
      *
+<<<<<<< HEAD
      * @param int $number1
      * @param int $number2
      *
@@ -34,6 +44,23 @@ class BitWise
      */
     public static function BITAND($number1, $number2)
     {
+=======
+     * @param array|int $number1
+     *                      Or can be an array of values
+     * @param array|int $number2
+     *                      Or can be an array of values
+     *
+     * @return array|int|string
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function BITAND($number1, $number2)
+    {
+        if (is_array($number1) || is_array($number2)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $number1, $number2);
+        }
+
+>>>>>>> develop
         try {
             $number1 = self::validateBitwiseArgument($number1);
             $number2 = self::validateBitwiseArgument($number2);
@@ -54,6 +81,7 @@ class BitWise
      * Excel Function:
      *        BITOR(number1, number2)
      *
+<<<<<<< HEAD
      * @param int $number1
      * @param int $number2
      *
@@ -61,6 +89,23 @@ class BitWise
      */
     public static function BITOR($number1, $number2)
     {
+=======
+     * @param array|int $number1
+     *                      Or can be an array of values
+     * @param array|int $number2
+     *                      Or can be an array of values
+     *
+     * @return array|int|string
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function BITOR($number1, $number2)
+    {
+        if (is_array($number1) || is_array($number2)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $number1, $number2);
+        }
+
+>>>>>>> develop
         try {
             $number1 = self::validateBitwiseArgument($number1);
             $number2 = self::validateBitwiseArgument($number2);
@@ -82,6 +127,7 @@ class BitWise
      * Excel Function:
      *        BITXOR(number1, number2)
      *
+<<<<<<< HEAD
      * @param int $number1
      * @param int $number2
      *
@@ -89,6 +135,23 @@ class BitWise
      */
     public static function BITXOR($number1, $number2)
     {
+=======
+     * @param array|int $number1
+     *                      Or can be an array of values
+     * @param array|int $number2
+     *                      Or can be an array of values
+     *
+     * @return array|int|string
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function BITXOR($number1, $number2)
+    {
+        if (is_array($number1) || is_array($number2)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $number1, $number2);
+        }
+
+>>>>>>> develop
         try {
             $number1 = self::validateBitwiseArgument($number1);
             $number2 = self::validateBitwiseArgument($number2);
@@ -110,6 +173,7 @@ class BitWise
      * Excel Function:
      *        BITLSHIFT(number, shift_amount)
      *
+<<<<<<< HEAD
      * @param int $number
      * @param int $shiftAmount
      *
@@ -117,6 +181,23 @@ class BitWise
      */
     public static function BITLSHIFT($number, $shiftAmount)
     {
+=======
+     * @param array|int $number
+     *                      Or can be an array of values
+     * @param array|int $shiftAmount
+     *                      Or can be an array of values
+     *
+     * @return array|float|int|string
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function BITLSHIFT($number, $shiftAmount)
+    {
+        if (is_array($number) || is_array($shiftAmount)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $number, $shiftAmount);
+        }
+
+>>>>>>> develop
         try {
             $number = self::validateBitwiseArgument($number);
             $shiftAmount = self::validateShiftAmount($shiftAmount);
@@ -140,6 +221,7 @@ class BitWise
      * Excel Function:
      *        BITRSHIFT(number, shift_amount)
      *
+<<<<<<< HEAD
      * @param int $number
      * @param int $shiftAmount
      *
@@ -147,6 +229,23 @@ class BitWise
      */
     public static function BITRSHIFT($number, $shiftAmount)
     {
+=======
+     * @param array|int $number
+     *                      Or can be an array of values
+     * @param array|int $shiftAmount
+     *                      Or can be an array of values
+     *
+     * @return array|float|int|string
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function BITRSHIFT($number, $shiftAmount)
+    {
+        if (is_array($number) || is_array($shiftAmount)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $number, $shiftAmount);
+        }
+
+>>>>>>> develop
         try {
             $number = self::validateBitwiseArgument($number);
             $shiftAmount = self::validateShiftAmount($shiftAmount);
@@ -171,7 +270,11 @@ class BitWise
      */
     private static function validateBitwiseArgument($value)
     {
+<<<<<<< HEAD
         self::nullFalseTrueToNumber($value);
+=======
+        $value = self::nullFalseTrueToNumber($value);
+>>>>>>> develop
 
         if (is_numeric($value)) {
             if ($value == floor($value)) {
@@ -197,7 +300,11 @@ class BitWise
      */
     private static function validateShiftAmount($value)
     {
+<<<<<<< HEAD
         self::nullFalseTrueToNumber($value);
+=======
+        $value = self::nullFalseTrueToNumber($value);
+>>>>>>> develop
 
         if (is_numeric($value)) {
             if (abs($value) > 53) {
@@ -214,14 +321,27 @@ class BitWise
      * Many functions accept null/false/true argument treated as 0/0/1.
      *
      * @param mixed $number
+<<<<<<< HEAD
      */
     public static function nullFalseTrueToNumber(&$number): void
     {
         $number = Functions::flattenSingleValue($number);
+=======
+     *
+     * @return mixed
+     */
+    private static function nullFalseTrueToNumber(&$number)
+    {
+>>>>>>> develop
         if ($number === null) {
             $number = 0;
         } elseif (is_bool($number)) {
             $number = (int) $number;
         }
+<<<<<<< HEAD
+=======
+
+        return $number;
+>>>>>>> develop
     }
 }

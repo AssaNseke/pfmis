@@ -102,7 +102,11 @@ abstract class Queue
             $job = CallQueuedClosure::create($job);
         }
 
+<<<<<<< HEAD
         $payload = json_encode($this->createPayloadArray($job, $queue, $data));
+=======
+        $payload = json_encode($this->createPayloadArray($job, $queue, $data), \JSON_UNESCAPED_UNICODE);
+>>>>>>> develop
 
         if (JSON_ERROR_NONE !== json_last_error()) {
             throw new InvalidPayloadException(

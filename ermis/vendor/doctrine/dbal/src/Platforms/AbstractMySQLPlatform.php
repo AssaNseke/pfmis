@@ -179,15 +179,28 @@ abstract class AbstractMySQLPlatform extends AbstractPlatform
      */
     public function getListTableForeignKeysSQL($table, $database = null)
     {
+<<<<<<< HEAD
+=======
+        // The schema name is passed multiple times as a literal in the WHERE clause instead of using a JOIN condition
+        // in order to avoid performance issues on MySQL older than 8.0 and the corresponding MariaDB versions
+        // caused by https://bugs.mysql.com/bug.php?id=81347
+>>>>>>> develop
         return 'SELECT k.CONSTRAINT_NAME, k.COLUMN_NAME, k.REFERENCED_TABLE_NAME, ' .
                'k.REFERENCED_COLUMN_NAME /*!50116 , c.UPDATE_RULE, c.DELETE_RULE */ ' .
                'FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE k /*!50116 ' .
                'INNER JOIN INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS c ON ' .
                'c.CONSTRAINT_NAME = k.CONSTRAINT_NAME AND ' .
+<<<<<<< HEAD
                'c.TABLE_NAME = k.TABLE_NAME AND ' .
                'c.CONSTRAINT_SCHEMA = k.CONSTRAINT_SCHEMA */ ' .
                'WHERE k.TABLE_NAME = ' . $this->quoteStringLiteral($table) . ' ' .
                'AND k.TABLE_SCHEMA = ' . $this->getDatabaseNameSQL($database) . ' ' .
+=======
+               'c.TABLE_NAME = k.TABLE_NAME */ ' .
+               'WHERE k.TABLE_NAME = ' . $this->quoteStringLiteral($table) . ' ' .
+               'AND k.TABLE_SCHEMA = ' . $this->getDatabaseNameSQL($database) . ' /*!50116 ' .
+               'AND c.CONSTRAINT_SCHEMA = ' . $this->getDatabaseNameSQL($database) . ' */' .
+>>>>>>> develop
                'ORDER BY k.ORDINAL_POSITION';
     }
 
@@ -449,12 +462,25 @@ SQL
 
         $tableOptions[] = sprintf('DEFAULT CHARACTER SET %s', $options['charset']);
 
+<<<<<<< HEAD
         // Collate
         if (! isset($options['collate'])) {
             $options['collate'] = $options['charset'] . '_unicode_ci';
         }
 
         $tableOptions[] = $this->getColumnCollationDeclarationSQL($options['collate']);
+=======
+        if (isset($options['collate'])) {
+            $options['collation'] = $options['collate'];
+        }
+
+        // Collation
+        if (! isset($options['collation'])) {
+            $options['collation'] = $options['charset'] . '_unicode_ci';
+        }
+
+        $tableOptions[] = $this->getColumnCollationDeclarationSQL($options['collation']);
+>>>>>>> develop
 
         // Engine
         if (! isset($options['engine'])) {

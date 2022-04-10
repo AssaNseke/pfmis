@@ -23,10 +23,16 @@ class RefreshToken extends BaseMiddleware
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
+<<<<<<< HEAD
      *
      * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
      *
      * @return mixed
+=======
+     * @return mixed
+     *
+     * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
+>>>>>>> develop
      */
     public function handle($request, Closure $next)
     {

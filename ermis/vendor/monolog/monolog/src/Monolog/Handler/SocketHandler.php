@@ -31,6 +31,7 @@ class SocketHandler extends AbstractProcessingHandler
     /** @var resource|null */
     private $resource;
     /** @var float */
+<<<<<<< HEAD
     private $timeout = 0.0;
     /** @var float */
     private $writingTimeout = 10.0;
@@ -40,6 +41,17 @@ class SocketHandler extends AbstractProcessingHandler
     private $chunkSize = null;
     /** @var bool */
     private $persistent = false;
+=======
+    private $timeout;
+    /** @var float */
+    private $writingTimeout;
+    /** @var ?int */
+    private $lastSentBytes = null;
+    /** @var ?int */
+    private $chunkSize;
+    /** @var bool */
+    private $persistent;
+>>>>>>> develop
     /** @var ?int */
     private $errno = null;
     /** @var ?string */
@@ -48,6 +60,7 @@ class SocketHandler extends AbstractProcessingHandler
     private $lastWritingAt = null;
 
     /**
+<<<<<<< HEAD
      * @param string $connectionString Socket connection string
      */
     public function __construct(string $connectionString, $level = Logger::DEBUG, bool $bubble = true)
@@ -55,6 +68,42 @@ class SocketHandler extends AbstractProcessingHandler
         parent::__construct($level, $bubble);
         $this->connectionString = $connectionString;
         $this->connectionTimeout = (float) ini_get('default_socket_timeout');
+=======
+     * @param string     $connectionString  Socket connection string
+     * @param bool       $persistent        Flag to enable/disable persistent connections
+     * @param float      $timeout           Socket timeout to wait until the request is being aborted
+     * @param float      $writingTimeout    Socket timeout to wait until the request should've been sent/written
+     * @param float|null $connectionTimeout Socket connect timeout to wait until the connection should've been
+     *                                      established
+     * @param int|null   $chunkSize         Sets the chunk size. Only has effect during connection in the writing cycle
+     *
+     * @throws \InvalidArgumentException    If an invalid timeout value (less than 0) is passed.
+     */
+    public function __construct(
+        string $connectionString,
+        $level = Logger::DEBUG,
+        bool $bubble = true,
+        bool $persistent = false,
+        float $timeout = 0.0,
+        float $writingTimeout = 10.0,
+        ?float $connectionTimeout = null,
+        ?int $chunkSize = null
+    ) {
+        parent::__construct($level, $bubble);
+        $this->connectionString = $connectionString;
+
+        if ($connectionTimeout !== null) {
+            $this->validateTimeout($connectionTimeout);
+        }
+
+        $this->connectionTimeout = $connectionTimeout ?? (float) ini_get('default_socket_timeout');
+        $this->persistent = $persistent;
+        $this->validateTimeout($timeout);
+        $this->timeout = $timeout;
+        $this->validateTimeout($writingTimeout);
+        $this->writingTimeout = $writingTimeout;
+        $this->chunkSize = $chunkSize;
+>>>>>>> develop
     }
 
     /**

@@ -415,7 +415,11 @@ class EigenvalueDecomposition
         $norm = 0.0;
 
         for ($i = 0; $i < $nn; ++$i) {
+<<<<<<< HEAD
             if (($i < $low) || ($i > $high)) {
+=======
+            if ($i > $high) {
+>>>>>>> develop
                 $this->d[$i] = $this->H[$i][$i];
                 $this->e[$i] = 0.0;
             }
@@ -762,7 +766,11 @@ class EigenvalueDecomposition
 
         // Vectors of isolated roots
         for ($i = 0; $i < $nn; ++$i) {
+<<<<<<< HEAD
             if ($i < $low | $i > $high) {
+=======
+            if ($i > $high) {
+>>>>>>> develop
                 for ($j = $i; $j < $nn; ++$j) {
                     $this->V[$i][$j] = $this->H[$i][$j];
                 }

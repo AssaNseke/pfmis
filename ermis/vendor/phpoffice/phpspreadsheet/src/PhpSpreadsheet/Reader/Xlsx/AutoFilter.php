@@ -22,7 +22,11 @@ class AutoFilter
     public function load(): void
     {
         // Remove all "$" in the auto filter range
+<<<<<<< HEAD
         $autoFilterRange = preg_replace('/\$/', '', $this->worksheetXml->autoFilter['ref']);
+=======
+        $autoFilterRange = preg_replace('/\$/', '', $this->worksheetXml->autoFilter['ref'] ?? '');
+>>>>>>> develop
         if (strpos($autoFilterRange, ':') !== false) {
             $this->readAutoFilter($autoFilterRange, $this->worksheetXml);
         }

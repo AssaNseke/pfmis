@@ -7,9 +7,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 namespace SebastianBergmann\CodeCoverage;
 
 use RuntimeException;
+=======
+namespace SebastianBergmann\CodeCoverage\Util;
+
+use RuntimeException;
+use SebastianBergmann\CodeCoverage\Exception;
+>>>>>>> develop
 
 final class DirectoryCouldNotBeCreatedException extends RuntimeException implements Exception
 {

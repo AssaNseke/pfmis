@@ -37,7 +37,10 @@ class Namshi extends Provider implements JWT
      * @param  string  $secret
      * @param  string  $algo
      * @param  array  $keys
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return void
      */
     public function __construct(JWS $jws, $secret, $algo, array $keys)
@@ -51,10 +54,16 @@ class Namshi extends Provider implements JWT
      * Create a JSON Web Token.
      *
      * @param  array  $payload
+<<<<<<< HEAD
      *
      * @throws \Tymon\JWTAuth\Exceptions\JWTException
      *
      * @return string
+=======
+     * @return string
+     *
+     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+>>>>>>> develop
      */
     public function encode(array $payload)
     {
@@ -71,10 +80,16 @@ class Namshi extends Provider implements JWT
      * Decode a JSON Web Token.
      *
      * @param  string  $token
+<<<<<<< HEAD
      *
      * @throws \Tymon\JWTAuth\Exceptions\JWTException
      *
      * @return array
+=======
+     * @return array
+     *
+     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+>>>>>>> develop
      */
     public function decode($token)
     {

@@ -7,6 +7,10 @@ use Closure;
 use Illuminate\Support\Collection;
 use PhpOffice\PhpSpreadsheet\Worksheet\Row as SpreadsheetRow;
 
+<<<<<<< HEAD
+=======
+/** @mixin SpreadsheetRow */
+>>>>>>> develop
 class Row implements ArrayAccess
 {
     use DelegatedMacroable;
@@ -34,11 +38,21 @@ class Row implements ArrayAccess
     /**
      * @param  SpreadsheetRow  $row
      * @param  array  $headingRow
+<<<<<<< HEAD
      */
     public function __construct(SpreadsheetRow $row, array $headingRow = [])
     {
         $this->row        = $row;
         $this->headingRow = $headingRow;
+=======
+     * @param  array  $headerIsGrouped
+     */
+    public function __construct(SpreadsheetRow $row, array $headingRow = [], array $headerIsGrouped = [])
+    {
+        $this->row             = $row;
+        $this->headingRow      = $headingRow;
+        $this->headerIsGrouped = $headerIsGrouped;
+>>>>>>> develop
     }
 
     /**
@@ -81,7 +95,15 @@ class Row implements ArrayAccess
             $value = (new Cell($cell))->getValue($nullValue, $calculateFormulas, $formatData);
 
             if (isset($this->headingRow[$i])) {
+<<<<<<< HEAD
                 $cells[$this->headingRow[$i]] = $value;
+=======
+                if (!$this->headerIsGrouped[$i]) {
+                    $cells[$this->headingRow[$i]] = $value;
+                } else {
+                    $cells[$this->headingRow[$i]][] = $value;
+                }
+>>>>>>> develop
             } else {
                 $cells[] = $value;
             }

@@ -119,7 +119,10 @@ class Connection
      * The parameters used during creation of the Connection instance.
      *
      * @var array<string,mixed>
+<<<<<<< HEAD
      * @phpstan-var array<string,mixed>
+=======
+>>>>>>> develop
      * @psalm-var Params
      */
     private $params;
@@ -215,7 +218,10 @@ class Connection
      *
      * @return array<string,mixed>
      * @psalm-return Params
+<<<<<<< HEAD
      * @phpstan-return array<string,mixed>
+=======
+>>>>>>> develop
      */
     public function getParams()
     {
@@ -540,7 +546,11 @@ class Connection
      * @param list<mixed>|array<string, mixed>                                     $params Query parameters
      * @param array<int, int|string|Type|null>|array<string, int|string|Type|null> $types  Parameter types
      *
+<<<<<<< HEAD
      * @return list< mixed>|false False is returned if no rows are found.
+=======
+     * @return list<mixed>|false False is returned if no rows are found.
+>>>>>>> develop
      *
      * @throws Exception
      */
@@ -625,7 +635,11 @@ class Connection
      * @param array<string, mixed>                                                 $criteria Deletion criteria
      * @param array<int, int|string|Type|null>|array<string, int|string|Type|null> $types    Parameter types
      *
+<<<<<<< HEAD
      * @return int The number of affected rows.
+=======
+     * @return int|string The number of affected rows.
+>>>>>>> develop
      *
      * @throws Exception
      */
@@ -662,7 +676,11 @@ class Connection
      *
      * @param int $level The level to set.
      *
+<<<<<<< HEAD
      * @return int
+=======
+     * @return int|string
+>>>>>>> develop
      *
      * @throws Exception
      */
@@ -699,7 +717,11 @@ class Connection
      * @param array<string, mixed>                                                 $criteria Update criteria
      * @param array<int, int|string|Type|null>|array<string, int|string|Type|null> $types    Parameter types
      *
+<<<<<<< HEAD
      * @return int The number of affected rows.
+=======
+     * @return int|string The number of affected rows.
+>>>>>>> develop
      *
      * @throws Exception
      */
@@ -734,7 +756,11 @@ class Connection
      * @param array<string, mixed>                                                 $data  Column-value pairs
      * @param array<int, int|string|Type|null>|array<string, int|string|Type|null> $types Parameter types
      *
+<<<<<<< HEAD
      * @return int The number of affected rows.
+=======
+     * @return int|string The number of affected rows.
+>>>>>>> develop
      *
      * @throws Exception
      */
@@ -1127,7 +1153,11 @@ class Connection
      * @param list<mixed>|array<string, mixed>                                     $params Statement parameters
      * @param array<int, int|string|Type|null>|array<string, int|string|Type|null> $types  Parameter types
      *
+<<<<<<< HEAD
      * @return int The number of affected rows.
+=======
+     * @return int|string The number of affected rows.
+>>>>>>> develop
      *
      * @throws Exception
      */

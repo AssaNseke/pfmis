@@ -2,11 +2,20 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\Logical;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 
 class Conditional
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     /**
      * STATEMENT_IF.
      *
@@ -34,7 +43,13 @@ class Conditional
      *
      * @param mixed $condition Condition to evaluate
      * @param mixed $returnIfTrue Value to return when condition is true
+<<<<<<< HEAD
      * @param mixed $returnIfFalse Optional value to return when condition is false
+=======
+     *              Note that this can be an array value
+     * @param mixed $returnIfFalse Optional value to return when condition is false
+     *              Note that this can be an array value
+>>>>>>> develop
      *
      * @return mixed The value of returnIfTrue or returnIfFalse determined by condition
      */
@@ -45,8 +60,13 @@ class Conditional
         }
 
         $condition = ($condition === null) ? true : (bool) Functions::flattenSingleValue($condition);
+<<<<<<< HEAD
         $returnIfTrue = ($returnIfTrue === null) ? 0 : Functions::flattenSingleValue($returnIfTrue);
         $returnIfFalse = ($returnIfFalse === null) ? false : Functions::flattenSingleValue($returnIfFalse);
+=======
+        $returnIfTrue = $returnIfTrue ?? 0;
+        $returnIfFalse = $returnIfFalse ?? false;
+>>>>>>> develop
 
         return ($condition) ? $returnIfTrue : $returnIfFalse;
     }
@@ -67,9 +87,17 @@ class Conditional
      *        result1, result2, ... result_n
      *              A list of results. The SWITCH function returns the corresponding result when a value
      *              matches expression.
+<<<<<<< HEAD
      *         default
      *              Optional. It is the default to return if expression does not match any of the values
      *              (value1, value2, ... value_n).
+=======
+     *              Note that these can be array values to be returned
+     *         default
+     *              Optional. It is the default to return if expression does not match any of the values
+     *              (value1, value2, ... value_n).
+     *              Note that this can be an array value to be returned
+>>>>>>> develop
      *
      * @param mixed $arguments Statement arguments
      *
@@ -113,6 +141,7 @@ class Conditional
      *        =IFERROR(testValue,errorpart)
      *
      * @param mixed $testValue Value to check, is also the value returned when no error
+<<<<<<< HEAD
      * @param mixed $errorpart Value to return when testValue is an error condition
      *
      * @return mixed The value of errorpart or testValue determined by error condition
@@ -121,6 +150,23 @@ class Conditional
     {
         $testValue = ($testValue === null) ? '' : Functions::flattenSingleValue($testValue);
         $errorpart = ($errorpart === null) ? '' : Functions::flattenSingleValue($errorpart);
+=======
+     *                      Or can be an array of values
+     * @param mixed $errorpart Value to return when testValue is an error condition
+     *              Note that this can be an array value to be returned
+     *
+     * @return mixed The value of errorpart or testValue determined by error condition
+     *         If an array of values is passed as the $testValue argument, then the returned result will also be
+     *            an array with the same dimensions
+     */
+    public static function IFERROR($testValue = '', $errorpart = '')
+    {
+        if (is_array($testValue)) {
+            return self::evaluateArrayArgumentsSubset([self::class, __FUNCTION__], 1, $testValue, $errorpart);
+        }
+
+        $errorpart = $errorpart ?? '';
+>>>>>>> develop
 
         return self::statementIf(Functions::isError($testValue), $errorpart, $testValue);
     }
@@ -132,6 +178,7 @@ class Conditional
      *        =IFNA(testValue,napart)
      *
      * @param mixed $testValue Value to check, is also the value returned when not an NA
+<<<<<<< HEAD
      * @param mixed $napart Value to return when testValue is an NA condition
      *
      * @return mixed The value of errorpart or testValue determined by error condition
@@ -140,6 +187,23 @@ class Conditional
     {
         $testValue = ($testValue === null) ? '' : Functions::flattenSingleValue($testValue);
         $napart = ($napart === null) ? '' : Functions::flattenSingleValue($napart);
+=======
+     *                      Or can be an array of values
+     * @param mixed $napart Value to return when testValue is an NA condition
+     *              Note that this can be an array value to be returned
+     *
+     * @return mixed The value of errorpart or testValue determined by error condition
+     *         If an array of values is passed as the $testValue argument, then the returned result will also be
+     *            an array with the same dimensions
+     */
+    public static function IFNA($testValue = '', $napart = '')
+    {
+        if (is_array($testValue)) {
+            return self::evaluateArrayArgumentsSubset([self::class, __FUNCTION__], 1, $testValue, $napart);
+        }
+
+        $napart = $napart ?? '';
+>>>>>>> develop
 
         return self::statementIf(Functions::isNa($testValue), $napart, $testValue);
     }
@@ -156,6 +220,10 @@ class Conditional
      *             Value returned if corresponding testValue (nth) was true
      *
      * @param mixed ...$arguments Statement arguments
+<<<<<<< HEAD
+=======
+     *              Note that this can be an array value to be returned
+>>>>>>> develop
      *
      * @return mixed|string The value of returnIfTrue_n, if testValue_n was true. #N/A if none of testValues was true
      */
@@ -170,7 +238,11 @@ class Conditional
         $falseValueException = new Exception();
         for ($i = 0; $i < $argumentCount; $i += 2) {
             $testValue = ($arguments[$i] === null) ? '' : Functions::flattenSingleValue($arguments[$i]);
+<<<<<<< HEAD
             $returnIfTrue = ($arguments[$i + 1] === null) ? '' : Functions::flattenSingleValue($arguments[$i + 1]);
+=======
+            $returnIfTrue = ($arguments[$i + 1] === null) ? '' : $arguments[$i + 1];
+>>>>>>> develop
             $result = self::statementIf($testValue, $returnIfTrue, $falseValueException);
 
             if ($result !== $falseValueException) {

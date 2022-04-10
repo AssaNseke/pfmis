@@ -24,7 +24,10 @@ trait CustomClaims
      * Set the custom claims.
      *
      * @param  array  $customClaims
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return $this
      */
     public function customClaims(array $customClaims)
@@ -38,7 +41,10 @@ trait CustomClaims
      * Alias to set the custom claims.
      *
      * @param  array  $customClaims
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return $this
      */
     public function claims(array $customClaims)

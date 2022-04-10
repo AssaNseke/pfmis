@@ -260,4 +260,28 @@ final class Utils
 
         return $val;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * @param array<mixed> $record
+     */
+    public static function getRecordMessageForException(array $record): string
+    {
+        $context = '';
+        $extra = '';
+        try {
+            if ($record['context']) {
+                $context = "\nContext: " . json_encode($record['context']);
+            }
+            if ($record['extra']) {
+                $extra = "\nExtra: " . json_encode($record['extra']);
+            }
+        } catch (\Throwable $e) {
+            // noop
+        }
+
+        return "\nThe exception occurred while attempting to log: " . $record['message'] . $context . $extra;
+    }
+>>>>>>> develop
 }

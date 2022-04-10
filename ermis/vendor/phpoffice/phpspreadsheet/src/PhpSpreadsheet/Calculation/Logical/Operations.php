@@ -2,11 +2,20 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\Logical;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Calculation;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 
 class Operations
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     /**
      * LOGICAL_AND.
      *
@@ -146,12 +155,26 @@ class Operations
      *            holds the value TRUE or FALSE, in which case it is evaluated as the corresponding boolean value
      *
      * @param mixed $logical A value or expression that can be evaluated to TRUE or FALSE
+<<<<<<< HEAD
      *
      * @return bool|string the boolean inverse of the argument
      */
     public static function NOT($logical = false)
     {
         $logical = Functions::flattenSingleValue($logical);
+=======
+     *                      Or can be an array of values
+     *
+     * @return array|bool|string the boolean inverse of the argument
+     *         If an array of values is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function NOT($logical = false)
+    {
+        if (is_array($logical)) {
+            return self::evaluateSingleArgumentArray([self::class, __FUNCTION__], $logical);
+        }
+>>>>>>> develop
 
         if (is_string($logical)) {
             $logical = mb_strtoupper($logical, 'UTF-8');

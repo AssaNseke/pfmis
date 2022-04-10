@@ -34,7 +34,10 @@ class AuthHeaders implements ParserContract
      * Attempt to parse the token from some other possible headers.
      *
      * @param  \Illuminate\Http\Request  $request
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return null|string
      */
     protected function fromAltHeaders(Request $request)
@@ -46,7 +49,10 @@ class AuthHeaders implements ParserContract
      * Try to parse the token from the request header.
      *
      * @param  \Illuminate\Http\Request  $request
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return null|string
      */
     public function parse(Request $request)
@@ -64,7 +70,10 @@ class AuthHeaders implements ParserContract
      * Set the header name.
      *
      * @param  string  $headerName
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return $this
      */
     public function setHeaderName($headerName)
@@ -78,7 +87,10 @@ class AuthHeaders implements ParserContract
      * Set the header prefix.
      *
      * @param  string  $headerPrefix
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return $this
      */
     public function setHeaderPrefix($headerPrefix)

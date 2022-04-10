@@ -2,12 +2,21 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\Statistical\Distributions;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 use PhpOffice\PhpSpreadsheet\Calculation\MathTrig\Combinations;
 
 class Binomial
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     /**
      * BINOMDIST.
      *
@@ -18,6 +27,7 @@ class Binomial
      *        babies born are male.
      *
      * @param mixed $value Integer number of successes in trials
+<<<<<<< HEAD
      * @param mixed $trials Integer umber of trials
      * @param mixed $probability Probability of success on each trial as a float
      * @param mixed $cumulative Boolean value indicating if we want the cdf (true) or the pdf (false)
@@ -29,6 +39,25 @@ class Binomial
         $value = Functions::flattenSingleValue($value);
         $trials = Functions::flattenSingleValue($trials);
         $probability = Functions::flattenSingleValue($probability);
+=======
+     *                      Or can be an array of values
+     * @param mixed $trials Integer umber of trials
+     *                      Or can be an array of values
+     * @param mixed $probability Probability of success on each trial as a float
+     *                      Or can be an array of values
+     * @param mixed $cumulative Boolean value indicating if we want the cdf (true) or the pdf (false)
+     *                      Or can be an array of values
+     *
+     * @return array|float|string
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function distribution($value, $trials, $probability, $cumulative)
+    {
+        if (is_array($value) || is_array($trials) || is_array($probability) || is_array($cumulative)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $value, $trials, $probability, $cumulative);
+        }
+>>>>>>> develop
 
         try {
             $value = DistributionValidations::validateInt($value);
@@ -58,6 +87,7 @@ class Binomial
      *     of trials falling into a specified range.
      *
      * @param mixed $trials Integer number of trials
+<<<<<<< HEAD
      * @param mixed $probability Probability of success on each trial as a float
      * @param mixed $successes The integer number of successes in trials
      * @param mixed $limit Upper limit for successes in trials as null, or an integer
@@ -71,6 +101,28 @@ class Binomial
         $probability = Functions::flattenSingleValue($probability);
         $successes = Functions::flattenSingleValue($successes);
         $limit = ($limit === null) ? $successes : Functions::flattenSingleValue($limit);
+=======
+     *                      Or can be an array of values
+     * @param mixed $probability Probability of success on each trial as a float
+     *                      Or can be an array of values
+     * @param mixed $successes The integer number of successes in trials
+     *                      Or can be an array of values
+     * @param mixed $limit Upper limit for successes in trials as null, or an integer
+     *                           If null, then this will indicate the same as the number of Successes
+     *                      Or can be an array of values
+     *
+     * @return array|float|string
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function range($trials, $probability, $successes, $limit = null)
+    {
+        if (is_array($trials) || is_array($probability) || is_array($successes) || is_array($limit)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $trials, $probability, $successes, $limit);
+        }
+
+        $limit = $limit ?? $successes;
+>>>>>>> develop
 
         try {
             $trials = DistributionValidations::validateInt($trials);
@@ -107,19 +159,37 @@ class Binomial
      *        variable. Like the binomial, trials are assumed to be independent.
      *
      * @param mixed $failures Number of Failures as an integer
+<<<<<<< HEAD
      * @param mixed $successes Threshold number of Successes as an integer
      * @param mixed $probability Probability of success on each trial as a float
      *
      * @return float|string The result, or a string containing an error
+=======
+     *                      Or can be an array of values
+     * @param mixed $successes Threshold number of Successes as an integer
+     *                      Or can be an array of values
+     * @param mixed $probability Probability of success on each trial as a float
+     *                      Or can be an array of values
+     *
+     * @return array|float|string The result, or a string containing an error
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+>>>>>>> develop
      *
      * TODO Add support for the cumulative flag not present for NEGBINOMDIST, but introduced for NEGBINOM.DIST
      *      The cumulative default should be false to reflect the behaviour of NEGBINOMDIST
      */
     public static function negative($failures, $successes, $probability)
     {
+<<<<<<< HEAD
         $failures = Functions::flattenSingleValue($failures);
         $successes = Functions::flattenSingleValue($successes);
         $probability = Functions::flattenSingleValue($probability);
+=======
+        if (is_array($failures) || is_array($successes) || is_array($probability)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $failures, $successes, $probability);
+        }
+>>>>>>> develop
 
         try {
             $failures = DistributionValidations::validateInt($failures);
@@ -143,12 +213,17 @@ class Binomial
     }
 
     /**
+<<<<<<< HEAD
      * CRITBINOM.
+=======
+     * BINOM.INV.
+>>>>>>> develop
      *
      * Returns the smallest value for which the cumulative binomial distribution is greater
      *        than or equal to a criterion value
      *
      * @param mixed $trials number of Bernoulli trials as an integer
+<<<<<<< HEAD
      * @param mixed $probability probability of a success on each trial as a float
      * @param mixed $alpha criterion value as a float
      *
@@ -159,6 +234,23 @@ class Binomial
         $trials = Functions::flattenSingleValue($trials);
         $probability = Functions::flattenSingleValue($probability);
         $alpha = Functions::flattenSingleValue($alpha);
+=======
+     *                      Or can be an array of values
+     * @param mixed $probability probability of a success on each trial as a float
+     *                      Or can be an array of values
+     * @param mixed $alpha criterion value as a float
+     *                      Or can be an array of values
+     *
+     * @return array|int|string
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function inverse($trials, $probability, $alpha)
+    {
+        if (is_array($trials) || is_array($probability) || is_array($alpha)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $trials, $probability, $alpha);
+        }
+>>>>>>> develop
 
         try {
             $trials = DistributionValidations::validateInt($trials);

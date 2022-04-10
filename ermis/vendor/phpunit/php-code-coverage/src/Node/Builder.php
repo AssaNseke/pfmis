@@ -22,7 +22,11 @@ use function strpos;
 use function substr;
 use SebastianBergmann\CodeCoverage\CodeCoverage;
 use SebastianBergmann\CodeCoverage\ProcessedCodeCoverageData;
+<<<<<<< HEAD
 use SebastianBergmann\CodeCoverage\StaticAnalysis\CoveredFileAnalyser;
+=======
+use SebastianBergmann\CodeCoverage\StaticAnalysis\FileAnalyser;
+>>>>>>> develop
 
 /**
  * @internal This class is not covered by the backward compatibility promise for phpunit/php-code-coverage
@@ -30,6 +34,7 @@ use SebastianBergmann\CodeCoverage\StaticAnalysis\CoveredFileAnalyser;
 final class Builder
 {
     /**
+<<<<<<< HEAD
      * @var CoveredFileAnalyser
      */
     private $coveredFileAnalyser;
@@ -37,6 +42,15 @@ final class Builder
     public function __construct(CoveredFileAnalyser $coveredFileAnalyser)
     {
         $this->coveredFileAnalyser = $coveredFileAnalyser;
+=======
+     * @var FileAnalyser
+     */
+    private $analyser;
+
+    public function __construct(FileAnalyser $analyser)
+    {
+        $this->analyser = $analyser;
+>>>>>>> develop
     }
 
     public function build(CodeCoverage $coverage): Directory
@@ -74,10 +88,17 @@ final class Builder
                             $value['lineCoverage'],
                             $value['functionCoverage'],
                             $tests,
+<<<<<<< HEAD
                             $this->coveredFileAnalyser->classesIn($filename),
                             $this->coveredFileAnalyser->traitsIn($filename),
                             $this->coveredFileAnalyser->functionsIn($filename),
                             $this->coveredFileAnalyser->linesOfCodeFor($filename)
+=======
+                            $this->analyser->classesIn($filename),
+                            $this->analyser->traitsIn($filename),
+                            $this->analyser->functionsIn($filename),
+                            $this->analyser->linesOfCodeFor($filename)
+>>>>>>> develop
                         )
                     );
                 }

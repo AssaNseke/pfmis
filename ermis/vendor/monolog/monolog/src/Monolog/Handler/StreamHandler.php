@@ -130,7 +130,11 @@ class StreamHandler extends AbstractProcessingHandler
         if (!is_resource($this->stream)) {
             $url = $this->url;
             if (null === $url || '' === $url) {
+<<<<<<< HEAD
                 throw new \LogicException('Missing stream url, the stream can not be opened. This may be caused by a premature call to close().');
+=======
+                throw new \LogicException('Missing stream url, the stream can not be opened. This may be caused by a premature call to close().' . Utils::getRecordMessageForException($record));
+>>>>>>> develop
             }
             $this->createDir($url);
             $this->errorMessage = null;
@@ -143,7 +147,11 @@ class StreamHandler extends AbstractProcessingHandler
             if (!is_resource($stream)) {
                 $this->stream = null;
 
+<<<<<<< HEAD
                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened in append mode: '.$this->errorMessage, $url));
+=======
+                throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened in append mode: '.$this->errorMessage, $url) . Utils::getRecordMessageForException($record));
+>>>>>>> develop
             }
             stream_set_chunk_size($stream, $this->streamChunkSize);
             $this->stream = $stream;
@@ -151,7 +159,11 @@ class StreamHandler extends AbstractProcessingHandler
 
         $stream = $this->stream;
         if (!is_resource($stream)) {
+<<<<<<< HEAD
             throw new \LogicException('No stream was opened yet');
+=======
+            throw new \LogicException('No stream was opened yet' . Utils::getRecordMessageForException($record));
+>>>>>>> develop
         }
 
         if ($this->useLocking) {

@@ -19,7 +19,11 @@
         "php": ">=7.3"
     },
     "require-dev": {
+<<<<<<< HEAD
         "phpunit/phpunit": "^9.3"
+=======
+        "phpunit/phpunit": "^9.5"
+>>>>>>> develop
     },
     "config": {
         "platform": {
@@ -38,12 +42,21 @@
             "tests/_fixture"
         ],
         "files": [
+<<<<<<< HEAD
             "tests/_fixture/callback_function.php"
+=======
+            "tests/_fixture/callback_function.php",
+            "tests/_fixture/functions_that_declare_return_types.php"
+>>>>>>> develop
         ]
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "2.3-dev"
+=======
+            "dev-master": "3.0-dev"
+>>>>>>> develop
         }
     }
 }

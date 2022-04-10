@@ -14,8 +14,13 @@ use function file_put_contents;
 use function serialize;
 use function sprintf;
 use SebastianBergmann\CodeCoverage\CodeCoverage;
+<<<<<<< HEAD
 use SebastianBergmann\CodeCoverage\Directory;
 use SebastianBergmann\CodeCoverage\Driver\WriteOperationFailedException;
+=======
+use SebastianBergmann\CodeCoverage\Driver\WriteOperationFailedException;
+use SebastianBergmann\CodeCoverage\Util\Filesystem;
+>>>>>>> develop
 
 final class PHP
 {
@@ -31,7 +36,11 @@ return \unserialize(<<<'END_OF_COVERAGE_SERIALIZATION'%s%s%sEND_OF_COVERAGE_SERI
         );
 
         if ($target !== null) {
+<<<<<<< HEAD
             Directory::create(dirname($target));
+=======
+            Filesystem::createDirectory(dirname($target));
+>>>>>>> develop
 
             if (@file_put_contents($target, $buffer) === false) {
                 throw new WriteOperationFailedException($target);

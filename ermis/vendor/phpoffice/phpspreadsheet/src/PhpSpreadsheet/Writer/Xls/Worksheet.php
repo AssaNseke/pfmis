@@ -433,6 +433,10 @@ class Worksheet extends BIFFwriter
             } else {
                 switch ($cell->getDatatype()) {
                     case DataType::TYPE_STRING:
+<<<<<<< HEAD
+=======
+                    case DataType::TYPE_INLINE:
+>>>>>>> develop
                     case DataType::TYPE_NULL:
                         if ($cVal === '' || $cVal === null) {
                             $this->writeBlank($row, $column, $xfIndex);

@@ -2,11 +2,20 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\MathTrig;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 
 class SeriesSum
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     /**
      * SERIESSUM.
      *
@@ -17,10 +26,21 @@ class SeriesSum
      * @param mixed $m Step
      * @param mixed[] $args An array of coefficients for the Data Series
      *
+<<<<<<< HEAD
      * @return float|string The result, or a string containing an error
      */
     public static function evaluate($x, $n, $m, ...$args)
     {
+=======
+     * @return array|float|string The result, or a string containing an error
+     */
+    public static function evaluate($x, $n, $m, ...$args)
+    {
+        if (is_array($x) || is_array($n) || is_array($m)) {
+            return self::evaluateArrayArgumentsSubset([self::class, __FUNCTION__], 3, $x, $n, $m, ...$args);
+        }
+
+>>>>>>> develop
         try {
             $x = Helpers::validateNumericNullSubstitution($x, 0);
             $n = Helpers::validateNumericNullSubstitution($n, 0);

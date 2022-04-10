@@ -74,9 +74,15 @@ interface EnvironmentBuilderInterface extends ConfigurationProviderInterface
     /**
      * Registers the given event listener
      *
+<<<<<<< HEAD
      * @param string   $eventClass Fully-qualified class name of the event this listener should respond to
      * @param callable $listener   Listener to be executed
      * @param int      $priority   Priority (a higher number will be executed earlier)
+=======
+     * @param class-string $eventClass Fully-qualified class name of the event this listener should respond to
+     * @param callable     $listener   Listener to be executed
+     * @param int          $priority   Priority (a higher number will be executed earlier)
+>>>>>>> develop
      *
      * @return $this
      */

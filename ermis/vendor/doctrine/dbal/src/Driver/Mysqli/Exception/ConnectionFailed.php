@@ -9,6 +9,11 @@ use mysqli;
 use mysqli_sql_exception;
 use ReflectionProperty;
 
+<<<<<<< HEAD
+=======
+use function assert;
+
+>>>>>>> develop
 /**
  * @internal
  *
@@ -18,7 +23,14 @@ final class ConnectionFailed extends AbstractException
 {
     public static function new(mysqli $connection): self
     {
+<<<<<<< HEAD
         return new self($connection->connect_error, 'HY000', $connection->connect_errno);
+=======
+        $error = $connection->connect_error;
+        assert($error !== null);
+
+        return new self($error, 'HY000', $connection->connect_errno);
+>>>>>>> develop
     }
 
     public static function upcast(mysqli_sql_exception $exception): self

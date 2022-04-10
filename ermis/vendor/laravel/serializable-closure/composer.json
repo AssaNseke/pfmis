@@ -41,7 +41,14 @@
         }
     },
     "config": {
+<<<<<<< HEAD
         "sort-packages": true
+=======
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+>>>>>>> develop
     },
     "minimum-stability": "dev",
     "prefer-stable": true

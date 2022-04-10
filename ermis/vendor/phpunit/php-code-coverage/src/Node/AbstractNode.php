@@ -14,8 +14,12 @@ use function array_merge;
 use function str_replace;
 use function substr;
 use Countable;
+<<<<<<< HEAD
 use SebastianBergmann\CodeCoverage\Percentage;
 use SebastianBergmann\LinesOfCode\LinesOfCode;
+=======
+use SebastianBergmann\CodeCoverage\Util\Percentage;
+>>>>>>> develop
 
 /**
  * @internal This class is not covered by the backward compatibility promise for phpunit/php-code-coverage
@@ -219,7 +223,14 @@ abstract class AbstractNode implements Countable
 
     abstract public function functions(): array;
 
+<<<<<<< HEAD
     abstract public function linesOfCode(): LinesOfCode;
+=======
+    /**
+     * @psalm-return array{linesOfCode: int, commentLinesOfCode: int, nonCommentLinesOfCode: int}
+     */
+    abstract public function linesOfCode(): array;
+>>>>>>> develop
 
     abstract public function numberOfExecutableLines(): int;
 

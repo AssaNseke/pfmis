@@ -30,7 +30,10 @@ abstract class BaseMiddleware
      * Create a new BaseMiddleware instance.
      *
      * @param  \Tymon\JWTAuth\JWTAuth  $auth
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return void
      */
     public function __construct(JWTAuth $auth)
@@ -42,10 +45,16 @@ abstract class BaseMiddleware
      * Check the request for the presence of a token.
      *
      * @param  \Illuminate\Http\Request  $request
+<<<<<<< HEAD
      *
      * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
      *
      * @return void
+=======
+     * @return void
+     *
+     * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
+>>>>>>> develop
      */
     public function checkForToken(Request $request)
     {
@@ -58,10 +67,16 @@ abstract class BaseMiddleware
      * Attempt to authenticate a user via the token in the request.
      *
      * @param  \Illuminate\Http\Request  $request
+<<<<<<< HEAD
      *
      * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
      *
      * @return void
+=======
+     * @return void
+     *
+     * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
+>>>>>>> develop
      */
     public function authenticate(Request $request)
     {
@@ -81,7 +96,10 @@ abstract class BaseMiddleware
      *
      * @param  \Illuminate\Http\Response|\Illuminate\Http\JsonResponse  $response
      * @param  string|null  $token
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
      */
     protected function setAuthenticationHeader($response, $token = null)

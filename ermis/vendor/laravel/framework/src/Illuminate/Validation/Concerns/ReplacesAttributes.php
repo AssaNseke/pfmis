@@ -201,6 +201,27 @@ trait ReplacesAttributes
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Replace all place-holders for the required_array_keys rule.
+     *
+     * @param  string  $message
+     * @param  string  $attribute
+     * @param  string  $rule
+     * @param  array  $parameters
+     * @return string
+     */
+    protected function replaceRequiredArrayKeys($message, $attribute, $rule, $parameters)
+    {
+        foreach ($parameters as &$parameter) {
+            $parameter = $this->getDisplayableValue($attribute, $parameter);
+        }
+
+        return str_replace(':values', implode(', ', $parameters), $message);
+    }
+
+    /**
+>>>>>>> develop
      * Replace all place-holders for the mimetypes rule.
      *
      * @param  string  $message

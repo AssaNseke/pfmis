@@ -55,7 +55,11 @@ $config
         'function_declaration' => true,
         'function_to_constant' => true,
         'function_typehint_space' => true,
+<<<<<<< HEAD
         'general_phpdoc_annotation_remove' => ['annotations' => ['access', 'category', 'copyright', 'method', 'throws']],
+=======
+        'general_phpdoc_annotation_remove' => ['annotations' => ['access', 'category', 'copyright', 'throws']],
+>>>>>>> develop
         'global_namespace_import' => true,
         'header_comment' => false, // We don't use common header in all our files
         'heredoc_indentation' => false, // Requires PHP >= 7.3

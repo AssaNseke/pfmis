@@ -21,6 +21,10 @@ use UnexpectedValueException;
  * @property-read HigherOrderCollectionProxy $average
  * @property-read HigherOrderCollectionProxy $avg
  * @property-read HigherOrderCollectionProxy $contains
+<<<<<<< HEAD
+=======
+ * @property-read HigherOrderCollectionProxy $doesntContain
+>>>>>>> develop
  * @property-read HigherOrderCollectionProxy $each
  * @property-read HigherOrderCollectionProxy $every
  * @property-read HigherOrderCollectionProxy $filter
@@ -62,6 +66,10 @@ trait EnumeratesValues
         'average',
         'avg',
         'contains',
+<<<<<<< HEAD
+=======
+        'doesntContain',
+>>>>>>> develop
         'each',
         'every',
         'filter',

@@ -75,10 +75,19 @@ abstract class AbstractSessionListener implements EventSubscriberInterface, Rese
                 }
 
                 /*
+<<<<<<< HEAD
                  * For supporting sessions in php runtime with runners like roadrunner or swoole the session
                  * cookie need read from the cookie bag and set on the session storage.
                  */
                 if ($sess && !$sess->isStarted()) {
+=======
+                 * For supporting sessions in php runtime with runners like roadrunner or swoole, the session
+                 * cookie needs to be read from the cookie bag and set on the session storage.
+                 *
+                 * Do not set it when a native php session is active.
+                 */
+                if ($sess && !$sess->isStarted() && \PHP_SESSION_ACTIVE !== session_status()) {
+>>>>>>> develop
                     $sessionId = $request->cookies->get($sess->getName(), '');
                     $sess->setId($sessionId);
                 }
@@ -152,7 +161,12 @@ abstract class AbstractSessionListener implements EventSubscriberInterface, Rese
             $request = $event->getRequest();
             $requestSessionCookieId = $request->cookies->get($sessionName);
 
+<<<<<<< HEAD
             if ($requestSessionCookieId && $session->isEmpty()) {
+=======
+            $isSessionEmpty = $session->isEmpty() && empty($_SESSION); // checking $_SESSION to keep compatibility with native sessions
+            if ($requestSessionCookieId && $isSessionEmpty) {
+>>>>>>> develop
                 $response->headers->clearCookie(
                     $sessionName,
                     $sessionCookiePath,
@@ -161,7 +175,11 @@ abstract class AbstractSessionListener implements EventSubscriberInterface, Rese
                     $sessionCookieHttpOnly,
                     $sessionCookieSameSite
                 );
+<<<<<<< HEAD
             } elseif ($sessionId !== $requestSessionCookieId) {
+=======
+            } elseif ($sessionId !== $requestSessionCookieId && !$isSessionEmpty) {
+>>>>>>> develop
                 $expire = 0;
                 $lifetime = $sessionOptions['cookie_lifetime'] ?? null;
                 if ($lifetime) {

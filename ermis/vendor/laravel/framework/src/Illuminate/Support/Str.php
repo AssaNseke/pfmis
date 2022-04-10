@@ -100,6 +100,22 @@ class Str
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Transliterate a string to its closest ASCII representation.
+     *
+     * @param  string  $string
+     * @param  string|null  $unknown
+     * @param  bool|null  $strict
+     * @return string
+     */
+    public static function transliterate($string, $unknown = '?', $strict = false)
+    {
+        return ASCII::to_transliterate($string, $unknown, $strict);
+    }
+
+    /**
+>>>>>>> develop
      * Get the portion of a string before the first occurrence of a given value.
      *
      * @param  string  $subject
@@ -896,6 +912,21 @@ class Str
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Swap multiple keywords in a string with other keywords.
+     *
+     * @param  array  $map
+     * @param  string  $subject
+     * @return string
+     */
+    public static function swap(array $map, $subject)
+    {
+        return strtr($subject, $map);
+    }
+
+    /**
+>>>>>>> develop
      * Make a string's first character uppercase.
      *
      * @param  string  $string

@@ -163,6 +163,10 @@ class MariaDBKeywords extends MySQLKeywords
             'NOT',
             'NULL',
             'NUMERIC',
+<<<<<<< HEAD
+=======
+            'OFFSET',
+>>>>>>> develop
             'ON',
             'OPTIMIZE',
             'OPTIMIZER_COSTS',

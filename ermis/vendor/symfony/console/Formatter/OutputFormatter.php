@@ -34,13 +34,21 @@ class OutputFormatter implements WrappableOutputFormatterInterface
     }
 
     /**
+<<<<<<< HEAD
      * Escapes "<" special char in given text.
+=======
+     * Escapes "<" and ">" special chars in given text.
+>>>>>>> develop
      *
      * @return string
      */
     public static function escape(string $text)
     {
+<<<<<<< HEAD
         $text = preg_replace('/([^\\\\]?)</', '$1\\<', $text);
+=======
+        $text = preg_replace('/([^\\\\]|^)([<>])/', '$1\\\\$2', $text);
+>>>>>>> develop
 
         return self::escapeTrailingBackslash($text);
     }
@@ -140,11 +148,24 @@ class OutputFormatter implements WrappableOutputFormatterInterface
      */
     public function formatAndWrap(?string $message, int $width)
     {
+<<<<<<< HEAD
         $offset = 0;
         $output = '';
         $tagRegex = '[a-z][^<>]*+';
         $currentLineLength = 0;
         preg_match_all("#<(($tagRegex) | /($tagRegex)?)>#ix", $message, $matches, \PREG_OFFSET_CAPTURE);
+=======
+        if (null === $message) {
+            return '';
+        }
+
+        $offset = 0;
+        $output = '';
+        $openTagRegex = '[a-z](?:[^\\\\<>]*+ | \\\\.)*';
+        $closeTagRegex = '[a-z][^<>]*+';
+        $currentLineLength = 0;
+        preg_match_all("#<(($openTagRegex) | /($closeTagRegex)?)>#ix", $message, $matches, \PREG_OFFSET_CAPTURE);
+>>>>>>> develop
         foreach ($matches[0] as $i => $match) {
             $pos = $match[1];
             $text = $match[0];
@@ -178,11 +199,15 @@ class OutputFormatter implements WrappableOutputFormatterInterface
 
         $output .= $this->applyCurrentStyle(substr($message, $offset), $output, $width, $currentLineLength);
 
+<<<<<<< HEAD
         if (str_contains($output, "\0")) {
             return strtr($output, ["\0" => '\\', '\\<' => '<']);
         }
 
         return str_replace('\\<', '<', $output);
+=======
+        return strtr($output, ["\0" => '\\', '\\<' => '<', '\\>' => '>']);
+>>>>>>> develop
     }
 
     /**
@@ -216,7 +241,12 @@ class OutputFormatter implements WrappableOutputFormatterInterface
             } elseif ('bg' == $match[0]) {
                 $style->setBackground(strtolower($match[1]));
             } elseif ('href' === $match[0]) {
+<<<<<<< HEAD
                 $style->setHref($match[1]);
+=======
+                $url = preg_replace('{\\\\([<>])}', '$1', $match[1]);
+                $style->setHref($url);
+>>>>>>> develop
             } elseif ('options' === $match[0]) {
                 preg_match_all('([^,;]+)', strtolower($match[1]), $options);
                 $options = array_shift($options);

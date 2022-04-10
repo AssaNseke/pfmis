@@ -2,11 +2,20 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\Engineering;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 
 class BesselI
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     /**
      * BESSELI.
      *
@@ -21,10 +30,15 @@ class BesselI
      *
      * @param mixed $x A float value at which to evaluate the function.
      *                                If x is nonnumeric, BESSELI returns the #VALUE! error value.
+<<<<<<< HEAD
+=======
+     *                      Or can be an array of values
+>>>>>>> develop
      * @param mixed $ord The integer order of the Bessel function.
      *                                If ord is not an integer, it is truncated.
      *                                If $ord is nonnumeric, BESSELI returns the #VALUE! error value.
      *                                If $ord < 0, BESSELI returns the #NUM! error value.
+<<<<<<< HEAD
      *
      * @return float|string Result, or a string containing an error
      */
@@ -32,6 +46,19 @@ class BesselI
     {
         $x = Functions::flattenSingleValue($x);
         $ord = Functions::flattenSingleValue($ord);
+=======
+     *                      Or can be an array of values
+     *
+     * @return array|float|string Result, or a string containing an error
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function BESSELI($x, $ord)
+    {
+        if (is_array($x) || is_array($ord)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $x, $ord);
+        }
+>>>>>>> develop
 
         try {
             $x = EngineeringValidations::validateFloat($x);

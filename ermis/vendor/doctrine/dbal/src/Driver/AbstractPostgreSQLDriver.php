@@ -9,6 +9,10 @@ use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\PostgreSQL100Platform;
 use Doctrine\DBAL\Platforms\PostgreSQL94Platform;
+<<<<<<< HEAD
+=======
+use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
+>>>>>>> develop
 use Doctrine\DBAL\Schema\PostgreSQLSchemaManager;
 use Doctrine\DBAL\VersionAwarePlatformDriver;
 use Doctrine\Deprecations\Deprecation;
@@ -66,7 +70,11 @@ abstract class AbstractPostgreSQLDriver implements VersionAwarePlatformDriver
      */
     public function getSchemaManager(Connection $conn, AbstractPlatform $platform)
     {
+<<<<<<< HEAD
         assert($platform instanceof PostgreSQL94Platform);
+=======
+        assert($platform instanceof PostgreSQLPlatform);
+>>>>>>> develop
 
         return new PostgreSQLSchemaManager($conn, $platform);
     }

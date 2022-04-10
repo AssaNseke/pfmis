@@ -72,6 +72,10 @@ class Trend
             case self::TREND_POWER:
                 if (!isset(self::$trendCache[$key])) {
                     $className = '\PhpOffice\PhpSpreadsheet\Shared\Trend\\' . $trendType . 'BestFit';
+<<<<<<< HEAD
+=======
+                    // @phpstan-ignore-next-line
+>>>>>>> develop
                     self::$trendCache[$key] = new $className($yValues, $xValues, $const);
                 }
 

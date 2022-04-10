@@ -2,12 +2,21 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\Statistical\Distributions;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Engineering;
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 
 class Normal
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     public const SQRT2PI = 2.5066282746310005024157652848110452530069867406099;
 
     /**
@@ -18,6 +27,7 @@ class Normal
      * testing.
      *
      * @param mixed $value Float value for which we want the probability
+<<<<<<< HEAD
      * @param mixed $mean Mean value as a float
      * @param mixed $stdDev Standard Deviation as a float
      * @param mixed $cumulative Boolean value indicating if we want the cdf (true) or the pdf (false)
@@ -29,6 +39,25 @@ class Normal
         $value = Functions::flattenSingleValue($value);
         $mean = Functions::flattenSingleValue($mean);
         $stdDev = Functions::flattenSingleValue($stdDev);
+=======
+     *                      Or can be an array of values
+     * @param mixed $mean Mean value as a float
+     *                      Or can be an array of values
+     * @param mixed $stdDev Standard Deviation as a float
+     *                      Or can be an array of values
+     * @param mixed $cumulative Boolean value indicating if we want the cdf (true) or the pdf (false)
+     *                      Or can be an array of values
+     *
+     * @return array|float|string The result, or a string containing an error
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function distribution($value, $mean, $stdDev, $cumulative)
+    {
+        if (is_array($value) || is_array($mean) || is_array($stdDev) || is_array($cumulative)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $value, $mean, $stdDev, $cumulative);
+        }
+>>>>>>> develop
 
         try {
             $value = DistributionValidations::validateFloat($value);
@@ -56,6 +85,7 @@ class Normal
      * Returns the inverse of the normal cumulative distribution for the specified mean and standard deviation.
      *
      * @param mixed $probability Float probability for which we want the value
+<<<<<<< HEAD
      * @param mixed $mean Mean Value as a float
      * @param mixed $stdDev Standard Deviation as a float
      *
@@ -66,6 +96,23 @@ class Normal
         $probability = Functions::flattenSingleValue($probability);
         $mean = Functions::flattenSingleValue($mean);
         $stdDev = Functions::flattenSingleValue($stdDev);
+=======
+     *                      Or can be an array of values
+     * @param mixed $mean Mean Value as a float
+     *                      Or can be an array of values
+     * @param mixed $stdDev Standard Deviation as a float
+     *                      Or can be an array of values
+     *
+     * @return array|float|string The result, or a string containing an error
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function inverse($probability, $mean, $stdDev)
+    {
+        if (is_array($probability) || is_array($mean) || is_array($stdDev)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $probability, $mean, $stdDev);
+        }
+>>>>>>> develop
 
         try {
             $probability = DistributionValidations::validateProbability($probability);

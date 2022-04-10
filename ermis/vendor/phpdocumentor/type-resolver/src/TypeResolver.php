@@ -550,7 +550,11 @@ final class TypeResolver
             );
         }
 
+<<<<<<< HEAD
         if (!$minValue || !$maxValue || $tokenCounter > 4) {
+=======
+        if ($minValue === null || $maxValue === null || $tokenCounter > 4) {
+>>>>>>> develop
             throw new RuntimeException(
                 'int<min,max> has not the correct format'
             );

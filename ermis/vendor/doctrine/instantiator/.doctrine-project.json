@@ -6,15 +6,26 @@
     "codePath": "/src",
     "versions": [
         {
+<<<<<<< HEAD
             "name": "1.4",
             "branchName": "master",
+=======
+            "name": "1.5",
+            "branchName": "1.5.x",
+>>>>>>> develop
             "slug": "latest",
             "upcoming": true
         },
         {
+<<<<<<< HEAD
             "name": "1.3",
             "branchName": "1.3.x",
             "slug": "1.3",
+=======
+            "name": "1.4",
+            "branchName": "1.4.x",
+            "slug": "1.4",
+>>>>>>> develop
             "aliases": [
                 "current",
                 "stable"
@@ -23,6 +34,15 @@
             "current": true
         },
         {
+<<<<<<< HEAD
+=======
+            "name": "1.3",
+            "branchName": "1.3.x",
+            "slug": "1.3",
+            "maintained": false
+        },
+        {
+>>>>>>> develop
             "name": "1.2",
             "branchName": "1.2.x",
             "slug": "1.2"

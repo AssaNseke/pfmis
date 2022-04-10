@@ -9,6 +9,10 @@
  */
 namespace SebastianBergmann\GlobalState;
 
+<<<<<<< HEAD
+=======
+use const PHP_VERSION_ID;
+>>>>>>> develop
 use function array_keys;
 use function array_merge;
 use function array_reverse;
@@ -137,7 +141,13 @@ class Snapshot
             $this->includedFiles = get_included_files();
         }
 
+<<<<<<< HEAD
         $this->traits = get_declared_traits();
+=======
+        if ($includeTraits) {
+            $this->traits = get_declared_traits();
+        }
+>>>>>>> develop
     }
 
     public function excludeList(): ExcludeList
@@ -313,6 +323,14 @@ class Snapshot
                     }
 
                     $attribute->setAccessible(true);
+<<<<<<< HEAD
+=======
+
+                    if (PHP_VERSION_ID >= 70400 && !$attribute->isInitialized()) {
+                        continue;
+                    }
+
+>>>>>>> develop
                     $value = $attribute->getValue();
 
                     if ($this->canBeSerialized($value)) {

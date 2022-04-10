@@ -179,7 +179,11 @@ class Application implements ResetInterface
             $exitCode = $e->getCode();
             if (is_numeric($exitCode)) {
                 $exitCode = (int) $exitCode;
+<<<<<<< HEAD
                 if (0 === $exitCode) {
+=======
+                if ($exitCode <= 0) {
+>>>>>>> develop
                     $exitCode = 1;
                 }
             } else {
@@ -979,6 +983,19 @@ class Application implements ResetInterface
                 throw new RuntimeException('Unable to subscribe to signal events. Make sure that the `pcntl` extension is installed and that "pcntl_*" functions are not disabled by your php.ini\'s "disable_functions" directive.');
             }
 
+<<<<<<< HEAD
+=======
+            if (Terminal::hasSttyAvailable()) {
+                $sttyMode = shell_exec('stty -g');
+
+                foreach ([\SIGINT, \SIGTERM] as $signal) {
+                    $this->signalRegistry->register($signal, static function () use ($sttyMode) {
+                        shell_exec('stty '.$sttyMode);
+                    });
+                }
+            }
+
+>>>>>>> develop
             if ($this->dispatcher) {
                 foreach ($this->signalsToDispatchEvent as $signal) {
                     $event = new ConsoleSignalEvent($command, $input, $output, $signal);

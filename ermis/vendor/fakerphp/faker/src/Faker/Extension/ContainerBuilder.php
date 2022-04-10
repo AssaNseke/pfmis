@@ -63,6 +63,10 @@ final class ContainerBuilder
         return [
             BarcodeExtension::class => Core\Barcode::class,
             BloodExtension::class => Core\Blood::class,
+<<<<<<< HEAD
+=======
+            ColorExtension::class => Core\Color::class,
+>>>>>>> develop
             FileExtension::class => Core\File::class,
             NumberExtension::class => Core\Number::class,
             VersionExtension::class => Core\Version::class,

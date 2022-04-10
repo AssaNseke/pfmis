@@ -131,6 +131,7 @@ abstract class Dimension
 
         return $this;
     }
+<<<<<<< HEAD
 
     /**
      * Implement PHP __clone to create a deep clone, not just a shallow copy.
@@ -146,4 +147,6 @@ abstract class Dimension
             }
         }
     }
+=======
+>>>>>>> develop
 }

@@ -63,7 +63,11 @@ class Company extends \Faker\Provider\Company
      *
      * @see http://pl.wikipedia.org/wiki/REGON
      *
+<<<<<<< HEAD
      * @return 14 digit number
+=======
+     * @return string 14 digit number
+>>>>>>> develop
      */
     public static function regonLocal()
     {

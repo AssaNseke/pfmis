@@ -29,7 +29,10 @@ class Utils
      * Get the Carbon instance for the timestamp.
      *
      * @param  int  $timestamp
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return \Carbon\Carbon
      */
     public static function timestamp($timestamp)
@@ -42,7 +45,10 @@ class Utils
      *
      * @param  int  $timestamp
      * @param  int  $leeway
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return bool
      */
     public static function isPast($timestamp, $leeway = 0)
@@ -59,7 +65,10 @@ class Utils
      *
      * @param  int  $timestamp
      * @param  int  $leeway
+<<<<<<< HEAD
      *
+=======
+>>>>>>> develop
      * @return bool
      */
     public static function isFuture($timestamp, $leeway = 0)

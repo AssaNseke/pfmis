@@ -726,7 +726,11 @@ class Stringable implements JsonSerializable
      * @param  string|array  $replace
      * @param  array|int  $offset
      * @param  array|int|null  $length
+<<<<<<< HEAD
      * @return string|array
+=======
+     * @return static
+>>>>>>> develop
      */
     public function substrReplace($replace, $offset = 0, $length = null)
     {
@@ -734,6 +738,20 @@ class Stringable implements JsonSerializable
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Swap multiple keywords in a string with other keywords.
+     *
+     * @param  array  $map
+     * @return static
+     */
+    public function swap(array $map)
+    {
+        return new static(strtr($this->value, $map));
+    }
+
+    /**
+>>>>>>> develop
      * Trim the string of the given characters.
      *
      * @param  string  $characters
@@ -779,11 +797,19 @@ class Stringable implements JsonSerializable
     /**
      * Split a string by uppercase characters.
      *
+<<<<<<< HEAD
      * @return static
      */
     public function ucsplit()
     {
         return new static(Str::ucsplit($this->value));
+=======
+     * @return \Illuminate\Support\Collection
+     */
+    public function ucsplit()
+    {
+        return collect(Str::ucsplit($this->value));
+>>>>>>> develop
     }
 
     /**

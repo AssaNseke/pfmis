@@ -4,17 +4,27 @@ namespace PhpOffice\PhpSpreadsheet\Calculation\DateTimeExcel;
 
 use DateInterval;
 use DateTime;
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 use PhpOffice\PhpSpreadsheet\Shared\Date as SharedDateHelper;
 
 class Difference
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     /**
      * DATEDIF.
      *
      * @param mixed $startDate Excel date serial value, PHP date/time stamp, PHP DateTime object
      *                                    or a standard date string
+<<<<<<< HEAD
      * @param mixed $endDate Excel date serial value, PHP date/time stamp, PHP DateTime object
      *                                    or a standard date string
      * @param string $unit
@@ -23,11 +33,34 @@ class Difference
      */
     public static function interval($startDate, $endDate, $unit = 'D')
     {
+=======
+     *                         Or can be an array of date values
+     * @param mixed $endDate Excel date serial value, PHP date/time stamp, PHP DateTime object
+     *                                    or a standard date string
+     *                         Or can be an array of date values
+     * @param array|string $unit
+     *                         Or can be an array of unit values
+     *
+     * @return array|int|string Interval between the dates
+     *         If an array of values is passed for the $startDate or $endDays,arguments, then the returned result
+     *            will also be an array with matching dimensions
+     */
+    public static function interval($startDate, $endDate, $unit = 'D')
+    {
+        if (is_array($startDate) || is_array($endDate) || is_array($unit)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $startDate, $endDate, $unit);
+        }
+
+>>>>>>> develop
         try {
             $startDate = Helpers::getDateValue($startDate);
             $endDate = Helpers::getDateValue($endDate);
             $difference = self::initialDiff($startDate, $endDate);
+<<<<<<< HEAD
             $unit = strtoupper(Functions::flattenSingleValue($unit));
+=======
+            $unit = strtoupper($unit);
+>>>>>>> develop
         } catch (Exception $e) {
             return $e->getMessage();
         }

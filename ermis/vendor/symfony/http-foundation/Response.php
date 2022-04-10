@@ -1088,8 +1088,12 @@ class Response
         $lastModified = $this->headers->get('Last-Modified');
         $modifiedSince = $request->headers->get('If-Modified-Since');
 
+<<<<<<< HEAD
         if ($ifNoneMatchEtags = $request->getETags()) {
             $etag = $this->getEtag();
+=======
+        if (($ifNoneMatchEtags = $request->getETags()) && (null !== $etag = $this->getEtag())) {
+>>>>>>> develop
             if (0 == strncmp($etag, 'W/', 2)) {
                 $etag = substr($etag, 2);
             }

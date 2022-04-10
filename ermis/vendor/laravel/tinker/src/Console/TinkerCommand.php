@@ -102,7 +102,13 @@ class TinkerCommand extends Command
         $config = $this->getLaravel()->make('config');
 
         foreach ($config->get('tinker.commands', []) as $command) {
+<<<<<<< HEAD
             $commands[] = $this->getApplication()->resolve($command);
+=======
+            $commands[] = $this->getApplication()->add(
+                $this->getLaravel()->make($command)
+            );
+>>>>>>> develop
         }
 
         return $commands;

@@ -60,8 +60,11 @@ final class VcsIgnoredFilterIterator extends \FilterIterator
 
         foreach ($this->parentsDirectoryDownward($fileRealPath) as $parentDirectory) {
             if ($this->isIgnored($parentDirectory)) {
+<<<<<<< HEAD
                 $ignored = true;
 
+=======
+>>>>>>> develop
                 // rules in ignored directories are ignored, no need to check further.
                 break;
             }

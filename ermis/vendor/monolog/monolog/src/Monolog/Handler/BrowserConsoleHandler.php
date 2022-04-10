@@ -11,10 +11,24 @@
 
 namespace Monolog\Handler;
 
+<<<<<<< HEAD
 use Monolog\Formatter\LineFormatter;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Utils;
 
+=======
+use Monolog\Formatter\FormatterInterface;
+use Monolog\Formatter\LineFormatter;
+use Monolog\Utils;
+
+use function count;
+use function headers_list;
+use function stripos;
+use function trigger_error;
+
+use const E_USER_DEPRECATED;
+
+>>>>>>> develop
 /**
  * Handler sending logs to browser's javascript console with no browser extension required
  *
@@ -29,6 +43,13 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
     /** @var FormattedRecord[] */
     protected static $records = [];
 
+<<<<<<< HEAD
+=======
+    protected const FORMAT_HTML = 'html';
+    protected const FORMAT_JS = 'js';
+    protected const FORMAT_UNKNOWN = 'unknown';
+
+>>>>>>> develop
     /**
      * {@inheritDoc}
      *
@@ -65,14 +86,24 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
     public static function send(): void
     {
         $format = static::getResponseFormat();
+<<<<<<< HEAD
         if ($format === 'unknown') {
+=======
+        if ($format === self::FORMAT_UNKNOWN) {
+>>>>>>> develop
             return;
         }
 
         if (count(static::$records)) {
+<<<<<<< HEAD
             if ($format === 'html') {
                 static::writeOutput('<script>' . static::generateScript() . '</script>');
             } elseif ($format === 'js') {
+=======
+            if ($format === self::FORMAT_HTML) {
+                static::writeOutput('<script>' . static::generateScript() . '</script>');
+            } elseif ($format === self::FORMAT_JS) {
+>>>>>>> develop
                 static::writeOutput(static::generateScript());
             }
             static::resetStatic();
@@ -125,12 +156,17 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
      * If Content-Type is anything else -> unknown
      *
      * @return string One of 'js', 'html' or 'unknown'
+<<<<<<< HEAD
+=======
+     * @phpstan-return self::FORMAT_*
+>>>>>>> develop
      */
     protected static function getResponseFormat(): string
     {
         // Check content type
         foreach (headers_list() as $header) {
             if (stripos($header, 'content-type:') === 0) {
+<<<<<<< HEAD
                 // This handler only works with HTML and javascript outputs
                 // text/javascript is obsolete in favour of application/javascript, but still used
                 if (stripos($header, 'application/javascript') !== false || stripos($header, 'text/javascript') !== false) {
@@ -144,6 +180,32 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
         }
 
         return 'html';
+=======
+                return static::getResponseFormatFromContentType($header);
+            }
+        }
+
+        return self::FORMAT_HTML;
+    }
+
+    /**
+     * @return string One of 'js', 'html' or 'unknown'
+     * @phpstan-return self::FORMAT_*
+     */
+    protected static function getResponseFormatFromContentType(string $contentType): string
+    {
+        // This handler only works with HTML and javascript outputs
+        // text/javascript is obsolete in favour of application/javascript, but still used
+        if (stripos($contentType, 'application/javascript') !== false || stripos($contentType, 'text/javascript') !== false) {
+            return self::FORMAT_JS;
+        }
+
+        if (stripos($contentType, 'text/html') !== false) {
+            return self::FORMAT_HTML;
+        }
+
+        return self::FORMAT_UNKNOWN;
+>>>>>>> develop
     }
 
     private static function generateScript(): string

@@ -2,11 +2,20 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\DateTimeExcel;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 
 class NetworkDays
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     /**
      * NETWORKDAYS.
      *
@@ -20,6 +29,7 @@ class NetworkDays
      *
      * @param mixed $startDate Excel date serial value (float), PHP date timestamp (integer),
      *                                            PHP DateTime object, or a standard date string
+<<<<<<< HEAD
      * @param mixed $endDate Excel date serial value (float), PHP date timestamp (integer),
      *                                            PHP DateTime object, or a standard date string
      * @param mixed $dateArgs
@@ -28,6 +38,30 @@ class NetworkDays
      */
     public static function count($startDate, $endDate, ...$dateArgs)
     {
+=======
+     *                         Or can be an array of date values
+     * @param mixed $endDate Excel date serial value (float), PHP date timestamp (integer),
+     *                                            PHP DateTime object, or a standard date string
+     *                         Or can be an array of date values
+     * @param mixed $dateArgs An array of dates (such as holidays) to exclude from the calculation
+     *
+     * @return array|int|string Interval between the dates
+     *         If an array of values is passed for the $startDate or $endDate arguments, then the returned result
+     *            will also be an array with matching dimensions
+     */
+    public static function count($startDate, $endDate, ...$dateArgs)
+    {
+        if (is_array($startDate) || is_array($endDate)) {
+            return self::evaluateArrayArgumentsSubset(
+                [self::class, __FUNCTION__],
+                2,
+                $startDate,
+                $endDate,
+                ...$dateArgs
+            );
+        }
+
+>>>>>>> develop
         try {
             //    Retrieve the mandatory start and end date that are referenced in the function definition
             $sDate = Helpers::getDateValue($startDate);

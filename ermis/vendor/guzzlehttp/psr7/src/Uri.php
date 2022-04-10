@@ -14,7 +14,11 @@ use Psr\Http\Message\UriInterface;
  * @author Tobias Schultze
  * @author Matthew Weier O'Phinney
  */
+<<<<<<< HEAD
 class Uri implements UriInterface
+=======
+class Uri implements UriInterface, \JsonSerializable
+>>>>>>> develop
 {
     /**
      * Absolute http and https URIs require a host per RFC 7230 Section 2.7
@@ -525,6 +529,14 @@ class Uri implements UriInterface
         return $new;
     }
 
+<<<<<<< HEAD
+=======
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
+
+>>>>>>> develop
     /**
      * Apply parse_url parts to a URI.
      *

@@ -2,23 +2,48 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\Financial;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+use PhpOffice\PhpSpreadsheet\Calculation\Exception;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 use PhpOffice\PhpSpreadsheet\Calculation\TextData\Format;
 
 class Dollar
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     /**
      * DOLLAR.
      *
      * This function converts a number to text using currency format, with the decimals rounded to the specified place.
      * The format used is $#,##0.00_);($#,##0.00)..
      *
+<<<<<<< HEAD
      * @param mixed $number The value to format
      * @param mixed $precision The number of digits to display to the right of the decimal point (as an integer).
      *                            If precision is negative, number is rounded to the left of the decimal point.
      *                            If you omit precision, it is assumed to be 2
      */
     public static function format($number, $precision = 2): string
+=======
+     * @param mixed $number The value to format, or can be an array of numbers
+     *                         Or can be an array of values
+     * @param mixed $precision The number of digits to display to the right of the decimal point (as an integer).
+     *                            If precision is negative, number is rounded to the left of the decimal point.
+     *                            If you omit precision, it is assumed to be 2
+     *              Or can be an array of precision values
+     *
+     * @return array|string
+     *         If an array of values is passed for either of the arguments, then the returned result
+     *            will also be an array with matching dimensions
+     */
+    public static function format($number, $precision = 2)
+>>>>>>> develop
     {
         return Format::DOLLAR($number, $precision);
     }
@@ -34,6 +59,7 @@ class Dollar
      *        DOLLARDE(fractional_dollar,fraction)
      *
      * @param mixed $fractionalDollar Fractional Dollar
+<<<<<<< HEAD
      * @param mixed $fraction Fraction
      *
      * @return float|string
@@ -45,14 +71,44 @@ class Dollar
 
         // Validate parameters
         if ($fractionalDollar === null || $fraction < 0) {
+=======
+     *              Or can be an array of values
+     * @param mixed $fraction Fraction
+     *              Or can be an array of values
+     *
+     * @return array|float|string
+     */
+    public static function decimal($fractionalDollar = null, $fraction = 0)
+    {
+        if (is_array($fractionalDollar) || is_array($fraction)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $fractionalDollar, $fraction);
+        }
+
+        try {
+            $fractionalDollar = FinancialValidations::validateFloat(
+                Functions::flattenSingleValue($fractionalDollar) ?? 0.0
+            );
+            $fraction = FinancialValidations::validateInt(Functions::flattenSingleValue($fraction));
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+
+        // Additional parameter validations
+        if ($fraction < 0) {
+>>>>>>> develop
             return Functions::NAN();
         }
         if ($fraction == 0) {
             return Functions::DIV0();
         }
 
+<<<<<<< HEAD
         $dollars = floor($fractionalDollar);
         $cents = fmod($fractionalDollar, 1);
+=======
+        $dollars = ($fractionalDollar < 0) ? ceil($fractionalDollar) : floor($fractionalDollar);
+        $cents = fmod($fractionalDollar, 1.0);
+>>>>>>> develop
         $cents /= $fraction;
         $cents *= 10 ** ceil(log10($fraction));
 
@@ -70,6 +126,7 @@ class Dollar
      *        DOLLARFR(decimal_dollar,fraction)
      *
      * @param mixed $decimalDollar Decimal Dollar
+<<<<<<< HEAD
      * @param mixed $fraction Fraction
      *
      * @return float|string
@@ -81,13 +138,42 @@ class Dollar
 
         // Validate parameters
         if ($decimalDollar === null || $fraction < 0) {
+=======
+     *              Or can be an array of values
+     * @param mixed $fraction Fraction
+     *              Or can be an array of values
+     *
+     * @return array|float|string
+     */
+    public static function fractional($decimalDollar = null, $fraction = 0)
+    {
+        if (is_array($decimalDollar) || is_array($fraction)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $decimalDollar, $fraction);
+        }
+
+        try {
+            $decimalDollar = FinancialValidations::validateFloat(
+                Functions::flattenSingleValue($decimalDollar) ?? 0.0
+            );
+            $fraction = FinancialValidations::validateInt(Functions::flattenSingleValue($fraction));
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+
+        // Additional parameter validations
+        if ($fraction < 0) {
+>>>>>>> develop
             return Functions::NAN();
         }
         if ($fraction == 0) {
             return Functions::DIV0();
         }
 
+<<<<<<< HEAD
         $dollars = floor($decimalDollar);
+=======
+        $dollars = ($decimalDollar < 0.0) ? ceil($decimalDollar) : floor($decimalDollar);
+>>>>>>> develop
         $cents = fmod($decimalDollar, 1);
         $cents *= $fraction;
         $cents *= 10 ** (-ceil(log10($fraction)));

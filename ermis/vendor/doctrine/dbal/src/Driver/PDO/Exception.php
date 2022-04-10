@@ -18,6 +18,13 @@ final class Exception extends AbstractException
     {
         if ($exception->errorInfo !== null) {
             [$sqlState, $code] = $exception->errorInfo;
+<<<<<<< HEAD
+=======
+
+            if ($code === null) {
+                $code = 0;
+            }
+>>>>>>> develop
         } else {
             $code     = $exception->getCode();
             $sqlState = null;

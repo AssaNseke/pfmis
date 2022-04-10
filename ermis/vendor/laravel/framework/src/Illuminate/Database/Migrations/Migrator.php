@@ -387,11 +387,19 @@ class Migrator
             $migration->getConnection()
         );
 
+<<<<<<< HEAD
         $callback = function () use ($migration, $method) {
             if (method_exists($migration, $method)) {
                 $this->fireMigrationEvent(new MigrationStarted($migration, $method));
 
                 $migration->{$method}();
+=======
+        $callback = function () use ($connection, $migration, $method) {
+            if (method_exists($migration, $method)) {
+                $this->fireMigrationEvent(new MigrationStarted($migration, $method));
+
+                $this->runMethod($connection, $migration, $method);
+>>>>>>> develop
 
                 $this->fireMigrationEvent(new MigrationEnded($migration, $method));
             }
@@ -447,14 +455,44 @@ class Migrator
             $migration->getConnection()
         );
 
+<<<<<<< HEAD
         return $db->pretend(function () use ($migration, $method) {
             if (method_exists($migration, $method)) {
                 $migration->{$method}();
+=======
+        return $db->pretend(function () use ($db, $migration, $method) {
+            if (method_exists($migration, $method)) {
+                $this->runMethod($db, $migration, $method);
+>>>>>>> develop
             }
         });
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Run a migration method on the given connection.
+     *
+     * @param  \Illuminate\Database\Connection  $connection
+     * @param  object  $migration
+     * @param  string  $method
+     * @return void
+     */
+    protected function runMethod($connection, $migration, $method)
+    {
+        $previousConnection = $this->resolver->getDefaultConnection();
+
+        try {
+            $this->resolver->setDefaultConnection($connection->getName());
+
+            $migration->{$method}();
+        } finally {
+            $this->resolver->setDefaultConnection($previousConnection);
+        }
+    }
+
+    /**
+>>>>>>> develop
      * Resolve a migration instance from a file.
      *
      * @param  string  $file

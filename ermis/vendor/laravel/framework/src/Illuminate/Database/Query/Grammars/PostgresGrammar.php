@@ -22,11 +22,19 @@ class PostgresGrammar extends Grammar
     ];
 
     /**
+<<<<<<< HEAD
      * The grammar specific bit operators.
      *
      * @var array
      */
     protected $bitOperators = [
+=======
+     * The grammar specific bitwise operators.
+     *
+     * @var array
+     */
+    protected $bitwiseOperators = [
+>>>>>>> develop
         '~', '&', '|', '#', '<<', '>>', '<<=', '>>=',
     ];
 
@@ -52,6 +60,25 @@ class PostgresGrammar extends Grammar
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * {@inheritdoc}
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  array  $where
+     * @return string
+     */
+    protected function whereBitwise(Builder $query, $where)
+    {
+        $value = $this->parameter($where['value']);
+
+        $operator = str_replace('?', '??', $where['operator']);
+
+        return '('.$this->wrap($where['column']).' '.$operator.' '.$value.')::bool';
+    }
+
+    /**
+>>>>>>> develop
      * Compile a "where date" clause.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -216,6 +243,39 @@ class PostgresGrammar extends Grammar
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * {@inheritdoc}
+     *
+     * @param  array  $having
+     * @return string
+     */
+    protected function compileHaving(array $having)
+    {
+        if ($having['type'] === 'Bitwise') {
+            return $this->compileHavingBitwise($having);
+        }
+
+        return parent::compileHaving($having);
+    }
+
+    /**
+     * Compile a having clause involving a bitwise operator.
+     *
+     * @param  array  $having
+     * @return string
+     */
+    protected function compileHavingBitwise($having)
+    {
+        $column = $this->wrap($having['column']);
+
+        $parameter = $this->parameter($having['value']);
+
+        return $having['boolean'].' ('.$column.' '.$having['operator'].' '.$parameter.')::bool';
+    }
+
+    /**
+>>>>>>> develop
      * Compile the lock into SQL.
      *
      * @param  \Illuminate\Database\Query\Builder  $query

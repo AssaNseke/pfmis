@@ -43,7 +43,11 @@ final class Query
             $parts = explode('=', $kvp, 2);
             $key = $decoder($parts[0]);
             $value = isset($parts[1]) ? $decoder($parts[1]) : null;
+<<<<<<< HEAD
             if (!isset($result[$key])) {
+=======
+            if (!array_key_exists($key, $result)) {
+>>>>>>> develop
                 $result[$key] = $value;
             } else {
                 if (!is_array($result[$key])) {

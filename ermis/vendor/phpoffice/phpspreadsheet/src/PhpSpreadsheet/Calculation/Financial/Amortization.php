@@ -168,7 +168,11 @@ class Amortization
 
         if (
             ($basis == FinancialConstants::BASIS_DAYS_PER_YEAR_ACTUAL) &&
+<<<<<<< HEAD
             ($yearFrac < 1) && (DateTimeExcel\Helpers::isLeapYear($purchasedYear))
+=======
+            ($yearFrac < 1) && (Functions::scalar(DateTimeExcel\Helpers::isLeapYear($purchasedYear)))
+>>>>>>> develop
         ) {
             $yearFrac *= 365 / 366;
         }

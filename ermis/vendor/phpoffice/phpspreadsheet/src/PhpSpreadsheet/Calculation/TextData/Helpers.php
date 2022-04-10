@@ -22,7 +22,10 @@ class Helpers
      */
     public static function extractString($value): string
     {
+<<<<<<< HEAD
         $value = Functions::flattenSingleValue($value);
+=======
+>>>>>>> develop
         if (is_bool($value)) {
             return self::convertBooleanValue($value);
         }
@@ -35,7 +38,10 @@ class Helpers
      */
     public static function extractInt($value, int $minValue, int $gnumericNull = 0, bool $ooBoolOk = false): int
     {
+<<<<<<< HEAD
         $value = Functions::flattenSingleValue($value);
+=======
+>>>>>>> develop
         if ($value === null) {
             // usually 0, but sometimes 1 for Gnumeric
             $value = (Functions::getCompatibilityMode() === Functions::COMPATIBILITY_GNUMERIC) ? $gnumericNull : 0;
@@ -59,7 +65,10 @@ class Helpers
      */
     public static function extractFloat($value): float
     {
+<<<<<<< HEAD
         $value = Functions::flattenSingleValue($value);
+=======
+>>>>>>> develop
         if ($value === null) {
             $value = 0.0;
         }
@@ -78,7 +87,10 @@ class Helpers
      */
     public static function validateInt($value): int
     {
+<<<<<<< HEAD
         $value = Functions::flattenSingleValue($value);
+=======
+>>>>>>> develop
         if ($value === null) {
             $value = 0;
         } elseif (is_bool($value)) {

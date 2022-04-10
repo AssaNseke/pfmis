@@ -2,15 +2,25 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\MathTrig;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 
 class Trunc
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     /**
      * TRUNC.
      *
      * Truncates value to the number of fractional digits by number_digits.
      *
+<<<<<<< HEAD
      * @param float $value
      * @param int $digits
      *
@@ -18,6 +28,23 @@ class Trunc
      */
     public static function evaluate($value = 0, $digits = 0)
     {
+=======
+     * @param array|float $value
+     *                      Or can be an array of values
+     * @param array|int $digits
+     *                      Or can be an array of values
+     *
+     * @return array|float|string Truncated value, or a string containing an error
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function evaluate($value = 0, $digits = 0)
+    {
+        if (is_array($value) || is_array($digits)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $value, $digits);
+        }
+
+>>>>>>> develop
         try {
             $value = Helpers::validateNumericNullBool($value);
             $digits = Helpers::validateNumericNullSubstitution($digits, null);

@@ -11,7 +11,10 @@
 
 namespace Symfony\Component\Translation\Test;
 
+<<<<<<< HEAD
 use PHPUnit\Framework\MockObject\MockObject;
+=======
+>>>>>>> develop
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpClient\MockHttpClient;
@@ -55,17 +58,23 @@ abstract class ProviderTestCase extends TestCase
         return $this->client ?? $this->client = new MockHttpClient();
     }
 
+<<<<<<< HEAD
     /**
      * @return LoaderInterface&MockObject
      */
+=======
+>>>>>>> develop
     protected function getLoader(): LoaderInterface
     {
         return $this->loader ?? $this->loader = $this->createMock(LoaderInterface::class);
     }
 
+<<<<<<< HEAD
     /**
      * @return LoaderInterface&MockObject
      */
+=======
+>>>>>>> develop
     protected function getLogger(): LoggerInterface
     {
         return $this->logger ?? $this->logger = $this->createMock(LoggerInterface::class);
@@ -76,9 +85,12 @@ abstract class ProviderTestCase extends TestCase
         return $this->defaultLocale ?? $this->defaultLocale = 'en';
     }
 
+<<<<<<< HEAD
     /**
      * @return LoaderInterface&MockObject
      */
+=======
+>>>>>>> develop
     protected function getXliffFileDumper(): XliffFileDumper
     {
         return $this->xliffFileDumper ?? $this->xliffFileDumper = $this->createMock(XliffFileDumper::class);

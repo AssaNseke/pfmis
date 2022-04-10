@@ -2,11 +2,20 @@
 
 namespace PhpOffice\PhpSpreadsheet\Calculation\MathTrig;
 
+<<<<<<< HEAD
+=======
+use PhpOffice\PhpSpreadsheet\Calculation\ArrayEnabled;
+>>>>>>> develop
 use PhpOffice\PhpSpreadsheet\Calculation\Exception;
 use PhpOffice\PhpSpreadsheet\Calculation\Functions;
 
 class Roman
 {
+<<<<<<< HEAD
+=======
+    use ArrayEnabled;
+
+>>>>>>> develop
     private const VALUES = [
         45 => ['VL'],
         46 => ['VLI'],
@@ -814,12 +823,29 @@ class Roman
      * Converts a number to Roman numeral
      *
      * @param mixed $aValue Number to convert
+<<<<<<< HEAD
      * @param mixed $style Number indicating one of five possible forms
      *
      * @return string Roman numeral, or a string containing an error
      */
     public static function evaluate($aValue, $style = 0)
     {
+=======
+     *                      Or can be an array of numbers
+     * @param mixed $style Number indicating one of five possible forms
+     *                      Or can be an array of styles
+     *
+     * @return array|string Roman numeral, or a string containing an error
+     *         If an array of numbers is passed as an argument, then the returned result will also be an array
+     *            with the same dimensions
+     */
+    public static function evaluate($aValue, $style = 0)
+    {
+        if (is_array($aValue) || is_array($style)) {
+            return self::evaluateArrayArguments([self::class, __FUNCTION__], $aValue, $style);
+        }
+
+>>>>>>> develop
         try {
             $aValue = Helpers::validateNumericNullBool($aValue);
             if (is_bool($style)) {
