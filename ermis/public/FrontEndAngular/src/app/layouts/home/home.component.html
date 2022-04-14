@@ -60,14 +60,14 @@
                     <!-- activity progress -->
                     <a href="#progress" class="list-group-item list-group-item-success menu-button" data-toggle="collapse" data-parent="#MainMenu">
                         <mat-icon>track_changes</mat-icon>
-                        <span>Change Requests</span>
+                        <span>Employees</span>
                         <span class="example-spacer "></span>
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <div class="collapse" id="progress">
-                        <a routerLink="/requesting/request" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Request Logs</a>
-                        <a routerLink="#" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Approvals</a>
-                        <a routerLink="/reports/logs" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Reports</a>
+                        <a routerLink="/requesting/request" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>College Staffs</a>
+                        <a routerLink="#" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Part Time</a>
+                        <a routerLink="/reports/logs" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Volunteers</a>
                         
                     </div>
                     <a href="#config" class="list-group-item list-group-item-success menu-button" data-toggle="collapse" data-parent="#MainMenu">
@@ -78,7 +78,7 @@
                     </a>
                     <div class="collapse" id="config">
                         <a routerLink="/user/rolesandpermissions" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Roles and Permission</a>
-                        <a routerLink="/requesting/mnrtsystem" class="list-group-item sub-menu-button"><i class="fa fa-caret-right" ></i>Projects and System</a>                        
+                        <!-- <a routerLink="/requesting/mnrtsystem" class="list-group-item sub-menu-button"><i class="fa fa-caret-right" ></i>Projects and System</a>                         -->
                         <a routerLink="/requesting/institution" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Institutions</a>
                         <a routerLink="/requesting/priority" class="list-group-item sub-menu-button"><i class="fa fa-caret-right" ></i>Priorities</a>
                     </div>
@@ -96,7 +96,7 @@
     </mat-sidenav-content>
 </mat-sidenav-container>
 <div mat-footer class="footer">
-    All Rights Reserved &copy; {{ currentYear }} Ministry of Natural Resources and Tourism.
+    All Rights Reserved &copy; {{ currentYear }} Sokoine University of Agriculture.
 </div>
 
 <!-- [hidden]="!permissions.rolesandpermissons" -->
