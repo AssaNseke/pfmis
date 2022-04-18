@@ -1,8 +1,8 @@
 ./ermis/node_modules
-./ermis//public/assets
-./ermis//public/storage
-./ermis//public/uploads
-./ermis//vendor
+./ermis/public/assets
+./ermis/public/storage
+./ermis/public/uploads
+./ermis/vendor
 ./ermis/.env
 ./ermis/composer.json
 ./ermis/composer.lock
