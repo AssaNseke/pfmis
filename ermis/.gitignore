@@ -4,7 +4,6 @@
 /public/uploads
 /vendor
 .env
-/storage/framework
 composer.json
 composer.lock
 config/database.php
