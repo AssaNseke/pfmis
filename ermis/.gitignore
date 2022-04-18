@@ -1,0 +1,12 @@
+/node_modules
+/public/assets
+/public/storage
+/public/uploads
+/vendor
+.env
+/storage/framework
+composer.json
+composer.lock
+config/database.php
+package-lock.json
+package.json
