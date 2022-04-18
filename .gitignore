@@ -1,9 +1,9 @@
-./ermis/node_modules
-./ermis/public/assets
-./ermis/public/storage
-./ermis/public/uploads
-./ermis/vendor
-./ermis/.env
+/node_modules
+/public/assets
+/public/storage
+/public/uploads
+/vendor
+.env
 ./ermis/composer.json
 ./ermis/composer.lock
 ./ermis/config/database.php
