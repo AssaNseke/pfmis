@@ -46,6 +46,7 @@ return array(
     'App\\Imports\\CsvImport' => $baseDir . '/app/Imports/CsvImport.php',
     'App\\Mail\\SendMail' => $baseDir . '/app/Mail/SendMail.php',
     'App\\Models\\Changerequest' => $baseDir . '/app/Models/Changerequest.php',
+    'App\\Models\\Contact' => $baseDir . '/app/Models/Contact.php',
     'App\\Models\\Institution' => $baseDir . '/app/Models/Institution.php',
     'App\\Models\\Mnrtsystem' => $baseDir . '/app/Models/Mnrtsystem.php',
     'App\\Models\\Permission' => $baseDir . '/app/Models/Permission.php',
