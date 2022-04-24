@@ -1,0 +1,11 @@
+/node_modules
+/public/assets
+/public/storage
+/public/uploads
+/vendor
+.env
+./ermis/composer.json
+./ermis/composer.lock
+./ermis/config/database.php
+./ermis/package-lock.json
+./ermis/package.json
