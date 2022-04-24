@@ -12,7 +12,14 @@
 
 # profiling files
 chrome-profiler-events*.json
+<<<<<<< HEAD
+<<<<<<<< HEAD:ermis/public/FrontEndAngular/.gitignore
 speed-measure-plugin*.json
+========
+>>>>>>>> origin/shaaban:ermis/public/FrontEndAngular/node_modules/@schematics/angular/workspace/files/__dot__gitignore.template
+=======
+speed-measure-plugin*.json
+>>>>>>> origin/shaaban
 
 # IDEs and editors
 /.idea
