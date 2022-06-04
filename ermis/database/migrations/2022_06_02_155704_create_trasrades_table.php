@@ -13,7 +13,7 @@ class CreateTrasradesTable extends Migration
      */
     public function up()
     {
-        Schema::create('trasrades', function (Blueprint $table) {
+        Schema::create('transladers', function (Blueprint $table) {
             $table->id();
             $table->string('trans_section');
             $table->string('trans_folio no');

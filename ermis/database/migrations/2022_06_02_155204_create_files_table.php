@@ -16,10 +16,17 @@ class CreateFilesTable extends Migration
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->string('file_subject');
-            $table->string('file_category');
+
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')
+            ->references('id')->on('file_categories')
+            ->onUpdate('cascade')
+            ->onDelete('restrict');
+
+            $table->string('status')->default('Active');
+
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
-            
         });
     }
 
