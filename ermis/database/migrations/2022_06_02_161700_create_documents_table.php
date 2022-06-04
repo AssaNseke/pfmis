@@ -15,9 +15,8 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->int('doc_folio id');
-            $table->int('doc_name');
-            $table->int('doc_date');
+            $table->string('doc_name');
+            $table->string('doc_path');
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
         });
