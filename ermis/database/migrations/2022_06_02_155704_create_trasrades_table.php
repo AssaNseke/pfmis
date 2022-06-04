@@ -15,17 +15,30 @@ class CreateTrasradesTable extends Migration
     {
         Schema::create('transladers', function (Blueprint $table) {
             $table->id();
-            $table->string('trans_section');
-            $table->string('trans_folio no');
-            $table->string('trans_intial');
-            $table->string('trans_date');
-            $table->string('trans_action');
-            $table->string('trans_intial');
-            $table->string('trans_date');
+
+            $table->integer('section_id')->unsigned();
+            $table->foreign('section_id')
+            ->references('id')->on('sections')
+            ->onUpdate('cascade')
+            ->onDelete('restrict');
+
+            $table->integer('document_filing_id')->unsigned();
+            $table->foreign('document_filing_id')
+            ->references('id')->on('document_filings')
+            ->onUpdate('cascade')
+            ->onDelete('restrict');
+
+            $table->integer('initial')->unsigned();
+            $table->foreign('user_id')
+            ->references('id')->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('restrict');
+
+            $table->text('comment')->nullable();
+            $table->string('action')->default('Foward');
+
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
-
-
         });
     }
 
