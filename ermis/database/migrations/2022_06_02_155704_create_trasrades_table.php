@@ -29,7 +29,7 @@ class CreateTrasradesTable extends Migration
             ->onDelete('restrict');
 
             $table->integer('initial')->unsigned();
-            $table->foreign('user_id')
+            $table->foreign('initial')
             ->references('id')->on('users')
             ->onUpdate('cascade')
             ->onDelete('restrict');
