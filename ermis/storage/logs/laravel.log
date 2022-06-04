@@ -3038,3 +3038,459 @@ Did you mean one of these?
 [stacktrace]
 #0 {main}
 "} 
+[2022-06-04 09:58:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 09:59:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:00:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:01:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:02:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:03:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:04:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:05:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:06:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:07:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:08:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:09:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:10:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:11:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:12:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:13:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:14:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:15:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:16:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:17:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:18:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:19:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:20:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:21:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:22:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:23:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:24:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:25:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:26:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:27:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:28:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:29:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:30:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:31:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:32:16] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:32:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:33:36] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:33:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:33:57] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:34:02] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:34:13] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:34:24] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:34:29] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:34:41] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:34:50] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:34:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:35:15] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:35:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:35:56] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:36:40] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:36:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:37:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:38:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:39:01] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:39:23] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:39:39] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:39:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:40:20] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:40:48] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:40:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:41:28] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:41:36] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:41:44] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:41:50] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:41:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:41:55] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:42:18] local.ERROR: Cannot redeclare App\Models\DoumentFiling::file() {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare App\\Models\\DoumentFiling::file() at /var/www/ermis/pfmis/ermis/app/Models/DoumentFiling.php:30)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:42:30] local.ERROR: Cannot redeclare App\Models\DoumentFiling::file() {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare App\\Models\\DoumentFiling::file() at /var/www/ermis/pfmis/ermis/app/Models/DoumentFiling.php:30)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:42:38] local.ERROR: Cannot redeclare App\Models\DoumentFiling::file() {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare App\\Models\\DoumentFiling::file() at /var/www/ermis/pfmis/ermis/app/Models/DoumentFiling.php:30)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:42:51] local.ERROR: Cannot redeclare App\Models\DoumentFiling::file() {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare App\\Models\\DoumentFiling::file() at /var/www/ermis/pfmis/ermis/app/Models/DoumentFiling.php:30)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:43:05] local.ERROR: Cannot redeclare App\Models\DoumentFiling::file() {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare App\\Models\\DoumentFiling::file() at /var/www/ermis/pfmis/ermis/app/Models/DoumentFiling.php:30)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:43:16] local.ERROR: Cannot redeclare App\Models\DoumentFiling::file() {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare App\\Models\\DoumentFiling::file() at /var/www/ermis/pfmis/ermis/app/Models/DoumentFiling.php:30)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:43:48] local.ERROR: Cannot redeclare App\Models\DoumentFiling::file() {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare App\\Models\\DoumentFiling::file() at /var/www/ermis/pfmis/ermis/app/Models/DoumentFiling.php:30)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:43:51] local.ERROR: Cannot redeclare App\Models\DoumentFiling::file() {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare App\\Models\\DoumentFiling::file() at /var/www/ermis/pfmis/ermis/app/Models/DoumentFiling.php:30)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:44:03] local.ERROR: Cannot redeclare App\Models\DoumentFiling::file() {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare App\\Models\\DoumentFiling::file() at /var/www/ermis/pfmis/ermis/app/Models/DoumentFiling.php:30)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:44:29] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:44:35] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:44:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:45:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:46:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:47:25] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:47:30] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:47:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:48:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:49:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:50:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:51:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:52:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:53:13] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:53:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:54:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:55:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:56:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:57:22] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:57:44] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:57:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:57:54] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:58:05] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:58:17] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:58:22] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:58:29] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:58:36] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:58:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 10:59:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 11:00:33] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 11:00:43] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 11:00:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 11:00:55] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 11:01:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 11:02:12] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 11:02:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 11:02:56] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 11:03:26] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-04 11:03:51] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
