@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\InstitutionController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\OjectiveController;
 use App\Http\Controllers\ResetPwdReqController;
@@ -45,7 +45,7 @@ use App\Http\Controllers\PriorityController;
 
 
 use App\Model\User;
-use App\Model\Institution;
+use App\Model\departments;
 use App\Model\Role;
 use App\Model\Objective;
 use App\Model\Target;
@@ -96,7 +96,7 @@ use App\Model\Prioritycategory;
 // Login api router
 Route::post('login',[UserController::class,"login"]);
 
-// Forgotten password reset request && forgetten password updating 
+// Forgotten password reset request && forgetten password updating
 Route::post('/req-password-reset', [ResetPwdReqController::class, 'reqForgotPassword']);
 Route::post('/update-password', [UpdatePwdController::class, 'updatePassword']);
 //
@@ -114,12 +114,12 @@ Route::get('/users', [UserController::class, 'index']);
 Route::get('/user/{id}', [UserController::class, 'show']);
 Route::get('/user', 'App\Http\Controllers\UserController@list');
 
-    // Institution api router
-Route::get('/institutions', [InstitutionController::class, 'index']);
-Route::get('/institution/{id}', [InstitutionController::class, 'show']);
-Route::post('/insertInstitution', [InstitutionController::class, 'store']);
-Route::put('/updateInstitution/{id}', [InstitutionController::class, 'update']);
-Route::delete('/deleteInstitution/{id}', [InstitutionController::class, 'destroy']);
+    // department api router
+Route::get('/departments', [DepartmentController::class, 'index']);
+Route::get('/department/{id}', [DepartmentController::class, 'show']);
+Route::post('/insertInstitution', [DepartmentController::class, 'store']);
+Route::put('/updateInstitution/{id}', [DepartmentController::class, 'update']);
+Route::delete('/deleteInstitution/{id}', [DepartmentController::class, 'destroy']);
 
 
 //On demand user Password api router
@@ -177,7 +177,7 @@ Route::post('/activities/{id}', 'App\Http\Controllers\ActivityController@updatez
 Route::put('/updateActivity/{id}', 'App\Http\Controllers\ActivityController@update');
 Route::delete('/deleteActivity/{id}', 'App\Http\Controllers\ActivityController@destroy');
 Route::get('/activities', 'App\Http\Controllers\ActivityController@list');
-Route::get('/view-activity-institution', 'App\Http\Controllers\ActivityController@virtual');
+Route::get('/view-activity-department', 'App\Http\Controllers\ActivityController@virtual');
 
 
 // Maintask api router
@@ -326,7 +326,7 @@ Route::post('/insertContractCategory', 'App\Http\Controllers\ContractCategoryCon
 Route::put('/updateContractCategory/{id}', 'App\Http\Controllers\ContractCategoryController@update');
 Route::delete('/deleteContractCategory/{id}', 'App\Http\Controllers\ContractCategoryController@destroy');
 
- 
+
 
 //Request api router
 Route::get('/request', [ChangerequestController::class, 'index']);

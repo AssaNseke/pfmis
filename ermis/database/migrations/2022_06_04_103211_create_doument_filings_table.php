@@ -13,7 +13,7 @@ class CreateDoumentFilingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('doument_filings', function (Blueprint $table) {
+        Schema::create('document_filings', function (Blueprint $table) {
             $table->id();
 
             $table->integer('file_id')->unsigned();

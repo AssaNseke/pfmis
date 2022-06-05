@@ -15,7 +15,7 @@ class CreateFoliosTable extends Migration
     {
         Schema::create('folios', function (Blueprint $table) {
             $table->id();
-            $table->int('folio_no');
+            $table->integer('folio_no');
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
 

@@ -15,7 +15,7 @@ export class AuthServiceService {
   userinfo: BehaviorSubject<any> = new BehaviorSubject(false);
 
   private handleError(errorResponse: HttpErrorResponse){
-    return throwError(errorResponse.error); 
+    return throwError(errorResponse.error);
   }
 
 
@@ -23,14 +23,14 @@ export class AuthServiceService {
     return this.httpClient.get( environment.baseURL+'api/users').pipe(catchError(this.handleError));
   }
 
-  getRegisteredUsersByInstID(inst_id:any): Observable <any>{
-    return this.httpClient.get( environment.baseURL+'api/user?institution_id='+inst_id).pipe(catchError(this.handleError));
+  getRegisteredUsersByInstID(dept_id:any): Observable <any>{
+    return this.httpClient.get( environment.baseURL+'api/user?department_id='+dept_id).pipe(catchError(this.handleError));
   }
 
   updatePassword(form: any): Observable <any>{
     return this.httpClient.post( environment.baseURL+'api/update-password',form).pipe(catchError(this.handleError));;
   }
- 
+
   registerUser(formdata: any): Observable <any>{
     return this.httpClient.post( environment.baseURL+'api/register',formdata).pipe(catchError(this.handleError));;
   }
@@ -47,7 +47,7 @@ export class AuthServiceService {
   userLogin(formdata: any): Observable <any>{
     return this.httpClient.post( environment.baseURL+'api/login',formdata).pipe(catchError(this.handleError));;
   }
-  
+
   getInstitutions(): Observable <any>{
     return this.httpClient.get( environment.baseURL+'api/institutions').pipe(catchError(this.handleError));;
   }
@@ -56,7 +56,7 @@ export class AuthServiceService {
     return this.httpClient.get( environment.baseURL+'api/roles').pipe(catchError(this.handleError));;
   }
 
-  deleteroleById(id:any): Observable<any> { 
+  deleteroleById(id:any): Observable<any> {
     return this.httpClient.delete(environment.baseURL + 'api/deleteRole/'+id).pipe(catchError(this.handleError));
   }
 
@@ -78,7 +78,7 @@ export class AuthServiceService {
 
 
 
-  
+
 
 
   saveUserData(result:any){
@@ -106,11 +106,11 @@ export class AuthServiceService {
     else{
       return false;
     }
-    
+
   }
 
   //logout
-  logout() { 
+  logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('user_name');
     localStorage.removeItem('user_id');

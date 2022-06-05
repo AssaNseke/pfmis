@@ -22,7 +22,7 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = [
         'name',
         'email',
-        'institution_id',
+        'department_id',
         'role_id',
         'password',
         'status'
@@ -48,9 +48,6 @@ class User extends Authenticatable implements JWTSubject
     ];
     protected $dates = ['deleted_at'];
 
-    public function institution(){
-        return $this->belongsTo(Institution::class, 'institution_id');
-    }
 
     public function role(){
         return $this->belongsTo(Role::class, 'role_id');
@@ -61,7 +58,7 @@ class User extends Authenticatable implements JWTSubject
     }
 
     public function department(){
-        return $this->hasOne(Department::class, 'department_id');
+        return $this->belongsTo(departments::class, 'department_id');
     }
 
     public function getJWTIdentifier() { return $this->getKey(); }

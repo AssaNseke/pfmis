@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\DepartmentResource;
-use App\Http\Controllers\Controller;
+use App\Models\departments;
 
 class DepartmentsController extends Controller
 {
@@ -16,7 +16,7 @@ class DepartmentsController extends Controller
      */
     public function index()
     {
-        $results = Department::all()->sortBy('id');
+        $results = departments::all()->sortBy('id');
         return new DepartmentResource($results);
     }
 
@@ -65,7 +65,7 @@ class DepartmentsController extends Controller
      */
     public function show(Department $department, $id)
     {
-        $department = Department::findOrFail($id);
+        $department = departments::findOrFail($id);
         return new DepartmentResource($department);
     }
 
@@ -113,5 +113,5 @@ class DepartmentsController extends Controller
             return new DepartmentResource($department);
         }
     }
-   
+
 }
