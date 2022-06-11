@@ -27,8 +27,8 @@ export class LogsComponent implements OnInit {
   data: any = []
   
   leadersArray = new MatTableDataSource<any>();
-  leadersdisplayedColumns = ["id","mnrtsystem_name","request_desc","category_name","priority","created_at","deadline","reason","institution","status","action"];
-  permissions = {"institutionadmin":false,"superadmin":false};
+  leadersdisplayedColumns = ["id","mnrtsystem_name","request_desc","category_name","priority","created_at","deadline","reason","department","status","action"];
+  permissions = {"departmentadmin":false,"superadmin":false};
   userrolepermissionArray: any[] = [];
   today = new Date();
   
@@ -56,9 +56,9 @@ export class LogsComponent implements OnInit {
   }
   
 
-  getRegisteredUsersByInstID(inst_id:any){
+  getRegisteredUsersByInstID(dept_id:any){
     this.sharedService.isLoading.next(true);
-    this.authService.getRegisteredUsersByInstID(inst_id).subscribe(result=>{
+    this.authService.getRegisteredUsersByInstID(dept_id).subscribe(result=>{
     this.sharedService.isLoading.next(false);
       //console.log(result.data);
       this.leadersArray.data = result.data;
@@ -133,18 +133,18 @@ export class LogsComponent implements OnInit {
           
           this.permissions.superadmin = true;
         }
-        if(this.userrolepermissionArray[i].permission.permission_code == 'institutionadmin'){
-          this.permissions.institutionadmin = true;
+        if(this.userrolepermissionArray[i].permission.permission_code == 'departmentadmin'){
+          this.permissions.departmentadmin = true;
         }
       }
 
-      //console.log(this.permissions.institutionadmin)
+      //console.log(this.permissions.departmentadmin)
 
       if(this.permissions.superadmin){
         this.getRegisteredUsers();
       }
-      else if(this.permissions.institutionadmin){
-        this.getRegisteredUsersByInstID(localStorage.getItem('institution_id'));
+      else if(this.permissions.departmentadmin){
+        this.getRegisteredUsersByInstID(localStorage.getItem('department_id'));
       }
 
 

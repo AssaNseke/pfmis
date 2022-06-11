@@ -15,7 +15,7 @@ export class AdduserComponent implements OnInit {
  
   constructor(public matDialogRef: MatDialogRef<AdduserComponent>, private router: Router, public sharedService: SharedserviceService, private authService: AuthServiceService) { }
   RegisterForm!: FormGroup;
-  institutions: any [] = [];
+  departments: any [] = [];
   roles: any [] = [];
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class AdduserComponent implements OnInit {
     this.RegisterForm = new FormGroup({
       email: new FormControl(null,[Validators.required, Validators.email]),
       name: new FormControl(null,[Validators.required]),
-      institution: new FormControl(null,[Validators.required,Validators.minLength(1)]),
+      department: new FormControl(null,[Validators.required,Validators.minLength(1)]),
       role: new FormControl(null,[Validators.required,Validators.minLength(1)]),
       password: new FormControl(null,[Validators.required]),
       password2: new FormControl(null,[Validators.required])
@@ -38,7 +38,7 @@ export class AdduserComponent implements OnInit {
     formdata.append("name", this.RegisterForm.value.name);
     formdata.append("email", this.RegisterForm.value.email);
     formdata.append("password", this.RegisterForm.value.password);
-    formdata.append("institution_id", this.RegisterForm.value.institution);
+    formdata.append("department_id", this.RegisterForm.value.department);
     formdata.append("role_id", this.RegisterForm.value.role);
     formdata.append("status", "true");
     if(this.RegisterForm.value.password != this.RegisterForm.value.password2){
@@ -73,7 +73,7 @@ export class AdduserComponent implements OnInit {
     this.authService.getInstitutions().subscribe(result=>{
     this.sharedService.isLoading.next(false);
       //console.log(result.data);
-      this.institutions = result.data;
+      this.departments = result.data;
     },errorResponse=>{
       console.log("Error: "+ errorResponse)
     });

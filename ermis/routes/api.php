@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\OjectiveController;
 use App\Http\Controllers\ResetPwdReqController;
@@ -108,18 +108,18 @@ Route::post('/update-password', [UpdatePwdController::class, 'updatePassword']);
 
 //**AUTHENTICATION WITH JSON WEB TOKE (JWT) APIs**
 
-Route::group(['middleware' => ['jwt.verify']], function() {
+//Route::group(['middleware' => ['jwt.verify']], function() {
 Route::post('/register', [UserController::class, "register"]);
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/user/{id}', [UserController::class, 'show']);
 Route::get('/user', 'App\Http\Controllers\UserController@list');
 
     // department api router
-Route::get('/departments', [DepartmentController::class, 'index']);
-Route::get('/department/{id}', [DepartmentController::class, 'show']);
-Route::post('/insertInstitution', [DepartmentController::class, 'store']);
-Route::put('/updateInstitution/{id}', [DepartmentController::class, 'update']);
-Route::delete('/deleteInstitution/{id}', [DepartmentController::class, 'destroy']);
+Route::get('/departments', [DepartmentsController::class, 'index']);
+Route::get('/department/{id}', [DepartmentsController::class, 'show']);
+Route::post('/insertInstitution', [DepartmentsController::class, 'store']);
+Route::put('/updateInstitution/{id}', [DepartmentsController::class, 'update']);
+Route::delete('/deleteInstitution/{id}', [DepartmentsController::class, 'destroy']);
 
 
 //On demand user Password api router
@@ -358,7 +358,7 @@ Route::get('/priority/{id}', [PriorityController::class, 'show']);
 Route::put('/priority/{id}', [PriorityController::class, 'update']);
 Route::delete('/priority/{id}', [PriorityController::class, 'destroy']);
 
-});
+//});
 
 
 

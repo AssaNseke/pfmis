@@ -49,7 +49,7 @@ export class AuthServiceService {
   }
 
   getInstitutions(): Observable <any>{
-    return this.httpClient.get( environment.baseURL+'api/institutions').pipe(catchError(this.handleError));;
+    return this.httpClient.get( environment.baseURL+'api/departments').pipe(catchError(this.handleError));;
   }
 
   getRoles(): Observable <any>{
@@ -86,7 +86,7 @@ export class AuthServiceService {
     localStorage.setItem("user_name", result.data.name);
     localStorage.setItem("user_id", result.data.id);
     localStorage.setItem("role_id", result.data.role_id);
-    localStorage.setItem("institution_id", result.data.institution_id);
+    localStorage.setItem("department_id", result.data.department_id);
 
     const data = {
       token: result.token,
@@ -116,7 +116,7 @@ export class AuthServiceService {
     localStorage.removeItem('user_id');
     localStorage.removeItem('user_info');
     localStorage.removeItem("role_id");
-    localStorage.removeItem("institution_id");
+    localStorage.removeItem("department_id");
     //console.log('localstorage remove access_token...');rgb(92, 223, 136)
     this.router.navigate(['/login']);
   }

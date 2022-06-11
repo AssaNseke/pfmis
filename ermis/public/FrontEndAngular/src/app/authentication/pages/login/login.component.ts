@@ -30,8 +30,7 @@ export class LoginComponent implements OnInit {
     formdata.append("email", this.LoginForm.value.email);
     formdata.append("password", this.LoginForm.value.password);
 
-    // formdata.append("email", "maro.emmanuel1@gmail.com");
-    // formdata.append("password", "12345678");
+
 
     this.sharedService.isLoading.next(true);
     this.authService.userLogin(formdata).subscribe(result=>{

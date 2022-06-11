@@ -38,10 +38,10 @@ export class DashboardComponent implements OnInit {
     this.checklist_rolepermission(localStorage.getItem('role_id'));
 
     //get intitutions and milestones
-    this.getActivitiesByInstID(localStorage.getItem('institution_id'))
+    this.getActivitiesByInstID(localStorage.getItem('dept_id'))
 
     //get contracts 
-    this.getContractsByInstID(localStorage.getItem('institution_id'))
+    this.getContractsByInstID(localStorage.getItem('dept_id'))
 
     
   }
@@ -84,9 +84,9 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  getActivitiesByInstID(inst_id:any){
+  getActivitiesByInstID(dept_id:any){
     this.sharedService.isLoading.next(true);
-    this.sharedService.getactivitiesByInstID(inst_id).subscribe(result=>{
+    this.sharedService.getactivitiesByInstID(dept_id).subscribe(result=>{
       this.sharedService.isLoading.next(false);
       //console.log(result.data);
       this.activities  = result.data;

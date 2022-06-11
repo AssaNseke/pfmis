@@ -34,26 +34,12 @@ class UserController extends Controller
     }
 
 
-    // public function show(User $user,$id)
-    // {
-    //     $user = User::find($id);
-    //     return $id = DB::table('users')
-    //     ->join('departments','departments.id','=','users.department_id')
-    //     ->join('roles','roles.id','=','users.role_id')
-    //     ->select('users.id','users.name','users.email','users.role_id','roles.role_title',
-    //     'users.department_id','departments.dept_name','departments.vote_code','departments.sub_vote_no',
-    //     'departments.vote_name','departments.sub_vote_name','users.status','users.deleted_at')
-    //     ->where('users.id',$user->id)
-    //     ->get();
-
-    // }
-
     //User login
     public function register(Request $request) {
         $validator  =   Validator::make($request->all(), [
             "name"  =>  "required",
             "email"  =>  "required|email",
-            "institution_id" => "required",
+            "department_id" => "required",
             "role_id" => "required",
             "password"  =>  "required",
 
@@ -65,6 +51,7 @@ class UserController extends Controller
 
         $inputs = $request->all();
         $inputs["password"] = Hash::make($request->password);
+        
 
         $user   =   User::create($inputs);
 
@@ -99,9 +86,10 @@ class UserController extends Controller
         $user       =       Auth::user();
         $token      =       $this->respondWithToken($token);
         //return $this->respondWithToken($token);
-        //$token = $this->respondWithToken($token);
+        $token = $this->respondWithToken($token);
 
-        return response()->json(["status" => "success", "login" => true, "token" => $token, "data" => $user]);
+        return response()->json(["status" => "success", "login" => true, "token" => $token,  "data" => $user]);
+
     } /*end of login*/
 
 
@@ -145,12 +133,12 @@ class UserController extends Controller
     }/*end of user details*/
 
 
-    //Fetch user by institution ID
+    //Fetch user by department ID
     public function list(Request $request)
     {
-        $user_query=User::with(['institution','role']);
-        if($request->institution_id){
-            $user_query->where('institution_id',$request->institution_id);
+        $user_query=User::with(['department','role']);
+        if($request->department_id){
+            $user_query->where('department_id',$request->department_id);
         }
         $user=$user_query->get();
                     return response()->json([
@@ -159,7 +147,7 @@ class UserController extends Controller
                     'data'=>$user
                     ],200);
 
-    }/*end of fetch by institution ID*/
+    }/*end of fetch by department ID*/
 
     //Authenticatio Guard
     protected function guard(){

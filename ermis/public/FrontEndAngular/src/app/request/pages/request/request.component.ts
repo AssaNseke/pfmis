@@ -75,7 +75,7 @@ export class RequestComponent implements OnInit {
         this.getRegisteredUsers();
       }
       else if(this.permissions.institutionadmin){
-        this.getRegisteredUsersByInstID(localStorage.getItem('institution_id'));
+        this.getRegisteredUsersByInstID(localStorage.getItem('department_id'));
       }
     });
   }
@@ -141,7 +141,7 @@ export class RequestComponent implements OnInit {
           
           this.permissions.superadmin = true;
         }
-        if(this.userrolepermissionArray[i].permission.permission_code == 'institutionadmin'){
+        if(this.userrolepermissionArray[i].permission.permission_code == 'departmentadmin'){
           this.permissions.institutionadmin = true;
         }
       }
@@ -152,7 +152,7 @@ export class RequestComponent implements OnInit {
         this.getRegisteredUsers();
       }
       else if(this.permissions.institutionadmin){
-        this.getRegisteredUsersByInstID(localStorage.getItem('institution_id'));
+        this.getRegisteredUsersByInstID(localStorage.getItem('department_id'));
       }
 
 
