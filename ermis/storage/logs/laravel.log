@@ -20047,3 +20047,15 @@ LINE 1: select * from \"departments\" where \"departments\".\"department_...
 [stacktrace]
 #0 {main}
 "} 
+[2022-06-20 01:11:32] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-20 01:12:32] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2022-06-20 01:13:32] local.ERROR: Trait 'App\Models\SoftDeletes' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'App\\Models\\SoftDeletes' not found at /var/www/ermis/pfmis/ermis/app/Models/File.php:8)
+[stacktrace]
+#0 {main}
+"} 
