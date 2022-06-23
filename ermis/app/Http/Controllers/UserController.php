@@ -51,7 +51,7 @@ class UserController extends Controller
 
         $inputs = $request->all();
         $inputs["password"] = Hash::make($request->password);
-        
+
 
         $user   =   User::create($inputs);
 

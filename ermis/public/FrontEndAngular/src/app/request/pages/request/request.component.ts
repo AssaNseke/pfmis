@@ -15,7 +15,7 @@ import { RequestService } from '../../services/request.service';
 })
 export class RequestComponent implements OnInit {
 
-   
+
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild('leaderstable') leaderstable!: MatTable<any>;
@@ -24,14 +24,14 @@ export class RequestComponent implements OnInit {
   data: any = []
   leadersArray = new MatTableDataSource<any>();
   leadersdisplayedColumns = ["id","mnrtsystem_name","request_desc","category_name","priority","created_at","deadline","reason","institution","status","action"];
-  permissions = {"institutionadmin":false,"superadmin":false};
+  permissions = {"departmentadmin":false,"superadmin":false};
   userrolepermissionArray: any[] = [];
 
   ngOnInit(): void {
 
     this.checklist_rolepermission(localStorage.getItem('role_id'));
 
-    
+
 
   }
 
@@ -48,7 +48,7 @@ export class RequestComponent implements OnInit {
       console.log("Error: "+ errorResponse)
     });
   }
-  
+
 
   getRegisteredUsersByInstID(inst_id:any){
     this.sharedService.isLoading.next(true);
@@ -74,7 +74,7 @@ export class RequestComponent implements OnInit {
       if(this.permissions.superadmin){
         this.getRegisteredUsers();
       }
-      else if(this.permissions.institutionadmin){
+      else if(this.permissions.departmentadmin){
         this.getRegisteredUsersByInstID(localStorage.getItem('department_id'));
       }
     });
@@ -116,7 +116,7 @@ export class RequestComponent implements OnInit {
   //     this.getRegisteredUsers();
   //  });
    }
-  
+
 
   //Filtering
   applyFilter(filtertext: string){
@@ -138,11 +138,11 @@ export class RequestComponent implements OnInit {
 
       for(var i = 0; i < this.userrolepermissionArray.length; ++i){
         if(this.userrolepermissionArray[i].permission.permission_code == 'superadmin'){
-          
+
           this.permissions.superadmin = true;
         }
         if(this.userrolepermissionArray[i].permission.permission_code == 'departmentadmin'){
-          this.permissions.institutionadmin = true;
+          this.permissions.departmentadmin = true;
         }
       }
 
@@ -151,7 +151,7 @@ export class RequestComponent implements OnInit {
       if(this.permissions.superadmin){
         this.getRegisteredUsers();
       }
-      else if(this.permissions.institutionadmin){
+      else if(this.permissions.departmentadmin){
         this.getRegisteredUsersByInstID(localStorage.getItem('department_id'));
       }
 

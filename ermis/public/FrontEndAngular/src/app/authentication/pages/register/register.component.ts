@@ -15,7 +15,7 @@ import { AuthServiceService } from '../../services/auth-service.service';
 })
 export class RegisterComponent implements OnInit {
 
-  
+
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild('leaderstable') leaderstable!: MatTable<any>;
@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
 
     this.checklist_rolepermission(localStorage.getItem('role_id'));
 
-    
+
 
   }
 
@@ -115,7 +115,7 @@ export class RegisterComponent implements OnInit {
   //     this.getRegisteredUsers();
   //  });
    }
-  
+
 
   //Filtering
   applyFilter(filtertext: string){
@@ -137,7 +137,7 @@ export class RegisterComponent implements OnInit {
 
       for(var i = 0; i < this.userrolepermissionArray.length; ++i){
         if(this.userrolepermissionArray[i].permission.permission_code == 'superadmin'){
-          
+
           this.permissions.superadmin = true;
         }
         if(this.userrolepermissionArray[i].permission.permission_code == 'departmentadmin'){

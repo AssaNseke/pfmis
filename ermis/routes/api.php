@@ -108,7 +108,7 @@ Route::post('/update-password', [UpdatePwdController::class, 'updatePassword']);
 
 //**AUTHENTICATION WITH JSON WEB TOKE (JWT) APIs**
 
-//Route::group(['middleware' => ['jwt.verify']], function() {
+Route::group(['middleware' => ['jwt.verify']], function() {
 Route::post('/register', [UserController::class, "register"]);
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/user/{id}', [UserController::class, 'show']);
@@ -358,7 +358,7 @@ Route::get('/priority/{id}', [PriorityController::class, 'show']);
 Route::put('/priority/{id}', [PriorityController::class, 'update']);
 Route::delete('/priority/{id}', [PriorityController::class, 'destroy']);
 
-//});
+});
 
 
 
