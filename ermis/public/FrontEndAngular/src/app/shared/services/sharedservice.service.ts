@@ -13,13 +13,13 @@ export class SharedserviceService {
   public isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  
+
   constructor(private snackBar: MatSnackBar, private httpClient: HttpClient) { }
 
   private handleError(errorResponse: HttpErrorResponse){
-    return throwError(errorResponse.error); 
+    return throwError(errorResponse.error);
   }
-  
+
   //Success snark
   openSnackBar(message: string) {
     this.snackBar.open(message, 'close', {
@@ -69,7 +69,7 @@ export class SharedserviceService {
   }
 
   getInstitutions(): Observable <any>{
-    return this.httpClient.get( environment.baseURL+'api/institutions').pipe(catchError(this.handleError));
+    return this.httpClient.get( environment.baseURL+'api/departments').pipe(catchError(this.handleError));
   }
 
   getRoles(): Observable <any>{

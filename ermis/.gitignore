@@ -1,6 +1,6 @@
 /node_modules
 /public/assets
-/public/storage
+storage
 /public/uploads
 /vendor
 .env
